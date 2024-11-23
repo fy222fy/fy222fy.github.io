@@ -1,34 +1,27 @@
-- title: Informações Gerais
+- title: 简介
   type: map
   contents:
-    - name: Nome Completo
-      value: Albert Einstein
-    - name: Data de Nascimento
-      value: 14 de março de 1879
-    - name: Idiomas
-      value: Inglês, Alemão
+    - name: 名字
+      value: 冯皓楠
+    - name: 生日
+      value: 1996/06/03
+    - name: 语言
+      value: 中文, 英文
 
-- title: Educação
+- title: 教育
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurique, Suíça
-      year: 1905
-      description:
-        - Descrição 1.
-        - Descrição 2.
-        - title: Descrição 3.
-          contents:
-            - Sub-descrição 1.
-            - Sub-descrição 2.
-    - title: Diploma de ensino federal
-      institution: Eidgenössische Technische Hochschule, Zurique, Suíça
-      year: 1900
-      description:
-        - Descrição 1.
-        - Descrição 2.
+    - title: 本科
+      institution: 北京邮电大学
+      year: 2014
+    - title: 硕士
+      institution: 北京邮电大学
+      year: 2018
+    - title: 博士
+      institution: 北京邮电大学
+      year: 2024
 
-- title: Experiência
+- title: 经历
   type: time_table
   contents:
     - title: Professor de Física Teórica
