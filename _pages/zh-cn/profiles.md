@@ -2,8 +2,8 @@
 page_id: profiles
 layout: profiles
 permalink: /people/
-title: membros
-description: membros do grupo de pesquisa ou laboratório
+title: 成员
+description: 实验室成员
 nav: true
 nav_order: 7
 
@@ -15,15 +15,15 @@ profiles:
     content: about_einstein.md
     image_circular: false # crops the image to make it circular
     more_info: >
-      <p>555 seu telefone do trabalho</p>
-      <p>123 seu endereço</p>
-      <p>Sua cidade, estado 12345</p>
+      <p>555 your office number</p>
+      <p>123 your address street</p>
+      <p>Your City, State 12345</p>
   - align: left
     image: prof_pic.jpg
     content: about_einstein.md
     image_circular: false # crops the image to make it circular
     more_info: >
-      <p>555 seu telefone do trabalho</p>
-      <p>123 seu endereço</p>
-      <p>Sua cidade, estado 12345</p>
+      <p>555 your office number</p>
+      <p>123 your address street</p>
+      <p>Your City, State 12345</p>
 ---

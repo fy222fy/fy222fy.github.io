@@ -1,0 +1,144 @@
+archive_category: 档案分类
+archive_tag: 档案标签
+archive_year: 档案年份
+blog:
+  navigation_title: blog
+categories:
+  fun: fun
+  work: 工作
+citation:
+  bibtex: "或使用 BibTeX:"
+  introduction: "如果你觉得有用，请引用:"
+contact_note: 可以通过电话、邮箱进行联系。
+cv:
+  address: 地址
+  area: 地区
+  awarder: 获奖者
+  awards: 获奖
+  basics: 一般信息
+  certificates: 证书
+  city: 城市
+  countryCode: 国家代码
+  courses: 课程
+  date: 日期
+  education: 教育
+  email: 邮箱
+  endDate: 截止日期
+  fluency: 影响力
+  highlights: 高亮
+  image: 图片
+  institution: 机构
+  interests: 兴趣
+  issuer: 发布者
+  keywords: 关键词
+  label: 标签
+  language: 语言
+  languages: 语言
+  level: 等级
+  location: 地点
+  name: 姓名
+  network: 网络
+  organization: 机构
+  phone: 电话
+  position: 位置
+  postalCode: 邮政编码
+  profiles: 个人资料
+  projects: 项目
+  publications: 作品
+  publisher: 发布者
+  reference: 参考
+  references: 参考
+  region: 地区
+  releaseDate: 发布时间
+  score: 得分
+  skills: 技能
+  startDate: 开始日期
+  studyType: 学制
+  summary: 总结
+  table_of_contents: 目录
+  title: 标题
+  url: 链接
+  username: 用户名
+  volunteer: 志愿者
+  work: 工作
+footer_text: > # the ">" symbol means to ignore newlines until "titles:"
+  Desenvolvido em <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> com o tema <a href="https://github.com/george-gca/multi-language-al-folio">multi-language-al-folio</a>.
+  Hospedado por <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+  Fotos do <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+latest_posts: últimas postagens
+months:
+  long:
+    january: 一月
+    february: 二月
+    march: 三月
+    april: 四月
+    may: 五月
+    june: 六月
+    july: 七月
+    august: 八月
+    september: 九月
+    october: 十月
+    november: 十一月
+    december: 十二月
+  short:
+    january: Jan
+    february: Feb
+    march: Mar
+    april: Apr
+    may: May
+    june: Jun
+    july: Jul
+    august: Aug
+    september: Sep
+    october: Oct
+    november: Nov
+    december: Dec
+news: 动态
+newsletter:
+  back: Back
+  error: "Oops! Something went wrong, please try again."
+  subscribe: subscribe
+  subscribed: "You have successfully subscribed to the newsletter."
+  subscribe_to_receive: "Subscribe to be notified of future articles:"
+  too_many_signups: "Too many signups, please try again in a little while"
+  wait: "Please wait..."
+no_news: 最近没有新动态...
+pagination:
+  newer: Newer
+  older: Older
+  page: page
+post:
+  created_in: Created in
+  created_by: by
+  last_updated: last updated in
+references: References
+related_posts:
+  description: "Here are some more articles you might like to read next:"
+  title: Enjoy Reading This Article?
+search:
+  dark_theme:
+    description: Change the theme of the site to Dark
+    title: Change theme to dark
+  dropdown: Dropdown
+  email: Send an email
+  footer:
+    close: to close
+    navigate: to navigate
+    parent: move to parent
+    select: to select
+  languages: Languages
+  light_theme:
+    description: Change the theme of the site to Light
+    title: Change theme to light
+  navigation: Navigation menu
+  news: News
+  placeholder: Type to start searching
+  posts: Posts
+  projects: Projects
+  socials: Socials
+  system_theme:
+    description: Change the theme of the site to System Default
+    title: Use system default theme
+  theme: Theme
+selected_publications: selected publications
+site_description: A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
