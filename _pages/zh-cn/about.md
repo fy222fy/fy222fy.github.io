@@ -3,8 +3,7 @@ page_id: about
 layout: about
 title: 关于
 permalink: /
-subtitle: <a href='#'>北京邮电大学</a>. 中国-北京. fenghaonan222@bupt.edu.cn
-
+subtitle: <a href='#', style='color:red;'> 冯皓楠 </a>， 北京邮电大学-网络空间安全学院，中国-北京， fenghaonan222@bupt.edu.cn
 profile:
   align: right
   image: prof_pic.jpg
@@ -17,6 +16,12 @@ latest_posts: false # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
+
+
+北邮本硕博，蚂蚁工作过，发表两篇文章，从事xxx方向。
+
+
+
 
 我是北京邮电大学，网络空间安全学院的博士生。
 我所在的实验室是Trustworthy AI and communication security lab (TACSL)。

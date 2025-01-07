@@ -6,7 +6,7 @@ title: 博客
 blog_name: 冯皓楠的博客
 description: 学习是一种积累，一点点称为更好的自己。
 nav: true
-nav_order: 1
+nav_order: 3
 pagination:
   enabled: true
   collection: posts

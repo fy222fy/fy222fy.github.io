@@ -2,9 +2,9 @@
 page_id: profiles
 layout: profiles
 permalink: /people/
-title: 成员
-description: 实验室成员
-nav: true
+title: 个人资料
+description: 北京邮电大学网络空间安全学院博士生，从事大模型安全、形式化分析、隐私计算、量化投资等方向。
+nav: false
 nav_order: 7
 
 profiles:

@@ -1,10 +1,9 @@
 {
   "basics": {
     "name": "冯皓楠",
-    "label": "AI安全，形式化分析，隐私计算，量化投资",
+    "label": "AI安全，AI for 安全，形式化分析，量化投资",
     "image": "prof_pic.jpg",
-    "email": "fenghaonan222@bupt.edu.cn, fenghaonan222@gmail.com",
-    "phone": "(010) 18811796269",
+    "email": "fenghaonan222@gmail.com",
     "url": "fy222fy.github.io",
     "summary": "北京邮电大学网络空间安全学院博士生，从事AI安全、形式化分析相关研究方向。",
     "location": {
@@ -29,7 +28,7 @@
       "url": "https://www.antgroup.com/",
       "startDate": "2021-07-06",
       "endDate": "2024-11-15",
-      "summary": "在蚂蚁集团从事大模型、隐私计算方向",
+      "summary": "从事密算大模型、隐私计算、联邦学习方向",
       "highlights": ["Relatividade"]
     }
   ],
@@ -80,14 +79,14 @@
       "date": "2017-09-1",
       "awarder": "北京邮电大学",
       "url": "https://www.bupt.edu.cn/xywh/cxcy.htm",
-      "summary": "支持多因子认证的，跨平台的，安全的密码管理系统。"
+      "summary": "设计实现支持多因子认证的，跨平台的，安全的密码管理系统。"
     },
     {
       "title": "第十届全国大学生信息安全竞赛",
       "date": "2018-09-1",
       "awarder": "教育部高等学校网络空间安全专业教学指导委员会",
       "url": "http://www.ciscn.cn/index.php/announcement/view/70",
-      "summary": "支持多因子认证的，跨平台的，安全的密码管理系统。"
+      "summary": "设计实现支持多因子认证的，跨平台的，安全的密码管理系统。"
     },
     {
       "title": "国家奖学金",
@@ -100,7 +99,7 @@
     {
       "name": "可信密态计算系统",
       "date": "2022-01-01",
-      "issuer": "信通院多方安全计算安全评测证书",
+      "issuer": "中国信通院",
       "icon": "fa-solid fa-location-dot"
     },
     {
@@ -117,14 +116,14 @@
       "publisher": "冯皓楠, 李晖, 潘雪松, 赵子铭",
       "releaseDate": "2021-10-30",
       "url": "https://www.ndss-symposium.org/ndss-paper/a-formal-analysis-of-the-fido-uaf-protocol/",
-      "summary": "该论文以第一作者发表在NDSS(Symposium on Network and Distributed System Security) 会议中，论文对FIDO UAF协议进行了形式化分析，提出最小化安全假设的形式化分析方法，开发并开源了相关的分析工具。"
+      "summary": "使用形式化分析技术对FIDO UAF协议进行分析。创新地提出了最小化假设的验证方式；开发并开源了自动化验证工具（UAFVerif）；发表两篇论文（NDSS/TDSC）；申报一个CNNVD中危漏洞；找到ProVerif工具漏洞并贡献修复。"
     },
     {
       "name": "FIDO gets verified: A formal analysis of the universal authentication framework protocol",
       "publisher": "冯皓楠, 关菁菁, 李晖, 潘雪松, 赵子铭",
       "releaseDate": "2022-03-18",
       "url": "https://ieeexplore.ieee.org/abstract/document/9930658",
-      "summary": "该论文以第一作者发表在TDSC(IEEE Transactions on Dependable and Secure Computing)期刊上，论文在NDSS论文的基础上，提出了更新的分析方法，完善了结论和攻击方式。"
+      "summary": "使用最小化假设的验证方法对FIDO UAF协议进行进一步分析，提出了完善的分析方法和分析结论。"
     },
     {
       "name": "Authenticator rebinding attack of the UAF protocol on mobile devices",
@@ -142,7 +141,12 @@
       "keywords": [
         "Python",
         "Java",
-        "C"
+        "C/C++",
+        "LaTeX",
+        "Applied-pi",
+        "Markdown",
+        "HTML",
+        "C#"
       ]
     },
     {
@@ -150,16 +154,24 @@
       "level": "Expert",
       "icon": "fa-solid fa-hashtag",
       "keywords": [
-        "大模型安全技术",
-        "形式化分析技术",
-        "隐私计算"
+        "TEE (SGX, HyperEnclave)",
+        "K8s",
+        "Docker",
+        "MzySQL",
+        "PostgreSQL",
+        "Redis",
+        "ProVerif",
+        "Linux",
+        "Alibaba Cloud",
+        "PR",
+        "AE"
       ]
     }
   ],
   "languages": [
     {
       "language": "中文",
-      "fluency": "熟练",
+      "fluency": "母语",
       "icon": ""
     },
     {
@@ -170,13 +182,13 @@
   ],
   "interests": [
     {
-      "name": "AI大模型",
+      "name": "大模型安全、大模型for安全",
       "icon": "fa-solid fa-tag",
       "keywords": [
       ]
     },
     {
-      "name": "量化投资",
+      "name": "形式化分析",
       "icon": "fa-solid fa-tag",
       "keywords": [
       ]

@@ -2,7 +2,7 @@
 id: dropdown
 layout: page
 title: 子菜单
-nav: true
+nav: false
 nav_order: 8
 dropdown: true
 children:

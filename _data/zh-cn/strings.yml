@@ -15,7 +15,7 @@ cv:
   area: 地区
   awarder: 获奖者
   awards: 获奖
-  basics: 一般信息
+  basics: 简介
   certificates: 证书
   city: 城市
   countryCode: 国家代码
@@ -104,41 +104,41 @@ newsletter:
   wait: "Please wait..."
 no_news: 最近没有新动态...
 pagination:
-  newer: Newer
-  older: Older
-  page: page
+  newer: 新
+  older: 旧
+  page: 页
 post:
-  created_in: Created in
-  created_by: by
-  last_updated: last updated in
-references: References
+  created_in: 创建时间
+  created_by: 创建者
+  last_updated: 上次更新
+references: 参考
 related_posts:
-  description: "Here are some more articles you might like to read next:"
-  title: Enjoy Reading This Article?
+  description: "这里是一些其他的文章："
+  title: 喜欢这篇文章？
 search:
   dark_theme:
-    description: Change the theme of the site to Dark
-    title: Change theme to dark
-  dropdown: Dropdown
-  email: Send an email
+    description: 切换网页主题到黑夜模式
+    title: 切换主题到黑夜模式
+  dropdown: 下拉
+  email: 发送邮件
   footer:
     close: to close
     navigate: to navigate
     parent: move to parent
     select: to select
-  languages: Languages
+  languages: 语言
   light_theme:
-    description: Change the theme of the site to Light
-    title: Change theme to light
-  navigation: Navigation menu
-  news: News
-  placeholder: Type to start searching
+    description: 切换网页主题至白天
+    title: 切换白天主题
+  navigation: 导航菜单
+  news: 最新动态
+  placeholder: 点击搜索
   posts: Posts
   projects: Projects
-  socials: Socials
+  socials: 社交媒体
   system_theme:
-    description: Change the theme of the site to System Default
-    title: Use system default theme
-  theme: Theme
-selected_publications: selected publications
+    description: 切换主题至系统默认
+    title: 使用系统默认主题
+  theme: 主题
+selected_publications: 主要发表作品
 site_description: A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
