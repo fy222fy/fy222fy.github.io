@@ -25,8 +25,8 @@ repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/b
 repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_trophies:
   enabled: true
-  theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
-  theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
+  theme_light: flat # https://github.com/ryo-ma/2github-profile-trophy
+  theme_dark: gitdimmed # https://github.com/ryo-ma/gi2thub-profile-trophy
 
 # -----------------------------------------------------------------------------
 # RSS Feed
@@ -386,8 +386,8 @@ external_links:
 # Jekyll Polyglot
 # -----------------------------------------------------------------------------
 
-languages: ["en-us", "zh-cn"]
-default_lang: "en-us"
+languages: ["zh-cn","en-us"]
+default_lang: "zh-cn"
 exclude_from_localization: ["assets"]
 lang_from_path: true
 country_flag: false # set true for allowing flag symbol in language toggle
