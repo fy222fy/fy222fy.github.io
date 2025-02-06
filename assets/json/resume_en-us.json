@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Haonan Feng",
-    "label": "AI Security, AI for Security, Formal Verification, Quantitative Investment",
+    "label": "AI Security, AI for Security, Formal Verification",
     "image": "prof_pic.jpg",
     "email": "fenghaonan222@gmail.com",
     "url": "fy222fy.github.io",
@@ -21,17 +21,7 @@
       }
     ]
   },
-  "work": [
-    {
-      "name": "Ant Group",
-      "position": "Network Security Engineer",
-      "url": "https://www.antgroup.com/",
-      "startDate": "2021-07-06",
-      "endDate": "2024-11-15",
-      "summary": "TODO?",
-      "highlights": ["?"]
-    }
-  ],
+
   "volunteer": [
   ],
   "education": [
@@ -65,6 +55,39 @@
       "endDate": "2018-06-01",
       "score": "10",
       "courses": []
+    }
+  ],
+  "work": [
+    {
+      "name": "Ant Group",
+      "position": "Network Security Engineer",
+      "url": "https://www.antgroup.com/",
+      "startDate": "2021-07-06",
+      "endDate": "2024-11-15",
+      "summary": "Engaged in cryptographic LLM, Federated Learning, Secure Multi-Party Computation, etc."
+    }
+  ],
+  "publications": [
+    {
+      "name": "A Formal Analysis of the FIDO UAF Protocol",
+      "publisher": "Haonan Feng, Hui Li, Xuesong Pan, Ziming Zhao",
+      "releaseDate": "2021-10-30",
+      "url": "https://www.ndss-symposium.org/ndss-paper/a-formal-analysis-of-the-fido-uaf-protocol/",
+      "summary": "Conducted formal analysis of the FIDO UAF protocol; proposed a new verification method, developed an open-source automated verification tools (UAFVerif); published 2 papers (NDSS/TDSC); reported a CNNVD vulnerability."
+    },
+    {
+      "name": "FIDO gets verified: A formal analysis of the universal authentication framework protocol",
+      "publisher": "Haonan Feng, Jingjing Guan, Hui Li, Xuesong Pan, Ziming Zhao",
+      "releaseDate": "2022-03-18",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9930658",
+      "summary": "The FIDO UAF protocol is further analyzed using the proposed minimal assumption verification method, and a complete analysis method and analysis conclusion are proposed."
+    },
+    {
+      "name": "Authenticator rebinding attack of the UAF protocol on mobile devices",
+      "publisher": "Hui Li, Xuesong Pan, Xinluo Wang, Haonan Feng",
+      "releaseDate": "2020-10-20",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1155/2020/8819790",
+      "summary": "The paper proposed an authenticator rebinding attack on the FIDO UAF protocol, verified it in practice on an actual APP, and published related vulnerabilities."
     }
   ],
   "awards": [
@@ -111,29 +134,7 @@
       "icon": "fa-solid fa-tag"
     }
   ],
-  "publications": [
-    {
-      "name": "A Formal Analysis of the FIDO UAF Protocol",
-      "publisher": "Haonan Feng, Hui Li, Xuesong Pan, Ziming Zhao",
-      "releaseDate": "2021-10-30",
-      "url": "https://www.ndss-symposium.org/ndss-paper/a-formal-analysis-of-the-fido-uaf-protocol/",
-      "summary": "Conducted formal analysis of the FIDO UAF protocol; proposed a new verification method, developed an open-source automated verification tools (UAFVerif); published 2 papers (NDSS/TDSC); reported a CNNVD vulnerability."
-    },
-    {
-      "name": "FIDO gets verified: A formal analysis of the universal authentication framework protocol",
-      "publisher": "Haonan Feng, Jingjing Guan, Hui Li, Xuesong Pan, Ziming Zhao",
-      "releaseDate": "2022-03-18",
-      "url": "https://ieeexplore.ieee.org/abstract/document/9930658",
-      "summary": "The FIDO UAF protocol is further analyzed using the proposed minimal assumption verification method, and a complete analysis method and analysis conclusion are proposed."
-    },
-    {
-      "name": "Authenticator rebinding attack of the UAF protocol on mobile devices",
-      "publisher": "Hui Li, Xuesong Pan, Xinluo Wang, Haonan Feng",
-      "releaseDate": "2020-10-20",
-      "url": "https://onlinelibrary.wiley.com/doi/full/10.1155/2020/8819790",
-      "summary": "The paper proposed an authenticator rebinding attack on the FIDO UAF protocol, verified it in practice on an actual APP, and published related vulnerabilities."
-    }
-  ],
+
   "skills": [
     {
       "name": "Programming",

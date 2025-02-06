@@ -3,15 +3,14 @@ page_id: about
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Beijing University of Posts and Telecommunications</a>. Beijing, China. fenghaonan222@bupt.edu.cn
+subtitle: <a href='https://www.bupt.edu.cn/'>Cyberspace Security, Beijing University of Posts and Telecommunications</a>. Beijing, China. fenghaonan222@gmail.com 
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>personal email: fenghaonan222@gmail.com</p>
-    <p>phone number: 18811796269</p>
+#    <p>personal email: fenghaonan222@gmail.com</p>
 
 news: false # includes a list of news items
 latest_posts: false # includes a list of the newest posts
@@ -19,17 +18,39 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I am a PhD student at the School of Cyberspace Security, Beijing University of Posts and Telecommunications.
-I am doing research in the Trustworthy AI and communication security lab (TACSL).
-My research interests are in AI Security, Formal Verification, Privacy Computing, Quantitative Trading.
-I am a recipient of the papers at NDSS 2021, TDSC 2023.
-I received my master's degree and bachelor's degree from Beijing University of Posts and Telecommunications.
+I am a Ph.D. student in the School of Cyberspace Security at Beijing University of Posts and Telecommunications.
+My main research interests include artificial intelligence security, formal analysis, privacy computing, etc.
 
-[//]: # ()
-[//]: # (Write your biography here. Tell the world about yourself. Link to your favorite [subreddit]&#40;http://reddit.com&#41;. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.)
+Currently, I am studying the application of large model technology in the field of formal analysis. Welcome to discuss related topics together.
 
-[//]: # ()
-[//]: # (Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page]&#40;/multi-language-al-folio/publications/&#41; automatically.)
+During my undergraduate and master’s studies, I mainly focused on the formal analysis of security protocols. 
+My main work is verifying the FIDO UAF authentication protocol using formal methods. 
+I proposed a formal modeling methods for inter-process communication and a verification methods for minimal assumptions in security protocols.
+I developed and open-sourced an automated analysis tool, 
+and published two papers at **NDSS 2021** and **TDSC 2023*, filed two patents, 
+and reported a medium-risk vulnerability to CNNVD.
+I also identified a vulnerability in the ProVerif formal analysis tool and contributed to its repair.
 
-[//]: # ()
-[//]: # (Link to your social media connections, too. This theme is set up to use [Font Awesome icons]&#40;https://fontawesome.com/&#41; and [Academicons]&#40;https://jpswalsh.github.io/academicons/&#41;, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.)
+From 2021 to 2024, I worked as a network security engineer at Ant Group, 
+where I was involved in cryptographic large language models, federated learning, multi-party secure computing, TEE, etc.
+
+In the field of large language models, 
+Ant Group launched the Secretflow Cloud Large Model Encryption Computing Platform in 2024. 
+Based on a combination of software and hardware for trusted privacy computing technology, 
+it realizes secure data transmission in the processes of large model hosting and large model inference.
+I participated in the research on confidential large model inference under TEE,
+developed a confidential knowledge graph platform,
+and proposed a federated learning technology-based privacy-preserving joint fine-tuning/inference solution for multi-institutional scenarios.
+
+In the field of federated learning, I implemented an automatic attack-defense framework for federated learning and open-sourced it under the Secretflow. 
+The framework can automatically traverse hyperparameter traversal under given attack-defense algorithms to find the best attack-defense practices. 
+Additionally, I implemented mainstream machine learning models and cutting-edge attack-defense algorithms in the framework,
+establishing industry benchmarks for different models and attack-defense scenarios.
+
+In the areas of Multi-Party Secure Computing (MPC) and Trusted Execution Environment (TEE), 
+Ant Group released the Trusted Encrypted Computing System (TECC) in 2022, 
+which was selected as one of the “Top Ten Hardcore Technologies” at the 5th Digital China Construction Summit.
+TECC primarily achieves a more secure and higher-performance encrypted computing system than standalone TEE and MPC technologies by integrating multiple heterogeneous TEE environments with Homogeneous Network MPC technology.
+The work I was involved in includes the research and development of MPC operators, 
+product development, adaptation for SGX and Hyperenclave TEE, as well as cloud deployment. 
+I have obtained 1 software copyright and an evaluation certificate from the China Academy of Information and Communications Technology (CAICT).
