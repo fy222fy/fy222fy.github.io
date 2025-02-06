@@ -3,8 +3,8 @@ page_id: blog
 layout: default
 permalink: /blog/
 title: blog
-blog_name: al-folio in english
-description: a simple whitespace theme for academics
+blog_name: Haonan Feng's blog
+description: Become a better self little by little
 nav: true
 nav_order: 3
 pagination:

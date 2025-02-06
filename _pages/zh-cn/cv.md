@@ -6,7 +6,7 @@ title: 简历
 nav: true
 nav_order: 2
 cv_pdf: my_cv.pdf
-description: 我的简历信息，包含教育、工作经历、获奖等。
+description: 北京邮电大学，网络空间安全学院博士生
 toc:
   sidebar: left
 ---
