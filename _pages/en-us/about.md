@@ -22,7 +22,7 @@ I am a Ph.D. student in the School of Cyberspace Security at Beijing University 
 My main research interests include artificial intelligence security, formal analysis, privacy computing, etc.
 
 Currently, I am researching the application of large model technology in the field of formal analysis, 
-as well as using formal analysis techniques to address the issue of safety in artificial intelligence group interactions. 
+as well as using formal analysis techniques to address the issue of security in artificial intelligence group interactions. 
 I welcome discussions on related topics.
 
 During my undergraduate and master’s studies, I mainly focused on the formal analysis of security protocols. 
