@@ -21,7 +21,9 @@ social: true # includes social icons at the bottom of the page
 I am a Ph.D. student in the School of Cyberspace Security at Beijing University of Posts and Telecommunications.
 My main research interests include artificial intelligence security, formal analysis, privacy computing, etc.
 
-Currently, I am studying the application of large model technology in the field of formal analysis. Welcome to discuss related topics together.
+Currently, I am researching the application of large model technology in the field of formal analysis, 
+as well as using formal analysis techniques to study the security in artificial intelligence group interactions. 
+I welcome discussions on related topics.
 
 During my undergraduate and master’s studies, I mainly focused on the formal analysis of security protocols. 
 My main work is verifying the FIDO UAF authentication protocol using formal methods. 
