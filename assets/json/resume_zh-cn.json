@@ -22,8 +22,7 @@
     ]
   },
 
-  "volunteer": [
-  ],
+  "volunteer": [],
   "education": [
     {
       "institution": "北京邮电大学网络空间安全学院",
@@ -139,34 +138,13 @@
       "name": "编程语言",
       "level": "Advanced",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Python",
-        "Java",
-        "C/C++",
-        "LaTeX",
-        "Applied-pi",
-        "Markdown",
-        "HTML",
-        "C#"
-      ]
+      "keywords": ["Python", "Java", "C/C++", "LaTeX", "Applied-pi", "Markdown", "HTML", "C#"]
     },
     {
       "name": "专业技术",
       "level": "Expert",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "TEE (SGX, HyperEnclave)",
-        "K8s",
-        "Docker",
-        "MzySQL",
-        "PostgreSQL",
-        "Redis",
-        "ProVerif",
-        "Linux",
-        "Alibaba Cloud",
-        "PR",
-        "AE"
-      ]
+      "keywords": ["TEE (SGX, HyperEnclave)", "K8s", "Docker", "MzySQL", "PostgreSQL", "Redis", "ProVerif", "Linux", "Alibaba Cloud", "PR", "AE"]
     }
   ],
   "languages": [
@@ -185,20 +163,14 @@
     {
       "name": "大模型安全、大模型for安全",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-      ]
+      "keywords": []
     },
     {
       "name": "形式化分析",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-      ]
+      "keywords": []
     }
   ],
-  "references": [
-
-  ],
-  "projects": [
-
-  ]
+  "references": [],
+  "projects": []
 }

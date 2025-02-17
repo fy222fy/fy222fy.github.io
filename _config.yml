@@ -7,7 +7,7 @@ first_name: Haonan
 middle_name:
 last_name: Feng
 email: fenghaonan222@gmail.com
-keywords: AI Security & Formal Verification  # add your own keywords or leave empty
+keywords: AI Security & Formal Verification # add your own keywords or leave empty
 icon: icon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://fy222fy.github.io # the base hostname & protocol for your site
@@ -74,7 +74,7 @@ flickr_id: # your flickr id
 github_username: # your GitHub user name
 gitlab_username: # your GitLab user name
 ieee_id: # your ieeexplore.ieee.org/author/id
-inspirehep_id:  # Inspire HEP author ID
+inspirehep_id: # Inspire HEP author ID
 instagram_id: # your instagram id
 kaggle_id: # your kaggle id
 keybase_username: # your keybase user name
@@ -298,7 +298,7 @@ jekyll-archives:
     category: "/blog/category/:name/"
 
 display_tags: ["llm"] # these tags will be displayed on the front page of your blog
-display_categories: ["ai","c++","learn"] # these categories will be displayed on the front page of your blog
+display_categories: ["ai", "c++", "learn"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
@@ -386,7 +386,7 @@ external_links:
 # Jekyll Polyglot
 # -----------------------------------------------------------------------------
 
-languages: ["zh-cn","en-us"]
+languages: ["en-us", "zh-cn"]
 default_lang: "en-us"
 exclude_from_localization: ["assets"]
 lang_from_path: true
