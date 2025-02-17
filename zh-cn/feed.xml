@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://fy222fy.github.io/zh-cn/feed.xml" rel="self" type="application/atom+xml"/><link href="https://fy222fy.github.io/zh-cn/" rel="alternate" type="text/html"/><updated>2025-02-17T07:30:22+00:00</updated><id>https://fy222fy.github.io/feed.xml</id><title type="html">blank</title><entry><title type="html">配置新的linux服务器并安装iterm2</title><link href="https://fy222fy.github.io/zh-cn/blog/2024/deploy-my-server/" rel="alternate" type="text/html" title="配置新的linux服务器并安装iterm2"/><published>2024-12-30T16:40:16+00:00</published><updated>2024-12-30T16:40:16+00:00</updated><id>https://fy222fy.github.io/blog/2024/deploy-my-server</id><content type="html" xml:base="https://fy222fy.github.io/blog/2024/deploy-my-server/"><![CDATA[<h2 id="配置iterm2自动登录服务器">配置iterm2自动登录服务器</h2> <ol> <li>打开settings-Profiles；</li> <li>新增一个Profile；</li> <li>在Command-General，选择Command，键入：ssh xxx@xx.xx.xxx.xx；</li> <li>选择Command-Advanced-Triggers-Edit；</li> <li>在Regular Expression中，键入xxx@xx.xx.xxx.xx’s password，目的是捕获服务器端的返回；</li> <li>Action选择Send Text</li> <li>Parameters中键入服务器密码，注意后面加上<code class="language-plaintext highlighter-rouge">\n</code>，不然不会自动登录；</li> <li>后面的Instant、Enable都开启。</li> </ol> <h2 id="linux服务器配置新用户">Linux服务器配置新用户</h2> <ol> <li>增加用户：useradd xxx -m</li> <li>修改密码：passwd xxx</li> <li>配置sudo用户组: usermod -G root xxx</li> <li>允许用户ssh登录：</li> </ol> <h2 id="linux-ubuntu安装oh-my-zsh">Linux Ubuntu安装oh my zsh</h2> <ol> <li>安装zsh：sudo apt install zsh -y</li> <li>切换zsh为默认shell：chsh -s /bin/zsh</li> <li>安装oh my zsh：sh -c “$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)”</li> <li>编辑配置: vim ~/.zshrc</li> <li>切换主题：ZSH_THEME=”agnoster” # last: “robbyrussell”</li> <li>语法高亮：git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~ /.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting</li> <li>自动补全：git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~ /.oh-my-zsh/custom}/plugins/zsh-autosuggestions</li> <li>记得在配置中增加：</li> </ol> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plugins=(
+        git
+        zsh-syntax-highlighting
+        zsh-autosuggestions
+)
+</code></pre></div></div>]]></content><author><name></name></author><category term="learn"/><category term="linux"/><summary type="html"><![CDATA[服务器部署]]></summary></entry><entry><title type="html">Windows系统如何安装ProVerif Editor</title><link href="https://fy222fy.github.io/zh-cn/blog/2024/ProVerif-editor/" rel="alternate" type="text/html" title="Windows系统如何安装ProVerif Editor"/><published>2024-05-01T00:32:13+00:00</published><updated>2024-05-01T00:32:13+00:00</updated><id>https://fy222fy.github.io/blog/2024/ProVerif-editor</id><content type="html" xml:base="https://fy222fy.github.io/blog/2024/ProVerif-editor/"><![CDATA[<p>@<a href="Windows系统如何安装ProVerif Editor">TOC</a></p> <p>ProVerif是一个强大的协议形式化分析工具，它可以根据输入的pv文件自动分析协议。为了方便研究者编辑应用PI演算，Joeri de Ruiter利用Python语言开发了一款ProVerif编辑器–<strong>ProVerif editor</strong>。但是,这款工具最近一次的更新已经是2013年4月了，它是用Python2开发的，并且使用的相关库都是比较老版本的，在安装过程中，出了很多错误，所以在这里记录一下如何让这个工具能正常地跑起来。本文参考了<a href="http://blog.qqzzz.net/?post=34">为Python添加GTK+库：pygtk（windows下安装pygtk）</a>和 <a href="https://stackoverflow.com/questions/2968273/making-pygtksourceview-work-in-windows">Making pygtksourceview work in windows</a>两篇文章。</p> <h1 id="工具下载">工具下载</h1> <p>ProVerif工具下载链接: <a href="https://prosecco.gforge.inria.fr/personal/bblanche/proverif/">https://prosecco.gforge.inria.fr/personal/bblanche/proverif/</a>. ProVerif editor工具下载链接：<a href="https://sourceforge.net/projects/proverifeditor/">https://sourceforge.net/projects/proverifeditor/</a>.</p> <h1 id="工具运行需求">工具运行需求</h1> <p>解压proverif_editor，找到README文件，可以看到ProVerif Editor的需求。</p> <ol> <li>ProVerif</li> <li>Python(&gt;=2.6)</li> <li>PyGTK2</li> <li>PyGTKSourceView2 (README中这里写错了)</li> </ol> <h2 id="python">Python</h2> <p>在Python的官网中下载大于2.6版本小于3版本的Python。我最后选择了Python2.7.8，下载地址：<a href="https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi">https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi</a>. 注意一定要下载32位的Python，因为后面的PyGtk只有32位版本的，与64位的Python不兼容。</p> <h2 id="pygtk2">PyGTK2</h2> <h3 id="gtk安装">GTK安装</h3> <p>在下载PyGTK前，确保先下载GTK，我下载的是GTK2.24.10_win32，下载地址：<a href="http://gemmei.ftp.acc.umu.se/pub/gnome/binaries/win32/gtk+/2.24/gtk+-bundle_2.24.10-20120208_win32.zip">http://gemmei.ftp.acc.umu.se/pub/gnome/binaries/win32/gtk+/2.24/gtk+-bundle_2.24.10-20120208_win32.zip</a>.</p> <p>还需要下载PyCairo，和PyGObject。 PyCairo下载地址：<a href="http://ftp.gnome.org/pub/GNOME/binaries/win32/pycairo/1.8/pycairo-1.8.10.win32-py2.7.msi">http://ftp.gnome.org/pub/GNOME/binaries/win32/pycairo/1.8/pycairo-1.8.10.win32-py2.7.msi</a>. PyGObject下载地址：<a href="http://ftp.gnome.org/pub/GNOME/binaries/win32/pygobject/2.26/pygobject-2.26.0-1.win32-py2.7.msi">http://ftp.gnome.org/pub/GNOME/binaries/win32/pygobject/2.26/pygobject-2.26.0-1.win32-py2.7.msi</a>. 下载后直接打开安装，会自动找到Python2.7的目录。</p> <p>将GTK安装包解压，并将文件的bin目录添加到系统的环境变量中。之后进行测试，在cmd下执行pkg-config –cflags gtk+-2.0 ，看是否有报错信息，如果没有，通过命令gtk-demo来验证是否安装正确，安装正确会跳出一个窗口。</p> <p>Windows下正常运行PyGTK还需要GTK+ for Windows Runtime Environment，下载地址：<a href="http://sourceforge.net/projects/gtk-win/">http://sourceforge.net/projects/gtk-win/</a>.</p> <h3 id="pygtk安装">PyGTK安装</h3> <p>我下载的是PyGTK2.24.0.win32-py2.7，下载地址：<a href="http://ftp.gnome.org/pub/gnome/binaries/win32/pygtk/2.24/pygtk-2.24.0.win32-py2.7.msi">http://ftp.gnome.org/pub/gnome/binaries/win32/pygtk/2.24/pygtk-2.24.0.win32-py2.7.msi</a>.下载后直接点击安装，它会自己寻找到你的Python2.7目录。</p> <h2 id="pygtksourceview2">PyGTKSourceView2</h2> <p>我下载的是PyGTKSourceView2.10.1.win32-py2.7，下载地址：<a href="http://ftp.gnome.org/pub/gnome/binaries/win32/gtksourceview/2.10/gtksourceview-2.10.0.zip">http://ftp.gnome.org/pub/gnome/binaries/win32/gtksourceview/2.10/gtksourceview-2.10.0.zip</a>. 下载后将压缩包解（为方便可以加压到Python目录下），然后将文件的bin目录添加到环境变量中。</p> <p>正当我觉得一切任务完成后，在打开ProVerif editor时报错:<strong>DLL load failed: 找不到指定的模块</strong>，但是报错又不告诉我找不到什么模块，于是我只好一步一步研究。</p> <p>最后我找到了PyGTKSourceView2.10的源代码，发现想要运行PyGTKSourceView2，需要glib-2.14.x, GTK+-2.12.x and libxml2 2.5.x. 于是我又去找到了这glib和libxml这两个dll进行安装。 glib下载地址：<a href="http://ftp.acc.umu.se/pub/gnome/binaries/win32/glib/2.14/glib-2.14.6.zip">http://ftp.acc.umu.se/pub/gnome/binaries/win32/glib/2.14/glib-2.14.6.zip</a>. libxml下载地址：<a href="http://ftp.acc.umu.se/pub/gnome/binaries/win32/dependencies/libxml2_2.7.7-1_win32.zip">http://ftp.acc.umu.se/pub/gnome/binaries/win32/dependencies/libxml2_2.7.7-1_win32.zip</a>. 下载后把这两个压缩包解压，然后将它们的bin目录（其中的dll目录）添加到环境变量中。</p> <p>这样python就能正常使用gtk了，最后在使用的过程中，ProVerif editor种的editor.py无法正确导入parser.py，可能是因为和Python本身的包重名了，如果遇到这个问题，改一下parser.py的文件名称和对应的editor.py的导入名称就可以了。</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">通过最大子序和算法题学习分治法、减治法、动态规划、贪心算法</title><link href="https://fy222fy.github.io/zh-cn/blog/2024/Dynamic-Programming/" rel="alternate" type="text/html" title="通过最大子序和算法题学习分治法、减治法、动态规划、贪心算法"/><published>2024-05-01T00:32:13+00:00</published><updated>2024-05-01T00:32:13+00:00</updated><id>https://fy222fy.github.io/blog/2024/Dynamic-Programming</id><content type="html" xml:base="https://fy222fy.github.io/blog/2024/Dynamic-Programming/"><![CDATA[<p>本篇文章将通过最大自序和这个题目来学习解决算法题目的几种方法–分治法、减治法、动态规划、贪心算法等。</p> <p><strong>题目：最大子序和</strong></p> <p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p> <p>示例:</p> <p>输入: [-2,1,-3,4,-1,2,1,-5,4]</p> <p>输出: 6</p> <p>解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。</p> <p>进阶:</p> <p>如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。</p> <p>来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/maximum-subarray</p> <ol> <li>常规思路：暴力破解</li> </ol> <p>看到一道算法题最容易想到的就是暴力破解，通过遍历每一种情况来找到最大子序和。但要记住这种方式的时间复杂度可能很大，往往不满足题目要求的执行用时。本题目使用两个指针，第一个指针选定一个位置，第二个指针从第一个指针的位置开始，逐渐后移，两个指针之间便是一个子序列，通过两个指针的移动，可以遍历每一种子序列。</p> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">maxSubArray</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it2</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">mmax</span> <span class="o">=</span> <span class="n">INT_MIN</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">it</span> <span class="o">!=</span> <span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">it</span><span class="o">++</span><span class="p">,</span><span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="k">for</span><span class="p">(</span><span class="n">it2</span> <span class="o">=</span> <span class="n">it</span><span class="p">;</span><span class="n">it2</span><span class="o">!=</span><span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">it2</span><span class="o">++</span><span class="p">){</span>
+                <span class="n">temp</span> <span class="o">+=</span> <span class="o">*</span><span class="n">it2</span><span class="p">;</span>
+                <span class="n">mmax</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="n">mmax</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">mmax</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <p>时间复杂度分析：算法的基本语句是temp += *it2; 在问题规模为n的情况下，基本语句要执行 ((1+n)n)/2 次，所以时间复杂度为 <strong>O(n<sup>2</sup>)</strong>。</p> <p>空间复杂度分析：程序运行所需的全部额外空间（注意：空间复杂度不考虑输入）只有temp临时变量，所以空间复杂度为<strong>O(1)</strong>。</p> <p>LeetCode给出的执行结果如下图，果然时间耗费的比较多。</p> <p><img src="https://i-blog.csdnimg.cn/blog_migrate/df69f0966180316574c36589db8b8777.png" alt="在这里插入图片描述"/></p> <ol> <li>递归-减治法</li> </ol> <p>因为暴力破解的方法时间复杂度较大，所以最好找到更加优化的算法，分治法和减治法是能想到的递归算法。一般的问题，会先想分治法，将数组一分为二，将左右子数组分别递归地求解。但是这种一分为二的方法，显然忽略了跨越两个子数组边界的情况，需要进行处理，所以先放在一边，想想能不能通过减治法来解决问题。</p> <p>减治法的思维，是将问题划分为两个子问题，其一是<em>平凡的</em>（容易求解的，或者说能在o(1)时间范围内解决的问题），另一个是规模缩减的，平凡的子问题是易解的，规模缩减的问题通过递归的方式进一步解决。如下图所示：</p> <p><img src="https://i-blog.csdnimg.cn/blog_migrate/8aee16cfff5deb92c774788ada7f3dd9.png" alt="在这里插入图片描述"/></p> <p>思考本题，对于n个元素的序列，我们可以先解决n-1序列的最大自序和，然后再加上最后一个元素来合并获得原问题的解。如图所示，计算出前8个序列的最大子序和，然后再加入最后一个元素，考虑整体的最大自序和。</p> <p><img src="https://i-blog.csdnimg.cn/blog_migrate/fb78b88d4194144bc8fbcc1761f49d27.png" alt="在这里插入图片描述"/></p> <p>那么，如何在已知前边序列的最大自序和max1基础上，获得加入最后一个元素后序列的最大自序和max2呢？ 考虑到max1可能的情况如图中红色所示，红色部分无法与最后一个元素4进行合并，所以除了知道左边序列的max1以外，还需要知道左边序列的向右<strong>最大贡献值</strong>，也就是包含最右边数字-5的最大自序和，然后再加上新成员4，如果大于max1，则它更大的子序和，如果不小于max1，那么就没他什么事情了。</p> <p>所以，再进行每一次计算时，都需要计算两个东西，一个是该序列的<strong>当前最大自序和</strong>，一个是计算该子串的<strong>向右最大贡献</strong>。通过递归的方式，我们逐步将问题简化，最终遇到<em>递归基</em>（最小规模的问题），也就是最左边的一个元素时，直接让当前最大自序和还有很多向右最大贡献为该值即可。</p> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">maxSubArray</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">start</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">end</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">maxH</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">getSubMax</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">maxH</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">//返回值是当前子序列最大值，maxH是最大向右贡献值</span>
+    <span class="kt">int</span> <span class="nf">getSubMax</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">start</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">end</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">maxH</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">mmax</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 最大序列值</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">start</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="o">*</span><span class="n">maxH</span> <span class="o">=</span> <span class="o">*</span><span class="n">start</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span><span class="p">{</span>
+                <span class="o">*</span><span class="n">maxH</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="o">*</span><span class="n">start</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span><span class="p">{</span>
+            <span class="n">mmax</span> <span class="o">=</span> <span class="n">getSubMax</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">maxH</span><span class="p">);</span>
+            <span class="o">*</span><span class="n">maxH</span> <span class="o">=</span> <span class="o">*</span><span class="n">maxH</span> <span class="o">+</span> <span class="o">*</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">maxH</span> <span class="o">&gt;</span> <span class="n">mmax</span><span class="p">){</span>
+                <span class="n">mmax</span> <span class="o">=</span> <span class="o">*</span><span class="n">maxH</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">maxH</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="o">*</span><span class="n">maxH</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="n">mmax</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <p>时间复杂度分析：显然递归的次数就是问题的规模n，所以基本语句执行n次，时间算法复杂度为<strong>O(n)</strong>。</p> <p>空间复杂度分析：函数递归调用随着问题规模的增大需要额外的栈空间来存储，执行一个问题，需要进行n次递归，所以空间复杂度为<strong>O(n)</strong>。</p> <p>LeetCode给出的执行结果如下图，时间比较短，但是耗费的空间比较多。</p> <p><img src="https://i-blog.csdnimg.cn/blog_migrate/e98b23a32d9e844f7eb2d2fa2a269ffe.jpeg" alt="在这里插入图片描述"/></p> <ol> <li>递归-分治法</li> </ol> <p>使用减治法成功解决问题后，回头再考虑一下分治法，因为一般的问题还是用分治法比较现实，分治法是将问题划分为若干个规模相当的子问题，并递归地求解每一个子问题，如下图所示：</p> <p><img src="https://i-blog.csdnimg.cn/blog_migrate/bb4f9fc1a459a9b159fbc9d9d708170b.png" alt="在这里插入图片描述"/></p> <p>将序列一分为二后，除了左序列和右序列的解以外，怎样解决跨左右序列的子序列和，是最难的问题，如图所示，序列1和序列2可以通过递归的方式求解，那么如果最终的最大自序是包含mid以及左右元素的序列怎么办呢？最简单直接的办法，就是暴力解决所有包含mid以及左右子序列的情况。 根据不同的数组下标处理方式，mid可能被包含在左序列中也可以被包含在右序列中，我的代码是将mid包含在右序列中，那么就只需要考虑包含mid以及左序列的某些元素的序列和即可。</p> <p><img src="https://i-blog.csdnimg.cn/blog_migrate/22032e16c1123f5881176ef77e385848.png" alt="在这里插入图片描述"/></p> <p>下面的代码，getSubMax函数通过递归的方式获得一个序列的最大自序和，该函数首先将序列一分为二，并分别计算这两个序列的最大自序和，然后通过getMidMax函数获得包含mid元素的最大序列和，最后在这三个结果中取最大即可。</p> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+	<span class="kt">int</span> <span class="n">maxSubArray</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">start</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+		<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">end</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+		<span class="k">return</span> <span class="n">getSubMax</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="kt">int</span> <span class="nf">getSubMax</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">start</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="o">*</span><span class="n">start</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="kt">int</span> <span class="n">maxLeft</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">maxRight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">maxMid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+		<span class="n">maxLeft</span> <span class="o">=</span> <span class="n">getSubMax</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">);</span>
+		<span class="n">maxRight</span> <span class="o">=</span> <span class="n">getSubMax</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+		<span class="n">maxMid</span> <span class="o">=</span> <span class="n">getMidMax</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">mid</span><span class="p">);</span>
+		<span class="k">return</span> <span class="nf">max</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">maxLeft</span><span class="p">,</span> <span class="n">maxRight</span><span class="p">),</span> <span class="n">maxMid</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="kt">int</span> <span class="nf">getMidMax</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">start</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">end</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">mid</span><span class="p">)</span> <span class="p">{</span>
+		<span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">maxLeft</span> <span class="o">=</span> <span class="n">INT_MIN</span><span class="p">;</span>
+		<span class="kt">int</span> <span class="n">maxRight</span> <span class="o">=</span> <span class="n">INT_MIN</span><span class="p">;</span>
+		<span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">left</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">;</span><span class="n">left</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">temp</span> <span class="o">+=</span> <span class="o">*</span><span class="n">left</span><span class="p">;</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">temp</span> <span class="o">&gt;</span> <span class="n">maxLeft</span><span class="p">)</span> <span class="p">{</span>
+				<span class="n">maxLeft</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">left</span> <span class="o">==</span> <span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">())</span> <span class="p">{</span>
+				<span class="k">break</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="k">for</span> <span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span> <span class="n">right</span> <span class="o">!=</span> <span class="n">end</span><span class="p">;</span> <span class="n">right</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">temp</span> <span class="o">+=</span> <span class="o">*</span><span class="n">right</span><span class="p">;</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">temp</span> <span class="o">&gt;</span> <span class="n">maxRight</span><span class="p">)</span> <span class="p">{</span>
+				<span class="n">maxRight</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">maxRight</span> <span class="o">+</span> <span class="n">maxLeft</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <p>时间复杂度：在递归的函数中，调用的getMidMax函数仍然有循环，所以这个函数中的两个for循环中的代码为基本语句，但是这里for循环内的语句执行次数还要取决于输入子序列的长度，所以不能直接计算。可以由递归分层考虑，在第一层，序列长度为n，有一个递归函数实例在运行，每个getMidMax函数中基本语句执行n次，总共执行n次，在第二层，序列长度为n/2，有2个递归函数实例在运行，每个实例中基本语句执行n/2次，总共执行n次……后面的每一层都执行n次。而一个规模为n的序列不断2分，直到序列长度为1，总共有log<sub>2</sub>n层，由此可见基本语句执行的次数为nlog<sub>2</sub>n次，所以时间复杂度为<strong>O(nlogn)</strong>。</p> <p>空间复杂度：本算法中没有用到与问题规模n有关的数组，所以所有的开销都是函数栈造成的。<strong>递归算法的空间复杂度=递归深度N×每次递归所要的辅助空间</strong>，而递归深度也就是上面说的层数，也就是log<sub>2</sub>n层，所以空间复杂度为<strong>O(logn)</strong>。</p> <p>LeetCode给出的执行结果如下图，执行时间非常短，内存消耗中等。</p> <p><img src="https://i-blog.csdnimg.cn/blog_migrate/7d47a3ff73be7f38a1c66be3cadad71b.png" alt="在这里插入图片描述"/></p> <p>如上两种算法都是效率比较高的递归算法，但是，比起迭代法，递归的方法便于想到便于理解，但是效率往往不够高。造成效率不高的主要原因，是迭代法可能存在大量的递归实例。 用本题来举个栗子：在考虑分治法时，因为一开始想在二分法中跨中心点mid的序列怎么算，所以考虑了如下图所示的划分子问题方法，以1-(n-1)为序列1，以2-n为序列2，并递归地解决问题。</p> <p><img src="https://i-blog.csdnimg.cn/blog_migrate/c6987535f74c84b15050e2fa7e31de13.png" alt="在这里插入图片描述"/></p> <p>但是这种方法在运行时会超时，这是为什么？思考过后，我发现，在序列1和序列2递归地分析子序列时，会有大量重复的递归的实例在运行，例如4，-1, 2这个子串，在序列1和序列2中都需要计算一遍，并且在序列1和序列2后续的子序列中还可能计算很多遍，这就是递归法中常见的重复递归实例，这会大量增加运算的次数。</p> <p>针对这种问题，有两种有效的解决方案。</p> <p>第一种是利用额外空间，记忆重复的计算过程，例如4，-1，2这个子串，在第一次计算时，就将结果记录在一个表中，其他递归示例再计算这个子序列时，就不需要再计算，直接查表即可。</p> <p>第二种是转换为迭代的方法，从下往上，减少重复计算。</p> <ol> <li>迭代-贪心算法</li> </ol> <p>递归的方法是从上往下的方法，往往便于思考，但是效率不高。 迭代的方法是从下往上的方法，思考需要技巧，但是效率高。如果已经完成了递归的方法，可以通过逆向思维思考对应的迭代法。</p> <p>贪心算法是指在对问题求解时，总是做出在当前看来是最好的选择，根据局部最优解迭代出全局最优解。贪心算法不总是能解决问题，因为很多问题的全局最优解并不能通过局部最优解来得到，能否得到，关键在于贪心算法中选择的<strong>贪心策略</strong>，这个策略必须满足<strong>无后效性</strong>：某个状态以前的过程不会影响到这个状态之后的状态，只与当前状态有关，就好比马尔科夫链一样。</p> <p>回忆减治法，从n长度的序列，逐步递归地求解n-1，n-2….的子序列。其实，逆向思考这个过程，就是贪心算法的迭代过程。贪心算法从最左边第一个元素开始，记录当前的最大子序和以及向右最大贡献，之后加入新的元素，如果新的元素和向右最大贡献加起来大于当前子序和，则替换当前最大子序和，这样不断迭代，遍历整个序列也就得到了序列的最大子序和。 可以想到，这种贪心策略之前的过程完全可以由当前最大自序和还有向右最大贡献这两个值代替，后面的状态可以由这两个值来唯一确定，所以是成功的贪心策略。</p> <p>之所以这种贪心策略可以成功，一大原因是本题目要求子序列必须是连续的，如果可以任意选择位置构成子序列，那么显然不能通过这种方式来解决。</p> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+	<span class="kt">int</span> <span class="n">maxSubArray</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+
+		<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it2</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+		<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">mmax</span> <span class="o">=</span> <span class="n">INT_MIN</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it1</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">it1</span> <span class="o">!=</span> <span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it1</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="o">*</span><span class="n">it1</span><span class="p">;</span>
+            <span class="n">mmax</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">sum</span><span class="p">,</span><span class="n">mmax</span><span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">sum</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">mmax</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <p>时间复杂度分析：显然，只需要一个for循环，基本语句执行了n次，这个算法的时间复杂度为<strong>O(n)</strong>。</p> <p>空间复杂度分析：额外空间只用到了sum和mmax这两个变量，所以是<strong>O(1)</strong>。比较减治法的空间复杂度O(n)，贪心算法不需要特意保存之前的状态，而减治法需要在函数栈中保存状态，所以贪心算法的空间复杂度更小。</p> <p>LeetCode给出的执行结果如下图，执行时间非常短，内存消耗也不大。</p> <p><img src="https://i-blog.csdnimg.cn/blog_migrate/7fba25d3e98adbc1ccca786a9e5498f4.png" alt="在这里插入图片描述"/></p> <ol> <li>迭代-动态规划</li> </ol> <p>如果没有合适的贪心策略，那么问题就不能用贪心算法来解决，但是仍然可以用动态规划的方法来解决。比起贪心算法，动态规划适用范围更广，因为它可以记住上一状态之前的信息，不必像贪心算法一样无后效性。</p> <p>但类似的是，动态规划仍然是分解子问题，并不断合并子问题的迭代过程，适合用动态规划的一个关键点在于：<strong>大问题分解成的若干个小问题之间还有相会重叠的更小的子问题</strong>，也就是之前提到的那种超时分治法的逆向过程，只不过这一次，我们不会再重复计算这些小问题，而是动态地记载这些重复的过程。</p> <p>首先，temp变量用于记录当前的子序列和，随着指针向右移动，不断加和新的元素，一旦出现的下一个元素大于当前子序和并且当前子序和已经小于0，那么还不如不用之前的子序列，重新从零开始，计算从这个元素开始的新的序列和。</p> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">maxSubArray</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">INT_MIN</span><span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it2</span><span class="p">;</span>
+        <span class="c1">//temp记载当前的子序列和，m记载最最大自序和</span>
+        <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">nums</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">it</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">&gt;</span> <span class="n">temp</span> <span class="o">&amp;&amp;</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="n">temp</span> <span class="o">=</span> <span class="o">*</span><span class="n">it</span><span class="p">;</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span><span class="p">{</span>
+                <span class="n">temp</span> <span class="o">+=</span> <span class="o">*</span><span class="n">it</span><span class="p">;</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">m</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div> <p>时间复杂度：同贪心算法，时间复杂度为<strong>O(n)</strong>。</p> <p>空间复杂度：因为只有temp一个变量，所以空间复杂度为<strong>O(1)</strong>。</p> <p>LeetCode给出的执行结果如下图，执行时间非常短，内存消耗也不大。</p> <p><img src="https://i-blog.csdnimg.cn/blog_migrate/f7bf0a743d4345b60b5e8a6069f0a3b1.png" alt="在这里插入图片描述"/></p> <p>最后感谢松鼠鱼等人在LeetCode上提供的解题思路！<a href="https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-de-si-kao-guo-cheng-bao-li-fa-jian/">https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-de-si-kao-guo-cheng-bao-li-fa-jian/</a></p>]]></content><author><name></name></author><category term="learn"/><category term="learn"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">C++中&amp;amp;和*的含义</title><link href="https://fy222fy.github.io/zh-cn/blog/2024/c-multiple/" rel="alternate" type="text/html" title="C++中&amp;amp;和*的含义"/><published>2024-05-01T00:32:13+00:00</published><updated>2024-05-01T00:32:13+00:00</updated><id>https://fy222fy.github.io/blog/2024/c-multiple</id><content type="html" xml:base="https://fy222fy.github.io/blog/2024/c-multiple/"><![CDATA[<h1 id="和的含义">&amp;和*的含义</h1> <p>*的基本含义：</p> <ol> <li>乘法运算符（双目运算符）：出现在表达式中。</li> <li>解引用符（单目运算符）：如果预先已经定义了p是一个指针，如int* p，那么，再使用*p就是p所指向地址的值。总是出现在表达式中。</li> <li>指针声明符（定义时）：如int *p;总是紧随类型声明符出现，是声明的一部分。</li> </ol> <p>&amp;的基本含义：</p> <ol> <li>按位与（双目运算符）：出现在表达式中。</li> <li>取地址（单目运算符）：出现在表达式中。</li> <li>引用（定义时）：这是C++在c功能上的扩展，是为了防止总是使用指针。引用指的是一个变量的别名，定义&amp;b = a，那么b从今以后就是a的一个别名，改变b的值也就改变了a的值。指针可能指向NULL，但引用从声明开始必须赋值。引用的&amp;总是紧随类型名出现。</li> </ol> <p>如何确认&amp;或者*当前的含义？只需要看它用在什么时候，比如&amp;，在定义（声明）或者用在函数参数声明时，就是引用的含义，如果用在单目运算中，那肯定是取地址，如果用在双目运算中，那就是按位与的含义。</p>]]></content><author><name></name></author><category term="c++"/><category term="c++"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">C++实现不同的排序算法，以及实现过程中的难点</title><link href="https://fy222fy.github.io/zh-cn/blog/2024/sort-c/" rel="alternate" type="text/html" title="C++实现不同的排序算法，以及实现过程中的难点"/><published>2024-05-01T00:32:13+00:00</published><updated>2024-05-01T00:32:13+00:00</updated><id>https://fy222fy.github.io/blog/2024/sort-c</id><content type="html" xml:base="https://fy222fy.github.io/blog/2024/sort-c/"><![CDATA[<p>为了查找方便，产生了各种各样地排序算法，根据不同的使用场景，有不同类型的排序方式，如插入排序、交换排序、选择排序、归并排序、基数排序等。 很多人明白不同排序的运作原理，但是并没有自己实现过，这篇文章将分析几种排序方式的原理，并介绍利用c++实现算法过程中用到的小技巧。</p> <p>首先，所有的排序方式如下面的目录所示，一个简单的比较如下表。</p> <table> <tr> <th colspan="3" rowspan="2">排序方式</th> <th colspan="3">时间复杂度</th> <th rowspan="2">空间<br/>复杂度</th> <th rowspan="2">稳定性<br/></th> <th rowspan="2">初始状态影响</th> <th rowspan="2">适用情况<br/></th> <th rowspan="2">适用规模</th> <th colspan="2">比较次数</th> <th rowspan="2">移动次数<br/></th> </tr> <tr> <td>最好<br/></td> <td>平均</td> <td>最坏</td> <td>最小<br/></td> <td>最大</td> </tr> <tr> <td rowspan="11">内<br/>部<br/>排<br/>序</td> <td rowspan="3">插<br/>入<br/>排<br/>序</td> <td>直接插入排序</td> <td>n</td> <td colspan="2">n<sup>2</sup></td> <td>1</td> <td>是<br/></td> <td>越有序越好</td> <td>顺序表<br/>链表<br/></td> <td>&lt;10000<br/></td> <td>n-1<br/></td> <td>n(n-1)/2&lt;/sup&gt;</td> <td>0~n(n-1)/2</td> </tr> <tr> <td>折半插入排序</td> <td>n</td> <td colspan="2">n<sup>2</sup></td> <td>1</td> <td>是</td> <td>越有序越好</td> <td>顺序表</td> <td>&lt;10000<br/></td> <td>log<sub>2</sub>n+1</td> <td>n<sup>2</sup></td> <td>0~n-1</td> </tr> <tr> <td>希尔排序</td> <td>n<sup>1.3</sup></td> <td colspan="2">n<sup>2</sup></td> <td>1</td> <td>否<br/></td> <td>越有序越好</td> <td>顺序表</td> <td>&lt;1000<br/></td> <td colspan="2">&lt;n<sup>2</sup></td> <td>小于直插</td> </tr> <tr> <td rowspan="2">交<br/>换<br/>排<br/>序</td> <td>冒泡排序</td> <td>n</td> <td colspan="2">n<sup>2</sup></td> <td>1</td> <td>是</td> <td>越有序越好</td> <td>顺序表</td> <td>&lt;10000<br/></td> <td colspan="2">n(n-1)/2</td> <td>0~n(n-1)/2</td> </tr> <tr> <td>快速排序</td> <td colspan="2">nlog<sub>2</sub>n</td> <td>n<sup>2</sup></td> <td>log<sub>2</sub>n</td> <td>否</td> <td>有序反而慢</td> <td>顺序表</td> <td>n很大</td> <td>nlog<sub>2</sub>n</td> <td>n(n-1)/2</td> <td></td> </tr> <tr> <td rowspan="2">选<br/>择<br/>排<br/>序</td> <td>简单选择排序</td> <td colspan="3">n<sup>2</sup></td> <td>1</td> <td>否</td> <td>比较次数无关<br/>移动次数有关</td> <td></td> <td>&lt;10000<br/></td> <td>n<sup>2</sup><br/></td> <td>n<sup>2</sup></td> <td>n</td> </tr> <tr> <td>堆排序</td> <td colspan="3">nlog<sub>2</sub>n</td> <td>1</td> <td>否</td> <td>有关<br/>但不怕坏情况</td> <td>顺序表</td> <td>n很大</td> <td colspan="2">nlog<sub>2</sub>n</td> <td></td> </tr> <tr> <td rowspan="3">分<br/>配<br/>式<br/>排<br/>序</td> <td>桶排序</td> <td colspan="3">n+k</td> <td>n+k</td> <td>是</td> <td>基本无关</td> <td>含关键字</td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td>计数排序<br/></td> <td colspan="3">n+max-min</td> <td>max-min</td> <td>是</td> <td>最大最小值<br/>差距越小越好</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td>基数排序<br/></td> <td colspan="3">nd</td> <td>n+k</td> <td>是</td> <td>只能非<br/>负整数排序<br/>最大最小值<br/>差距越小越好</td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td colspan="2">归并排序</td> <td colspan="3">nlog<sub>2</sub>n</td> <td>1</td> <td>是</td> <td>无关</td> <td>顺序表<br/>链表<br/></td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td rowspan="2">外<br/>部<br/>排<br/>序</td> <td colspan="2">多路归并排序</td> <td colspan="3">nlog2n</td> <td>n</td> <td>是<br/></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> <tr> <td colspan="2">置换-选择排序</td> <td colspan="3">d(n+r)</td> <td>r</td> <td>是<br/></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> </table> <p>@[toc]</p> <h2 id="内部排序">内部排序</h2> <h3 id="插入排序insert-sort">插入排序(Insert Sort)</h3> <ul class="task-list"> <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled"/><strong>基本思想</strong></li> </ul> <p>插入排序的思想是一次拿一个元素出来，放在前面已经排好顺序的序列中。 类似于扑克牌整牌的过程。 在这个过程中，每一次都有一个元素会落到最终的位置。</p> <ul class="task-list"> <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled"/><strong>排序过程</strong></li> </ul> <p>排序过程主要分为三步。 第一步，在待排序列（也就是后面的序列）中提取出第一个元素。 第二步，在已排的有序序列（前面排好的序列）中查找这个元素应该在的位置。 第三步，将该元素插入到它应该在的位置。</p> <p>在第二步查找的过程中，如果使用<em>顺序查找</em>，那么就是直接插入排序，如果使用折半查找，那么就是折半插入排序。 另外，如果抽取出部分序列进行排序，最后再综合排序，那么就是希尔排序。</p> <h4 id="直接插入排序">直接插入排序</h4> <ul> <li><strong>过程</strong>：</li> </ul> <ol> <li>在待排序列中提取第一个元素；</li> <li>用顺序查找的方法查找该元素在前边已排序列的位置；</li> <li>插入该元素。</li> </ol> <ul> <li><strong>适用范围</strong>：顺序表，链表都可以，但链表使用该方法是一大优势，因为插入元素比较简单,不需要移动后续的所有元素。另外，越有序的序列排序速度越快。</li> <li> <p><strong>性能</strong>：直接插入排序要对每个元素进行比较和插入，n个元素，当全部都排序好时，每个元素只需要比较一次，所以最好时间复杂度是o(1)。在最坏和平均情况时每个元素比较的次数大约是n次，所以<strong>时间复杂度o(n<sup>2</sup>)</strong>，因为没有用到额外的存储空间，所以<strong>空间复杂度o(1)</strong>。</p> </li> <li><strong>稳定性</strong>：稳定，但写代码的时候注意插入的时候遇到相同的数据，要插入到已排序列该数据元素之后，这样才能保证稳定性。</li> <li><strong>比较次数</strong>：当序列本身有序的时候，比较的次数是最小的，因为每个元素只需要与其前一个元素（也就是已排元素的最后一个元素）作比较，然后发现它已经比这个元素大，所以只需要比较n-1次。但在最坏情况下，每个元素都要和前面的所有已排元素比较一遍也就是1+2+…+n-1 = n(n-1)/2次。</li> <li> <p><strong>移动次数</strong>：最好情况下，就根本不需要移动。在最坏情况下，每个元素都要使之前的已排元素全部后移一次，也是n(n-1)/2次。</p> </li> <li><strong>代码实现</strong>：首先对整个序列进行遍历，也就是第一步的待排序列取元素。 按照顺序，应该是通过顺序查找的方式找到待插入位置的下标，然后再顺序后移元素，将取出的元素插入到空出的位置。</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void DirectInsertSort1(vector&lt;int&gt; &amp;nums) {
+	//默认第一个元素就是一个已排序列，从第二个元素开始向后循环
+	int n = nums.size();
+	for (int i = 1; i &lt; n; ++i) {//从第二个元素开始遍历待排序列
+		int i2 = 0;
+		//查找nums[i]元素应该在前面已排元素的哪个位置
+		//因为是查找过程，所以可以直接把i这个元素当成哨兵，减少判断界限的语句
+		while (nums[i2] &lt; nums[i]) {
+			i2++;
+		}
+		//找到位置以后，从i这个位置依次后移元素
+		int temp = nums[i];
+		for (int i3 = i; i3 &gt; i2; --i3) {//移动元素的过程
+			nums[i3] = nums[i3 - 1];//后移
+		}
+		//最后把i这个元素放在前面已排序列中应有的位置
+		nums[i2] = temp;
+	}
+}
+</code></pre></div></div> <p>上述代码符合直接插入排序的概念，易于理解，但是实际上，查找和插入的过程上没有必要分开，从前往后的查找过程可以改成从提取元素的位置向前查找，并且在查找的过程中就可以移动了。</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void DirectInsertSort2(vector&lt;int&gt;&amp; nums) {
+	int temp = 0;
+	//默认第一个元素就是一个已排序列，从第二个元素开始向后循环
+	int n = nums.size();
+	for (int i = 1; i &lt; n; ++i) {
+		int temp = nums[i];
+		int i2 = i - 1;
+		for (; i2 &gt;= 0; --i2) {
+			//直接从该元素向前查找（因为该元素之前就是已排序列）
+			if (nums[i2] &gt; temp) {//只要没找到位置就将元素向后移动
+				nums[i2 + 1] = nums[i2];
+			}
+			else {//找到应有的位置，后面的元素也后移完了
+				nums[i2 + 1] = temp;//刚好插入
+				break;
+			}
+		}
+		if (i2 &lt; 0) {//如果一直找到头了还没有找到位置，那么就放在最开始
+			nums[0] = temp;
+		}
+	}
+}
+</code></pre></div></div> <p>更简单地，也可以直接在查找的过程中进行交换，这样就不需要设置一个temp来进行保存了，当查找结束的时候，交换也结束，元素也被交换到了应有的位置。 不过实际上这种方式看起来简单，但会降低算法的性能，交换一个元素至少要三个操作，而多次交换其实都用的是这同一个元素，所以不如上一种算法来的快。</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void DirectInsertSort3(vector&lt;int&gt;&amp; nums) {//优化版本
+	int temp = 0;
+	//默认第一个元素就是一个已排序列，从第二个元素开始向后循环
+	int n = nums.size();
+	for (int i = 1; i &lt; n; ++i) {
+		int temp = nums[i];
+		for (int i2 = i - 1; i2 &gt;= 0; --i2) {//向前边查找边交换
+			if (nums[i2] &gt; nums[i2 + 1]) {//没找到位置，就交换
+				swap(nums[i2], nums[i2 + 1]);
+			}
+			else {
+				break;
+			}
+		}
+	}
+}
+</code></pre></div></div> <h4 id="折半插入排序binary-insert-sort">折半插入排序(Binary Insert Sort)</h4> <ul> <li><strong>过程</strong>：</li> </ul> <ol> <li>在待排序列中提取第一个元素；</li> <li>用折半查找的方法查找该元素在前边已排序列的位置；</li> <li>插入该元素。</li> </ol> <ul> <li> <p><strong>适用范围</strong>：只能顺序表，链表不行因为折半查找需要跳跃，链表无法跳跃查找。另外，越有序的序列排序速度越快。</p> </li> <li> <p><strong>性能</strong>：虽然折半查找的时间复杂度为log<sub>2</sub>n，但是即便快速查找到了插入位置，后面的元素还是需要依次后移，所以<strong>时间复杂度o(n<sup>2</sup>)</strong>，<strong>空间复杂度o(1)</strong></p> </li> <li><strong>稳定性</strong>：稳定</li> <li><strong>比较次数</strong>：当序列本身有序的时候，比较的次数是最小的，因为每个元素只需要与其前一个元素（也就是已排元素的最后一个元素）作比较，然后发现它已经比这个元素大，所以只需要比较n-1次。但在最坏情况下，每个元素通过折半查找要和前面的元素比较log<sub>2</sub>k次，k是已排序列的个数，所以总共需要比较的次数是log<sub>2</sub>1+log<sub>2</sub>2+…+log<sub>2</sub>n-1 ≈ log<sub>2</sub>(n!) ≈ nlog<sub>2</sub>n (log<sub>2</sub>(n!)和nlog<sub>2</sub>n是同阶函数)</li> <li><strong>移动次数</strong>：最好情况下，就根本不需要移动。在最坏情况下，每个元素都要使之前的已排元素全部后移一次，也是n(n-1)/2次。</li> <li><strong>代码实现</strong>：与直接插入排序的唯一区别就是查找用的是折半查找。</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void BinaryInsertSort(vector&lt;int&gt; &amp;nums){
+	//默认第一个元素就是一个已排序列，从第二个元素开始向后循环
+	int n = nums.size();
+	for (int i = 1; i &lt; n; i++) {//从第二个元素向后遍历
+		int low = 0;
+		int high = i - 1;
+		int mid = (low + high) / 2;
+		int target = nums[i];
+		while (low &lt;= high) {
+			if (nums[mid] &gt; target) {
+				high = mid-1;
+				mid = low + (high - low) / 2;
+			}
+			else {
+				low = mid+1;
+				mid = low + (high - low) / 2;
+			}
+		}
+		//折半查找后，调整一下mid的位置
+		if (nums[mid] &lt; target) {
+			mid++;
+		}
+		//最后从i这个位置，向后移动元素，为目标元素空出位置
+		for (int i2 = i; i2 &gt; mid; --i2) {
+			nums[i2] = nums[i2 - 1];
+		}
+		nums[mid] = target;
+	}
+}
+</code></pre></div></div> <h4 id="希尔排序">希尔排序</h4> <ul> <li><strong>过程</strong>： 以排序一个20个元素的序列为例</li> </ul> <ol> <li>选取一系列缩小增量序列，选取规则随意，一般是对半选取，如{10,5,2,1}，直到缩小到1。</li> <li>对第一个缩小增量10，选取(1)，(11)两个元素，使用直接插入排序，然后再选取(2)，(12)两个元素，使用直接插入排序….直到选取(10)，(20)两个元素，使用直接插入排序。</li> <li>对第二个缩小增量5，选取(1),(6),(11),(16)四个元素，使用直接插入排序，然后再选取(2),(7),(12),(17)四个元素，使用直接插入排序….直到选取(5),(10),(15),(20)四个元素，使用直接插入排序。</li> <li>继续缩小增量，直到增量为1，选取(1)~(20)这20个元素，使用直接插入排序，这时候序列本身已经基本有序，所以很快就排列完成了。</li> </ol> <p>注意：增量序列的选取是任意的，不一定非要对半选取。</p> <ul> <li> <p><strong>适用范围</strong>：只能顺序表，链表不行因为无法跳跃查找。希尔排序也是越有序越好。</p> </li> <li> <p><strong>性能</strong>：<strong>时间复杂度o(n<sup>1.3</sup>)~o(n<sup>2</sup>)</strong>，希尔排序时间复杂度的下限是nlog<sub>2</sub>n，没有快速排序快，但快速排序在数据已经有序的时候，会变得非常慢，所以可以建议在任何情况下先使用希尔排序进行排序。由于没有用到额外辅助空间，所<strong>空间复杂度o(1)</strong>。希尔排序之所以比直接插入排序快，是因为通过大增量的排序，一个元素已经大致移动到了它最终该在的位置上了，所以它总体上不需要像直接插入排序那样移动那么多次。</p> </li> <li> <p><strong>稳定性</strong>：稳定</p> </li> <li> <p><strong>代码实现</strong>：</p> </li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void ShellSort(vector&lt;int&gt; &amp;nums) {
+	int n = nums.size();
+	vector&lt;int&gt; temp;
+	for (int gap = n / 2; gap &gt; 0; gap /= 2) {//对每一种增量进行排序
+		for (int i = 0; i &lt; gap; i++) {//对该种增量下的全部子序列进行排序
+			for (int ii = i + gap; ii &lt; n; ii += gap) {//对该子序列进行直插排序
+				//以下是直接插入排序的过程
+				int temp = nums[ii];
+				int i2 = ii - gap;
+				for (; i2 &gt;= i; i2 -= gap) {
+					if (nums[i2] &gt; temp) {
+						nums[i2 + gap] = nums[i2];
+					}
+					else {
+						nums[i2 + gap] = temp;
+						break;
+					}
+				}
+				if (i2 &lt; 0) {
+					nums[i] = temp;
+				}
+			}
+		}
+	}
+</code></pre></div></div> <h3 id="交换排序swap-sort">交换排序(Swap Sort)</h3> <ul class="task-list"> <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled"/><strong>基本思想</strong></li> </ul> <p>交换排序的基本思想是相邻的元素两两之间进行比较，然后根据大小关系进行交换，使得元素逐渐有序。</p> <ul class="task-list"> <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled"/><strong>特征</strong>：每次都会有一个元素到达最终位置。</li> </ul> <h4 id="冒泡排序bubble-sort">冒泡排序(Bubble Sort)</h4> <ul> <li> <p><strong>过程</strong>： 以从从头到尾，两两元素之间进行比较，并根据大小进行交换，在一趟冒泡排序后，最大的元素就冒到最后面去了，然后剩下的元素再次进行，一直冒泡n次，就有序了。</p> </li> <li> <p><strong>适用范围</strong>：顺序表，链表。</p> </li> <li> <p><strong>稳定性</strong>：稳定。</p> </li> <li> <p><strong>性能</strong>：在最好的情况下，已经有序，时间复杂度o(n)，平均和最坏的<strong>时间复杂度都是o(n<sup>2</sup>)</strong>，<strong>空间复杂度o(1)</strong>。</p> </li> <li><strong>稳定性</strong>：稳定</li> <li><strong>比较次数</strong>：冒泡排序总要搞那么n-1轮，所以比较次数一定是n(n-1)/2,。</li> <li><strong>移动次数</strong>：当已经有序的情况下，冒泡排序不需要移动元素，当初始状态是反序时，冒泡排序每一趟要将元素从起始位置移动到该趟的最后边，n-1趟中，每一趟移动的次数分别是n-1，n-1…..,1，所以最多移动的次数是n(n-1)/2。</li> <li><strong>代码实现</strong>：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void BubbleSort(vector&lt;int&gt; &amp;nums) {
+	for (int n = nums.size(); n &gt; 1; n--) {//遍历未排序的序列
+		for (int i = 0; i + 1 &lt; n; i++) {//遍历每两个相邻的元素
+			if (nums[i] &gt; nums[i + 1]) {//比较并交换
+				swap(nums[i], nums[i + 1]);
+			}
+		}
+	}
+}
+</code></pre></div></div> <h4 id="快速排序quick-sort">快速排序(Quick Sort)</h4> <ul> <li><strong>过程</strong>： 基于分治法的原则，递归地求解问题。</li> </ul> <ol> <li>随意选取一个元素（可以是首元素也可以是尾元素也可以是随机一个元素），然后将它放在头部或者尾部。放在头部是左基准快排，放在末尾是右基准快排。</li> <li>通过交换的方式（具体2种方法见代码实现），将该基准元素放在其最终排序的位置，即左边的元素均小于它，右边的元素均大于它。</li> <li>递归地将左右两边的子序列快速排序。</li> </ol> <ul> <li> <p><strong>适用范围</strong>：顺序表，链表，其中的数据最好较为随机，有序反而排序可能变慢。</p> </li> <li> <p><strong>性能</strong>：在最好的情况下，<strong>时间复杂度o(nlog<sub>2</sub>n)</strong>，平均下来也是o(nlog<sub>2</sub>n)，最坏的时间复杂度都是o(n<sup>2</sup>)，<strong>空间复杂度o(log<sub>2</sub>n)~oo(n)</strong>。</p> </li> </ul> <p><strong>问：如何计算快速排序的时间复杂度？</strong></p> <ol> <li>递归分析法</li> </ol> <p>首先分析最坏情况，当序列本身已经有序，那么n个元素，分成两个部分，一个部分的长度为n-1，另一个部分长度为0。这样就需要递归n次。在第一次，需要把基准元素比较n-1次，第二次递归，需要比较n-2次….最后需要比较1次，所以总共执行的比较次数是n(b-1)/2次，时间复杂度是o(n)。</p> <p>在正常情况下，n个元素，分成两个部分递归，一个部分长a，另一个部分长b，有a+b=n-1的关系。其中，a序列需要执行的比较次数为a，b序列需要执行的比较次数为b，所以这一层递归需要执行的比较次数是n-1，同理，下一层的4个递归序列总共加起来要执行的比较次数为n-2。按照递归树，n个元素的递归树，其高度为log<sub>2</sub>(n+1)，而根据上面的分析，每一层需要执行的比较次数已经确定，所以总共需要执行的比较次数大约为nlog<sub>2</sub>n，这既是算法的最差时间复杂度，也是算法的平均复杂度。</p> <ol> <li>主定理法</li> </ol> <p>假设有递推关系式T(n)=aT(n/b)+f(n)，其中为n问题规模，a为递推的子问题数量，n/b为每个子问题的规模（假设每个子问题的规模基本一样），f(n)为递推以外进行的计算工作。</p> <p>(1) 若f(n)=o(n<sup>log<sub>b</sub>a-ε</sup>),ε&gt;0，那么T(n)=o(n<sup>log<sub>b</sub>a</sup>)。</p> <p>(2) 若f(n)=o(n<sup>log<sub>b</sub>a</sup>)，那么T(n)=o(n<sup>log<sub>b</sub>a</sup>logn)。</p> <p>(3) 若f(n)=o(n<sup>log<sub>b</sub>a+ε</sup>),ε&gt;0，且对于某个常数c&lt;1和所有充分大的n有af(n/b)≤cf(n),那么那么T(n)=o(f(n))。</p> <p>在快速排序中，a = 2, b = 2, f(n) = o(n)，所以f(n)满足第二种情况，所以直接根据主定理，可以判断其算法的时间复杂度为o(nlog<sub>2</sub>n)</p> <p><strong>问：如何计算快速排序的空间复杂度？</strong></p> <p>递归算法的空间复杂度=递归调用的深度×每次递归调用的额外空间</p> <p>在最坏情况下，递归树的深度为n，每个递归实例并没有额外的空间使用，所以最差空间复杂度为o(n)。</p> <p>在正常情况下，递归树的深度为log<sub>2</sub>n，无额外空间使用，所以空间复杂度为o(log<sub>2</sub>n)。</p> <ul> <li><strong>稳定性</strong>：不稳定</li> <li><strong>比较次数</strong>：在最坏的情况下，已经有序，退化为冒泡排序算法，第一个元素需要比较n-1次，第二个元素需要比较n-2次，总共需要比较最多n(n-1)/2次。在一般情况下，根据时间复杂度计算，总共需要比较nlog<sub>2</sub>n次。</li> <li><strong>代码实现</strong>：</li> </ul> <p>第一种方法，从序列最开始进行遍历，每当遇到一个比基准元素小的元素，就把它扔到前面去，遍历结束后，所有比他小的都扔在了前面，剩下的就是比它大的，然后把基准元素放在中间。</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void QuickSort(vector&lt;int&gt;&amp; nums) {
+	QuickRecursion2(nums, 0, nums.size()-1);
+}
+void QuickRecursion(vector&lt;int&gt;&amp; nums, int low, int high) {
+	if (low &gt;= high) {//结束循环的标志是待排子序列已经长度为1
+		return;
+	}
+	//右基准快排
+	//（实际上可以随机一个元素并放在右边作为基准，防止待排序列本身有序）
+	int key = nums[high];
+	int mid = low;//找到基准元素的最终位置mid，保证左小于它，右大于它
+	for (int i = low; i &lt;= high; i++) {
+		if (nums[i] &lt; key) {//每当遇到一个比基准元素小的数字
+			swap(nums[mid], nums[i]);//就把它和mid交换，并++mid
+			mid++;
+		}
+	}
+	//找到最终位置后，将它和基准元素high交换
+	swap(nums[mid], nums[high]);
+	//递归地解决左序列和右序列的排序问题
+	QuickRecursion(nums, low, mid - 1);
+	QuickRecursion(nums, mid + 1, high);
+}
+</code></pre></div></div> <p>第二种方法，设置一个low指针一个high指针，low指针从前向后，找到一个比基准元素大的数字，与high指针对换，然后high指针从后向前，找到一个比基准元素小的数字，与low指针对换，直到low=high，就找到了该基准元素的位置。</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void QuickSort(vector&lt;int&gt;&amp; nums) {
+	QuickRecursion2(nums, 0, nums.size()-1);
+}
+void QuickRecursion2(vector&lt;int&gt;&amp; nums, int low, int high) {
+	if (low &gt;= high) {//结束循环的标志是待排子序列已经长度为1
+		return;
+	}
+	//右基准快排
+	//以最右边的数作为基准
+	int key = nums[high];
+	int l = low;
+	int h = high;
+	while (l != h) {//寻找mid的位置
+		//low从前向后，找到比key大的，就和high作交换
+		for (; l != h; l++) {
+			if (nums[l] &gt; key) {
+				swap(nums[l], nums[h]);
+				break;
+			}
+		}
+		//high从前向后，找到比key小的，就和low作交换
+		for (; h!=l; h--) {
+			if (nums[h] &lt; key) {
+				swap(nums[h], nums[l]);
+				break;
+			}
+		}
+	}
+	//交换结束后，l和h的位置都指向mid，并且基准元素也被交换到了这个位置
+	int mid = l;
+	QuickRecursion2(nums, low, mid - 1);
+	QuickRecursion2(nums, mid + 1, high);
+}
+</code></pre></div></div> <h3 id="选择排序">选择排序</h3> <ul class="task-list"> <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled"/><strong>基本思想</strong></li> </ul> <p>从所有元素中选择一个最小的，放在第一位，然后再选、再选、再选。</p> <ul class="task-list"> <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled"/><strong>特征</strong>：每次都会有一个元素到达最终位置。</li> </ul> <h4 id="简单选择排序">简单选择排序</h4> <ul> <li><strong>过程</strong>：从未排序的序列中找出最小的，和头交换，然后去掉头，再继续找。</li> </ul> <p>-<strong>适用范围</strong>：顺序表，链表。</p> <ul> <li><strong>性能</strong>：<strong>时间复杂度o(n<sup>2</sup>)</strong> = 比较次数o(n<sup>2</sup>)+移动次数o(n)，不论初始状态如何都要比较n<sup>2</sup>次，但是移动的次数不一定。 <strong>空间复杂度o(1)</strong>。</li> <li><strong>稳定性</strong>：不稳定。</li> <li><strong>比较次数</strong>：每一个元素都需要比较n<sup>2</sup>次才能选择出来，所以比较次数永远是n<sup>2</sup>次。</li> <li> <p><strong>移动次数</strong>：每次选出来一个元素以后，只需要移动一次即可，所以总共的移动次数是n。</p> </li> <li><strong>代码实现</strong>：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void SelectionSort(vector&lt;int&gt;&amp; nums) {
+	int n = nums.size();
+	int temp = INT_MAX;//保存最小的元素
+	int index = 0;
+	for (int i = 0; i &lt; n; i++) {//遍历整个序列
+		for (int i2 = i; i2 &lt; n; i2++) {//
+			if (nums[i2] &lt; temp) {//找到最小的元素
+				temp = nums[i2];
+				index = i2;
+			}
+		}
+		swap(nums[i], nums[index]);//与当前的头元素交换
+		temp = INT_MAX;
+	}
+}
+</code></pre></div></div> <h4 id="堆排序">堆排序</h4> <ul> <li><strong>过程</strong>：</li> </ul> <ol> <li>把序列看成是一个完全二叉树（注意只是看成，不是转换，实际上序列还是顺序存储结构）。</li> <li>通过筛选方式将这个树化为<strong>大根堆</strong>（所有非叶子结点的值大于或等于其子节点的值）。筛选的方法是从i=n/2-1（n为元素个数）这个点开始，比较其与其孩子的关系，并作交换，然后再比i-1，一直比到第一个节点，每一次比较都要让整个树满足定义，即每一个节点都满足比其孩子大的性质。</li> <li>输出顶端最大元素（输出的方式是将其与末尾元素替换，末尾元素时最大元素，下一次不参与建堆）。</li> <li>从头结点（刚刚缓过来的末尾元素）开始再一次构建大根堆。</li> <li>输出-构建直到所有的元素都已经输出，这时正好排序成为了升序序列。</li> </ol> <ul> <li> <p><strong>适用范围</strong>：顺序表。和初始状态基本无关，堆排序的最大好处，就是不怕任何坏情况，所有情况都能在nlog<sub>2</sub>n的时间内完成。</p> </li> <li> <p><strong>性能</strong>：<strong>时间复杂度o(nlog<sub>2</sub>n)</strong>， <strong>空间复杂度o(1)</strong>。</p> </li> </ul> <p>问：堆排序的时间复杂度如何计算？</p> <p>堆排序需要使用到递归，总共有两个过程会影响到时间复杂度。第一个过程是初始化建堆的过程，第二个阶段是不断输出堆顶元素，调整剩余堆的过程。</p> <p>在第一阶段，我们从n/2-1这个非叶子结点开始，比较其与孩子的大小关系（这作为一个基本操作），然后一直比到第一个根节点，总共要比n/2-1个节点。每个节点比较的次数，取决于其所在的层次。例如，倒数第二层的非叶子结点，只比较其与下一层的关系；倒数第三层的非叶子结点，在比较与其孩子关系时，如果发生交换，那么还要递归地保证其子树也是符合大根堆定义的，所以其孩子也要比较一次，直到最后一层，所以要比较2次。可见，假设树的高度是h，那么第i层的元素，最多都要比较h-i次。</p> <p>对于一个n个元素的序列，把它看成树，其树的高度为h=log<sub>2</sub>n，拿第i层来分析，第i层一共有2<sup>i-1</sup>个节点，每个节点要比较h-i次，所以该层总共要比较的次数是</p> <pre><code class="language-math">a_i = 2^{i-1}(h-i) = h2^{i-1}-i2^{i-1}
+</code></pre> <p>总共需要比较的层数是从1~h-1（因为h-1是倒数第二层）。也就是说要求a<sub>i</sub>的前h-1项和</p> <pre><code class="language-math">S_m = (2^0h+2^1h+...+2^{m-1}h) - (1*2^0+2*2^1+...+i*2^{i-1})
+</code></pre> <p>S<sub>i</sub>的左半部分是等比数列，根据等比数列前m项和，为(2<sup>m</sup>-1)h，右半部分为差比数列，运用错位相减法，可得其前m项和为(m-1)2<sup>m</sup>-1，那么可得总体的前m项和为</p> <pre><code class="language-math">S_m = (2^{m}-1)h-(m-1)2^{m}-1
+</code></pre> <p>带入h-1，得到前h-1项和为</p> <pre><code class="language-math">S_{h-1} = n-log_2n-1
+</code></pre> <p>可以发现，增长速度最快的是n项，所以在初始化建堆过程中，算法的<strong>时间复杂度为o(n)</strong>。</p> <p>在第二阶段，我们要反复地将大根堆顶部元素输出（与末尾元素交换），并重新建堆。这个过程显然要重复n次，因为堆的高度是h=log<sub>2</sub>n，所以第一次最多要比较的次数为log<sub>2</sub>n次，第二次最多要比较的次数为log<sub>2</sub>n-1次……最后一次只需要比较log<sub>2</sub>1次。所以共需要执行的比较次数最多为</p> <pre><code class="language-math">log_2n +log_2(n-1)+...+log_2(1) = log_2(n!)
+</code></pre> <p>因为log<sub>2</sub>n!和nlog<sub>2</sub>n是同阶函数，所以第二步重建堆的<strong>时间复杂度为o(nlog<sub>2</sub>n)</strong>。</p> <p>综合可得，堆排序的<strong>时间复杂度为</strong>o(n)+o(nlog<sub>2</sub>n) = <strong>o(nlog<sub>2</sub>n)</strong></p> <ul> <li><strong>稳定性</strong>：不稳定。</li> <li><strong>比较次数</strong>：上述对时间复杂度的分析，可以看出堆排序的比较次数总是o(n)+o(nlog<sub>2</sub>n) = o(nlog<sub>2</sub>n)</li> <li><strong>代码实现</strong>：</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void HeapSort(vector&lt;int&gt;&amp; nums) {
+	int n = nums.size();
+	for (int i = n / 2 - 1; i &gt;= 0; i--) {
+		//首先从n/2-1这个节点开始，依次向上构建大根堆
+		AdjustHeap(nums, n, i);
+	}
+	//将堆顶元素与末尾元素交换（也就是输出堆顶元素）
+	swap(nums[0], nums[n - 1]);
+	//默认剩余堆的元素少了一个
+	for (int i = n-1; i &gt; 0; i--) {
+		//对剩余的堆进行大根堆调整
+		AdjustHeap(nums,i,0);
+		//输出元素
+		swap(nums[0], nums[i-1]);
+	}
+
+}
+//构建大根堆,n是长度，start是调整位置，自上而下调整
+void AdjustHeap(vector&lt;int&gt;&amp; nums, int n, int start) {
+	int lc = 2 * start + 1;
+	int rc = lc + 1;
+	int maxindex = start;
+	if (rc &lt; n) {//如果该节点含有两个子节点，选取大的子节点交换
+		if (nums[rc] &gt; nums[lc]) {
+			maxindex = rc;
+		}
+		else {
+			maxindex = lc;
+		}
+		if (nums[maxindex] &lt; nums[start]) {
+			maxindex = start;
+		}
+	}
+	else if (lc &lt; n) {//如果该节点只含有左儿子，那么比较并交换
+		if (nums[lc] &gt; nums[start]) {
+			maxindex = lc;
+		}
+	}
+	else {//如果没孩子，那么就不管了
+		maxindex = start;
+	}
+	if (maxindex != start) {
+		//交换后，递归地解决被交换孩子节点的子树
+		swap(nums[maxindex], nums[start]);
+		AdjustHeap(nums, n, maxindex);
+	}
+
+}
+</code></pre></div></div> <h3 id="归并排序">归并排序</h3> <ul> <li><strong>过程</strong>：</li> </ul> <ol> <li>先将n个元素看成是n个单元素有序表；</li> <li>通过merge函数将两个有序表之间归并；</li> <li>通过merge函数将再将两个有序表之间归并（因为表内本身有序，所以很快）；</li> <li>一直到只剩一个大的有序表，或者只剩一个元素，单独处理一下。</li> </ol> <ul> <li> <p><strong>适用范围</strong>：顺序表，链表。尤其适用于大量数据的外部排序。</p> </li> <li> <p><strong>性能</strong>：总共n个元素，两两归并，两两再归并，可以形成满二叉树，树的叶子节点共有n个，根据树的性质，共有log<sub>2</sub>n+1层，其中，每一层都要比较n次元素，所以<strong>时间复杂度o(nlog<sub>2</sub>n)</strong>。归并排序中，在merge的过程中，需要一个辅助表来进行临时排序存储，这个表的长度为n，所以 <strong>空间复杂度o(n)</strong>，当然，如果通过旋转等操作，让归并的过程中不使用辅助空间，也可以让归并函数迭代实现的的空间复杂度变为o(1)，但是递归实现的归并排序最少也要o(log<sub>2</sub>n)。</p> </li> <li> <p><strong>稳定性</strong>：稳定。</p> </li> <li> <p><strong>代码实现</strong>：</p> </li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void MergeSort(vector&lt;int&gt; &amp;nums) {
+	int n = nums.size();
+	MergeSortRecursion(nums, 0, n-1);
+}
+void MergeSortRecursion(vector&lt;int&gt; &amp;nums, int start, int end) {
+	//递归地将序列二分
+	if (end &lt;= start) {
+		return;
+	}
+	int n = end - start + 1;
+	int mid = start + n / 2;
+	//对左右序列分别递归地求解问题
+	MergeSortRecursion(nums, start,mid - 1);
+	MergeSortRecursion(nums, mid, end);
+	//左右序列此时都已经有序，然后通过merge函数合并左右序列
+	Merge(nums, start, mid - 1, mid, end);
+}
+void Merge(vector&lt;int&gt; &amp;nums, int s1, int e1, int s2, int e2) {
+	vector&lt;int&gt; out;//辅助数组
+	int i1 = s1, i2 = s2;
+	//拿出左右序列的第一个和第一个比，哪个小就把哪个放在辅助数组，然后继续
+	while (i1 &lt;= e1 &amp; i2 &lt;= e2) {
+		if (nums[i1] &lt; nums[i2]) {
+			out.push_back(nums[i1]);
+			i1++;
+		}
+		else {
+			out.push_back(nums[i2]);
+			i2++;
+		}
+	}
+	//把剩余一个（肯定是都很大的元素）再依次放进辅助空间
+	for (; i1 &lt;= e1; i1++) {
+		out.push_back(nums[i1]);
+	}
+	for (; i2 &lt;= e2; i2++) {
+		out.push_back(nums[i2]);
+	}
+	//把辅助数组的内容再放回原数组
+	for (int i = 0,i2 = s1; i &lt;= e2 - s1; i++,i2++) {
+		nums[i2] = out[i];
+	}
+}
+</code></pre></div></div> <h2 id="分配式排序桶子排序distribution-sort">分配式排序/桶子排序(Distribution Sort)</h2> <p>上述提到的所有排序方式都是基于比较的排序方式，通过两两元素之间的比较来判断元素应当处在的位置，而分配式排序非比较式的排序，它是通过每个元素内的的部分资讯（关键字），将要排序的元素分配至某些“桶”中。如通过个十百千位关键字的比较，再比如通过日期的年月日关键字的比较，或者姓名中姓的比较等。</p> <p>桶排序是分配式排序的基本原理，基数排序是桶排序在正整数排序中的一个特例应用，计数排序是桶排序在数字最大最小差值小的情况下适用的一个特例。</p> <p>分配式排序都是稳定的。</p> <h3 id="桶排序">桶排序</h3> <ul> <li><strong>过程</strong>：基本思路是将待排序元素划分到不同的桶。</li> </ul> <ol> <li>先扫描一遍序列求出最大值 maxV 和最小值 minV，然后确定一个桶的个数 k，</li> <li>把区间 [minV, maxV]均匀划分成k个区间，每个区间就是一个桶。将序列中的元素分配到各自的桶。</li> <li>对每个桶内的元素进行排序。可以选择任意一种排序算法。</li> <li>将各个桶中的元素合并成一个大的有序序列。</li> </ol> <ul> <li><strong>适用范围</strong>：序列元素含有多关键字可供比较。</li> <li> <p><strong>性能</strong>：当 k 接近于n时，桶排序的时间复杂度就可以近似认为是 O(n) 的。即桶越多，时间效率就越高，而桶越多，空间就越大（k=n就是计数排序）。</p> </li> <li><strong>稳定性</strong>：稳定</li> <li>代码实现：</li> </ul> <h3 id="计数排序">计数排序</h3> <ul> <li><strong>过程</strong>：是一种O(n)的排序算法，但耗费空间较多。</li> </ul> <ol> <li>开一个长度为 max-min+1 的数组。</li> <li>扫描一遍原始数组，以当前值- minValue 作为下标，将该下标的计数器增1。</li> <li>收集。扫描一遍计数器数组，按顺序把值收集起来。</li> </ol> <p>举个例子， nums=[2, 1, 3, 1, 5] , 首先扫描一遍获取最小值和最大值，maxValue=5 , minValue=1 ，于是开一个长度为5的计数器数组 counter ，</p> <ol> <li>分配。统计每个元素出现的频率，得到 counter=[2, 1, 1, 0, 1] ，例如 counter[0] 表示值 0+minValue=1 出现了2次。</li> <li>收集。 counter[0]=2表示1出现了两次，那就向原始数组写入两个1，3。counter[1]=1 表示2出现了1次，那就向原始数组写入一个2，依次类推，最终原始数组变为 [1,1,2,3,5] ，排序好了。</li> </ol> <p>计数排序本质上是一种特殊的桶排序，当桶的个数最大的时候，就是计数排序。</p> <ul> <li><strong>适用范围</strong>：最大最小值差距不要太大，不然开辟的数组太大占用太多空间。</li> <li><strong>性能</strong>：</li> </ul> <h3 id="基数排序">基数排序</h3> <ul> <li><strong>过程</strong>：</li> </ul> <ol> <li>将所有待排序整数（注意，必须是非负整数）统一为位数相同的整数，位数较少的前面补零。一般用10进制，</li> <li>从最低位开始，依次进行一次稳定排序（不稳定的话上一次的结果放到下一次可能就乱了）。这样从最低位一直到最高位排序完成以后，整个序列就变成了一个有序序列。</li> </ol> <p>举个例子，有一个整数序列，0, 123, 45, 386, 106，下面是排序过程：</p> <p>第一次排序，个位，000 123 045 386 106，无任何变化</p> <p>第二次排序，十位，000 106 123 045 386</p> <p>第三次排序，百位，000 045 106 123 386</p> <p>最终结果，0, 45, 106, 123, 386, 排序完成。</p> <ul> <li><strong>适用范围</strong>：含关键字的正整数排序。</li> </ul> <h2 id="外部排序">外部排序</h2> <h3 id="多路平衡归并">多路平衡归并</h3> <h3 id="置换-选择排序">置换-选择排序</h3>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">C++中左值和右值是什么以及存在的理解误区</title><link href="https://fy222fy.github.io/zh-cn/blog/2024/c-left-right/" rel="alternate" type="text/html" title="C++中左值和右值是什么以及存在的理解误区"/><published>2024-05-01T00:32:13+00:00</published><updated>2024-05-01T00:32:13+00:00</updated><id>https://fy222fy.github.io/blog/2024/c-left-right</id><content type="html" xml:base="https://fy222fy.github.io/blog/2024/c-left-right/"><![CDATA[<p>左值(Lvalue)和右值(Rvalue)的通俗理解是在如下的等式中，右值(Right-value)放在等号右边，左值(Left-value)放在等号左边，这就是左值右值的初步定义。</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int a = 1 + 1
+</code></pre></div></div> <p>但这种方式并不能解释左值和右值的根本含义，并且并不是每一个等式的左边一定是左值，右边一定是右值。其根本的定义和区别不在于能否被赋值，而在与其是否有确定的内存地址。</p> <p>这里首先要清楚，左值还是右值，针对的是C++中的<strong>表达式</strong>而言的，C++官方给出的表达式定义为：an operator with its operands, a literal, a variable name, etc.</p> <p><strong>左值(Lvalue)</strong>：Location-value，表示可寻址。是保存在内存中，具有确切地址，并能取地址，进行访问，修改等操作的表达式。严格来说，这里定义的左值是pLvalue，也就是pure纯左值。</p> <p><strong>右值(Rvalue)</strong>：Read-value，表示可读不可寻址。是保存在内存中，或者寄存器中，不知道也无法获得其确切地址，在得到计算表达式结果后就销毁的临时表达式。严格来说，这里定义的右值是pRvalue，也就是pure纯右值。</p> <p><strong>右值引用(Xvalue)</strong>：Expiring value，表示即将过期但还没过期的值。与纯右值和纯左值不同，C++11新出了对右值的引用，取决于如何使用，这种引用既可能是右值，也可能是左值，需要单独考虑。</p> <h4 id="常见误区">常见误区</h4> <ol> <li>左值不一定可以修改，常量就是不可修改的，但是它有确定的地址，所以仍然是左值。</li> </ol> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int const a = 2;//a是左值，但是a不可以修改
+</code></pre></div></div> <ol> <li>左值右值和引用，非引用没有关系，左值引用一定是左值，右值引用可能是左值可能是右值。</li> </ol> <table> <thead> <tr> <th>左值引用</th> <th>右值引用</th> <th>非引用</th> <th> </th> </tr> </thead> <tbody> <tr> <td>是左值</td> <td>总是</td> <td>显式声明为变量时</td> <td>显式声明为变量时</td> </tr> <tr> <td>是右值</td> <td>×</td> <td>作为临时变量时</td> <td>作为临时变量时</td> </tr> </tbody> </table> <ol> <li>左值显然可以转换成右值，右值不能转化为左值，但是可以在其销毁前，作为参数转化为左值。</li> </ol> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//左值转换为右值
+int a = 1;//a是左值
+int b = 2;//b是左值
+int c = a + b; //这里a和b从左值转换为右值，然后将和（右值）赋值给左值c。
+
+//通过右值获得左值
+int array[2] = {1,2}; //array是一个左值
+*(array + 1) = 3;//array+1在计算过程中由左值转换为一个临时右值
+//该右值被解引用，又从右值转换为一个左值。
+</code></pre></div></div> <ol> <li>左值引用一般不能用右值初始化，因为如果用右值初始化，相当于将左值绑定在了右值上，那右值就不会被销毁，也就不是右值了（此时编译器通常会提示非常量引用的初始值只能为左值）。但是常量引用显然可以赋右值，因为常量引用不会改变引用的值。当然，右值引用是另一种可以赋右值的引用类型。</li> </ol> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int &amp;a = 1;//错误，1是右值，a是左值引用，无法直接初始化
+int a = 1; //正确，a是左值不是左值引用，可以被赋值
+int const a = 1;//正确，a是常量左值引用，可以链到右值上
+int &amp;&amp;a = 1;//正确，这是C++11中的右值引用，a为左值。
+</code></pre></div></div> <ol> <li>函数的返回值一般是右值，但也可以是左值。</li> </ol> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//返回右值的常规函数
+int fun(){//函数中a是局部变量，会销毁，所以返回值是右值，只能临时使用。
+    int a = 1;
+    return a;
+}
+
+//返回左值的函数
+int &amp;fun(int &amp;a){//函数将输入的引用返回，从始至终都是这个a
+    a++;
+    return a;
+}
+//以上函数可以这么用
+fun(a) = 4;//因为fun返回左值，所以fun可以被赋值
+
+//错误的返回左值案例
+int &amp;fun(){//不要讲局部变量的引用返回，因为返回后局部变量被销毁
+    int a = 3;
+    return a;
+}
+</code></pre></div></div>]]></content><author><name></name></author><category term="c++"/><category term="c++"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">kubernetes（K8s）+ pouch三主高可用集群部署</title><link href="https://fy222fy.github.io/zh-cn/blog/2024/k8s-pouch/" rel="alternate" type="text/html" title="kubernetes（K8s）+ pouch三主高可用集群部署"/><published>2024-05-01T00:32:13+00:00</published><updated>2024-05-01T00:32:13+00:00</updated><id>https://fy222fy.github.io/blog/2024/k8s-pouch</id><content type="html" xml:base="https://fy222fy.github.io/blog/2024/k8s-pouch/"><![CDATA[<p>s# 准备工作 使用6台服务器完成3master，3node集群搭建，相关配置如下：</p> <ul> <li>操作系统：CentOS Linux release 7.9.2009 (Core)，建议使用7.5及以上</li> <li>内存：64G</li> <li>IP：30.30.230.107（Master），30.30.230.70（Node1），30.30.230.13（Node2）</li> </ul> <h1 id="集群搭建">集群搭建</h1> <h2 id="环境初始化">环境初始化</h2> <h3 id="主机名解析">主机名解析</h3> <p>在hosts文件中配置主机名，让三台机器可以通过主机名互相访问，在真实场景中，应当通过DNS服务器完成主机解析的工作。</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /etc/hosts
+30.30.230.107 k8s-master
+30.30.230.70 k8s-node1
+30.30.230.13 k9s-node2
+</code></pre></div></div> <h3 id="时间同步">时间同步</h3> <h3 id="禁用iptables和防火墙">禁用iptables和防火墙</h3> <h3 id="禁用selinux">禁用selinux</h3> <p>临时禁用方法：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>setenforce 0
+</code></pre></div></div> <h3 id="禁用swap分区">禁用swap分区</h3> <p>临时禁用方法</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>swapoff -a
+</code></pre></div></div> <h3 id="修改linux的内核参数">修改linux的内核参数</h3> <h3 id="配置ipvs功能">配置ipvs功能</h3> <h3 id="安装docker">安装docker</h3> <h3 id="安装kubernetes组件">安装Kubernetes组件</h3> <p>由于这里使用pouch而非docker进行容器部署，所以需要对kubeadm进行配置。 在master机器上：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubeadm config print init-defaults &gt; kubeadm.yaml
+
+# 修改
+advertiseAddress: x.x.x.x #这里填写要部署apiserver的机器IP，一般就是master的IP
+criSocket: /var/run/pouchcri.sock #这是关键
+name: k8s-master
+
+imageRepository: registry.aliyuncs.com/google_containers
+kubernetesVersion: v1.20.5
+
+# 在 dnsDomain: cluster.local 下添加
+podSubnet: 10.244.0.0/16
+
+# 最后添加
+---
+apiVersion: kubeproxy.config.k8s.io/v1alpha1
+kind: KubeProxyConfiguration
+mode: ipvs
+---
+apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+cgroupDriver: systemd
+
+# 初始化 k8s master
+kubeadm init --config=kubeadm.yaml
+</code></pre></div></div> <h3 id="准备集群镜像">准备集群镜像</h3> <h3 id="集群初始化">集群初始化</h3> <p>为了让master也可以作为node，可以通过去除污点的方法</p> <h3 id="安装网络插件master">安装网络插件（Master）</h3> <h1 id="问题处理">问题处理</h1> <h2 id="kubadm-init报错端口占用">kubadm –init报错端口占用</h2> <p>在kubadm –init时，出现如下错误：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>error execution phase preflight: [preflight] Some fatal errors occurred:
+	[ERROR Port-10259]: Port 10259 is in use
+	[ERROR Port-10257]: Port 10257 is in use
+	[ERROR FileAvailable--etc-kubernetes-manifests-kube-apiserver.yaml]: /etc/kubernetes/manifests/kube-apiserver.yaml already exists
+	[ERROR FileAvailable--etc-kubernetes-manifests-kube-controller-manager.yaml]: /etc/kubernetes/manifests/kube-controller-manager.yaml already exists
+	[ERROR FileAvailable--etc-kubernetes-manifests-kube-scheduler.yaml]: /etc/kubernetes/manifests/kube-scheduler.yaml already exists
+	[ERROR FileAvailable--etc-kubernetes-manifests-etcd.yaml]: /etc/kubernetes/manifests/etcd.yaml already exists
+	[ERROR Port-10250]: Port 10250 is in use
+</code></pre></div></div> <p>这是因为已经进行过初始化，此时执行reset命令后，重新初始化即可。</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubadm reset
+</code></pre></div></div> <h2 id="kubctl报错连接失败">kubctl报错连接失败</h2> <p>完成集群初始化和节点加入后，在执行kubctl get nodes命令查看集群状态时，报如下错误：</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The connection to the server localhost:8080 was refused - did you specify the right host or port?
+</code></pre></div></div> <p>出现这个问题的原因是kubectl命令需要使用kubernetes-admin来运行，解决方法如下，将主节点中的【/etc/kubernetes/admin.conf】文件拷贝到从节点相同目录下，然后配置环境变量：</p> <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"export KUBECONFIG=/etc/kubernetes/admin.conf"</span> <span class="o">&gt;&gt;</span> ~/.bash_profile
+<span class="nb">source</span> ~/.bash_profile
+</code></pre></div></div> <p>在运行kubectl命令就成功了</p> <h2 id="nginx安装提示找不到stream">nginx安装提示找不到“stream”</h2> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unknown directive "stream" in /etc/nginx/nginx.conf:10
+</code></pre></div></div> <p>只需要安装这个模块就行</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum install nginx-mod-stream
+</code></pre></div></div> <h2 id="安装nginx找不到nginx包">安装nginx找不到nginx包</h2> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum install epel-release
+</code></pre></div></div> <p>执行执行这个命令，相当于添加了一个第三房源，就能找到包了。</p>]]></content><author><name></name></author><category term="learn"/><category term="K8s"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">大模型微调技术梳理</title><link href="https://fy222fy.github.io/zh-cn/blog/2024/llm-fintune/" rel="alternate" type="text/html" title="大模型微调技术梳理"/><published>2024-05-01T00:32:13+00:00</published><updated>2024-05-01T00:32:13+00:00</updated><id>https://fy222fy.github.io/blog/2024/llm-fintune</id><content type="html" xml:base="https://fy222fy.github.io/blog/2024/llm-fintune/"><![CDATA[<h1 id="背景知识">背景知识</h1> <p><strong>FineTune（微调）</strong> 大模型微调技术是指在<strong>已经预训练好</strong>的大型语言模型基础上，使用特定的数据集进行<strong>进一步</strong>的训练，以使模型适应<strong>特定任务</strong>或领域。这种方式有如下的优势：</p> <ol> <li>微调后的模型仍具备原有大模型的特征；</li> <li>仅需要少量数据集就可以达到不错的效果，免去了重新训练模型；</li> <li>训练成本低。</li> </ol> <p>大模型微调技术主要分为如下两类：</p> <ol> <li>全量微调（Full Fine-Tuning，FFT）：即<strong>全部参数</strong>都微调，但对于大模型来说，参数量巨大导致全量微调需要消耗大量算力，实用性不高，此外，全量微调会造成灾难性遗忘，会在把某领域方面表现变好的同时，把原来表现好的其他领域的能力变差；</li> <li>高效微调（Parameter-Efficient Fine-Tuning，PEFT）：针对<strong>部分参数</strong>进行训练和调整，解决了全量微调的缺陷，使大模型在某个领域的能力提升。</li> </ol> <p>本篇主要介绍高效微调，包括如下几种：</p> <ol> <li><strong>Freeze Tuning</strong></li> <li><strong>Adapter Tuning</strong></li> <li><strong>Prompt Tuning</strong></li> <li><strong>P-Tuning</strong></li> <li><strong>Prefix-Tuning</strong></li> <li><strong>P-Tuning V2</strong></li> <li><strong>LoRa Tuning</strong></li> </ol> <h1 id="freeze-tuning">Freeze Tuning</h1> <p>Freeze参数冻结，对大模型的大部分参数进行冻结，仅训练少部分参数，以此来减少显存占用，完成微调。</p> <h1 id="adapter-tuning">Adapter Tuning</h1> <p><a href="https://arxiv.org/pdf/1902.00751.pdf">《Parameter-Efficient Transfer Learning for NLP》</a> 2019 论文指出，Freeze Tuning难以达到较好的效果。</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/1-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/1-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/1-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/1.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p>Adapter Tuning主要是在Transformer模块中增加了一个适配层。</p> <p>子层1：将Transformer块的输出作为输入，将原始维度d投影到m维度，m的大小决定了Adapter模块的参数量，m«d。</p> <p>子层2：在输出时，通过第二个子层还原输入维度，将m投影到d。</p> <p>优点：</p> <p>主要解决了灾难性遗忘，任务之间的干扰和训练不稳定的问题。</p> <h1 id="prompt-tuning">Prompt Tuning</h1> <p>Prompt：提示词，用于引导模型生成文本的一段输入，帮助模型更好理解用户意图，这种输入可以是明确的单词（Hard Prompt，离散Prompt），也可以是一个一个向量（Soft Prompt，连续Prompt）。</p> <ul> <li>Prompt Engineering：通过人工开发和优化Prompt，帮助语言模型用于各个应用场景和领域。</li> <li>Prompt Tuning：通过AI优化Prompt，达到最好的Prompt效果，适配各个场景。</li> </ul> <h2 id="背景">背景</h2> <p>大模型本身具备很强的推理和理解能力， GPT3在<a href="https://arxiv.org/abs/2005.14165">《Language Models are Few-Shot Learners》</a>提出in-context learning概念， 无需修改模型，通过few-shot/zero-shot/demonstrate-learning，让模型知道和标签相似的语义，提升推理能力。 在真实场景中，例如在GPT3不那么大的模型中，Prommpt直接用在zero-shot上效果下降，且对于一些具体的任务场景，需要单独设计组件实现。 于是出现了PET（Pattern-Exploiting Training）模型 <a href="https://arxiv.org/pdf/2001.07676">《Exploiting Cloze Questions for Few Shot Text Classification and Natural Language Inference》</a>。</p> <p>以NLI（预测两句话之间的关系）为例：</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/2-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/2-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/2-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/2.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h2 id="基本原理">基本原理</h2> <p>Prompt-Tuning的主要组件称为Pattern-Verbalizer-Pair。</p> <ul> <li>Pattern：带[mask]标记的短文本，是希望模型预测的标记，可以是任何词。</li> <li>PLM：预训练的模型。</li> <li>Verbalizer：标签词映射，对于具体分类任务，选择指定的标签词。</li> </ul> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/3-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/3-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/3-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/3.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p>为达到更好的效果，可以有多种方法：</p> <ul> <li>Patterns Ensembling：为一个句子设计不同的Pattern；</li> <li>Verbalizers Ensembling：标签词可以有多个，例如great、nice都可以是积极的；</li> <li>PVPs Ensembling：多个PVP组件，采用加权、投票等形式获得结果。</li> </ul> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/4-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/4-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/4-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/4.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p>基于PVP框架，Prompt Tuning的重点就在于如何选择和构造合适的Pattern和Verbalizer。</p> <h3 id="微调模板">微调模板</h3> <p>最简单的方式就是人工设计模板，但自动化的方式更好。 离散模板构建法（Hard Template 、 Hard Prompt 、 Discrete Template 、 Discrete Prompt），在训练过程中保持不变，且是离散的词向量。包括：</p> <ul> <li>人工构建（Manual Template） ：在前文已经描述过，不再详细说明；</li> <li>启发式法（Heuristic-based Template） ：通过规则、启发式搜索等方法构建合适的模板；</li> <li>生成（Generation） ：根据给定的任务训练数据（通常是小样本场景），生成出合适的模板；</li> </ul> <p>连续模板构建（Soft Template 、 Soft Prompt 、 Continuous Template 、 Continuous Prompt），在连续的向量空间寻找合适的标记，解决离散模版容易陷入局部最优的问题。</p> <ul> <li>词向量微调（Word Embedding） ：显式地定义离散字符的模板，但在训练时这些模板字符的词向量参与梯度下降，初始定义的离散字符用于作为向量的初始化；</li> <li>伪标记（Pseudo Token） ：不显式地定义离散的模板，而是将模板作为可训练的参数；</li> </ul> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/5-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/5-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/5-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/5.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h4 id="启发式构建模板">启发式构建模板</h4> <p>采用规则、正则化的模板构建出Pattern，或用启发式的搜索算法获得Pattern。 例如，可以利用启发式的规则定义若干个子模板，自动组合形成最终Pattern。 例如，<a href="https://arxiv.org/pdf/2010.15980.pdf">AutoPrompt</a>给定原始的输入，额外定义若干离散的字符作为trigger， 并组成Template，喂入MLM中预测对应label word的概率。而这些trigger最终通过梯度搜索的方法进行挑选。</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/6-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/6-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/6-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/6.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h4 id="生成法构建">生成法构建</h4> <p>直接让模型来生成合适的模板。 首先定义一个Template的母版，将这些母版与原始文本拼接后喂入T5模型（T5模型属于自回归式的生成模型）后在<X>和<Y>占位符部分生成相应的字符， 最终形成对应的Template。然后再基于生成的Template和label word进行训练。</Y></X></p> <p><img src="https://i-blog.csdnimg.cn/blog_migrate/de969f0730c54b7e302caf54078b035d.png" alt="image.png"/></p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/7-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/7-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/7-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/7.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h4 id="连续提示模板">连续提示模板</h4> <p>不论是启发式方法，还是通过生成的方法，都需要为每一个任务单独设计对应的模板，因为这些模板都是可读的离散的token（这类模板我们称作Discrete Prompt或Hard Prompt）， 这导致很难寻找到最佳的模板。 另外，即便是同一个任务，不同的句子也会有其所谓最佳的模板，而且有时候，即便是人类理解的相似的模板，也会对模型预测结果产生很大差异。 为避免这种问题，将模板转换为可进行优化的连续向量，不同的任务、数据可以自适应地在语义空间中寻找若干合适的向量，来代表模板中的每一个词， 相较于显式的token，这类token称为 <strong>伪标记（Pseudo Token）</strong>。</p> <p>代表的几种方法有：</p> <ul> <li><a href="https://arxiv.org/pdf/2104.08691.pdf?trk=public_post_comment-text">《The Power of Scale for Parameter-Efficient Prompt Tuning》</a>2021：代表方法为Prompt Tuning</li> <li><a href="https://arxiv.org/abs/2103.10385">《GPT Understands, Too》</a>2021：P-tuning</li> <li><a href="https://arxiv.org/pdf/2110.07602.pdf">《P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks》</a>2021</li> <li><a href="https://arxiv.org/pdf/2109.04332.pdf">《PPT: Pre-trained Prompt Tuning for Few-shot Learning》</a>2021：代表方法PPT</li> <li><a href="https://arxiv.org/pdf/2101.00190">《Prefix-Tuning: Optimizing Continuous Prompts for Generation》</a>2021</li> </ul> <h3 id="微调verbalizer">微调Verbalizer</h3> <p>Verbalizer也会影响预测的结果，和模板类似，Verbalizer也分为离散和连续两种类型。</p> <ul> <li>人工设计：根据对每个任务的经验来人工指定这些label word。但是人工设计需要依赖大量的人力；</li> <li>领域知识指导搜索离散的label word，代表方法为KPT，<a href="https://arxiv.org/pdf/2108.02035.pdf">《Knowledgeable Prompt-tuning:Incorporating Knowledge into Prompt Verbalizer for Text Classification》</a>；</li> <li>原型网络动态生成label representations：<a href="https://arxiv.org/pdf/2203.09770.pdf">《Prototypical Verbalizer for Prompt-based Few-shot Tuning》</a>，代表方法为ProtoVerb</li> </ul> <h2 id="prompt-tuning-1">Prompt Tuning</h2> <p>这里说的是<a href="https://arxiv.org/pdf/2104.08691.pdf?trk=public_post_comment-text">《The Power of Scale for Parameter-Efficient Prompt Tuning》</a> 里的Prompt Tuning。其实是Prefix Tuning的一个简化版本。 基本概念：给每个任务定义prompt tokens，只在输入层加入这些tokens（训练的就是这些tokens）。</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/8-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/8-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/8-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/8.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p>Prompts提出了Prompt Ensembling，在一个批次里面可以同时训练一个任务的不同prompt（采用多种不同方式询问同一个问题），提升了效率。</p> <h2 id="p-tuning">P-Tuning</h2> <p><a href="https://arxiv.org/abs/2103.10385">《GPT Understands, Too》</a> P-Tuning用MLP + LSTM（长短期记忆网络）的方式对Prompt Embedding进行一层处理，其虚拟token可以插入到除了前缀的任意位置。</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/9-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/9-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/9-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/9.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p>在训练过程中，PML模型的参数全部固定，微调的事Prompt Encoder，也就是LSTM的参数，这个参数是所有任务共享的。 预测过程中不需要这个组件，针对特定任务，LSTM输出独一无二的虚拟token embedding，插入到输入token中即可。</p> <h2 id="prefix-tuning">Prefix Tuning</h2> <p><a href="https://arxiv.org/pdf/2101.00190">《Prefix-Tuning: Optimizing Continuous Prompts for Generation》</a> 基本概念：固定训练的LM，添加任务特定的，可训练的前缀（训练的是这个embedding的前缀）。</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/10-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/10-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/10-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/10.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p>具体原理： 在输入token之前构造一段任务相关的virtual tokens作为Prefix，然后训练的时候只更新Prefix部分的参数，而PLM中的其他部分参数固定。 针对不同的模型结构，需要构造不同的Prefix。</p> <ul> <li>针对自回归架构模型：在句子前面添加前缀，得到 z = [PREFIX; x; y]，合适的上文能够在固定 LM 的情况下去引导生成下文（比如：GPT3的上下文学习）。</li> <li>针对编码器-解码器架构模型：Encoder和Decoder都增加了前缀，得到 z = [PREFIX; x; PREFIX0; y]。</li> <li>Encoder端增加前缀是为了引导输入部分的编码，Decoder 端增加前缀是为了引导后续token的生成。</li> </ul> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/11-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/11-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/11-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/11.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p>为了达到更好的效果：</p> <ol> <li>Deep Continuous Prompt：一般做法是在embedding层加入可训练的virtual token，但实际上可以在每一层都加入可训练的prefix。</li> <li>套MLP：因为直接优化可能导致不稳定和性能下降，所以在训练的过程中增加MLP映射矩阵。</li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/12-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/12-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/12-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/12.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h2 id="p-tuning-v2">P-Tuning V2</h2> <p><a href="https://arxiv.org/pdf/2110.07602.pdf">《P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks》</a>2021 背景：</p> <p>从原理上，P-Tuning V2和Prefix Tuning是一样的，只不过Prefix Tuning针对NLG（自然语言生成）任务， 而P-Tuning v2进行了改进，可以用于NLU（自然语言理解）任务，如语义识别，情感分析等。</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/posts/2024-04-05-llm-fintune-img/13-480.webp 480w,/assets/posts/2024-04-05-llm-fintune-img/13-800.webp 800w,/assets/posts/2024-04-05-llm-fintune-img/13-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/posts/2024-04-05-llm-fintune-img/13.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <h1 id="lora-tuning">LoRA Tuning</h1> <p><a href="https://arxiv.org/pdf/2106.09685.pdf">《LORA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS》</a></p> <p>LoRa（Low-Rank Adaptation）基于一个假设：现有大模型的参数量是过度的，其背后有一批生成关键结果的参数，被称作低维本质模型。</p> <h2 id="原理">原理</h2> <p>全量微调：</p> <p>图左是全量微调的模型，表示预训练模型的权重矩阵，在反向传播的过程中，更新一个，更新后的权重矩阵为，如果模型有6B个参数，则也有6B个参数，非常消耗资源。</p> <p>Lora微调：</p> <p>图右是Lora微调，Lora将分解为两个低秩的矩阵，的行数和相同，的列数和相同，另外一个维度的长度是一个超参数，那么。微调时只需要训练A和B即可，因为的值很小（如4，8，16），所以资源消耗很少。</p> <p>原理：</p> <p>在Lora微调过程中，权重固定不变，控制矩阵为随机初始化矩阵，矩阵为0矩阵。 在前向过程中，初始权重和旁路矩阵都会作用于输入： 反向传播过程中，更新矩阵。 预测时同理。</p> <h2 id="优点">优点</h2> <ol> <li>节省资源：秩 r 是一个超参数。例如，如果 ΔW 有 10,000 行和 20,000 列，则需存储 200,000,000 个参数。如果我们选择 r=8 的 A 和 B，则 A 有 10,000 行和 8 列，B 有 8 行和 20,000 列，即 10,000×8 + 8×20,000 = 240,000 个参数，比 200,000,000 个参数少约 830 倍。</li> <li>预测性能损耗低</li> <li>便于切换场景：每个场景对应于一个矩阵，切换场景进需要做矩阵加减法即可：</li> <li>效果好</li> </ol> <h2 id="开源实现">开源实现</h2> <p>目前 LORA 已经被 HuggingFace 集成在了 <a href="https://link.zhihu.com/?target=https%3A//github.com/huggingface/peft">PEFT（Parameter-Efficient Fine-Tuning）</a> 代码库里。</p>]]></content><author><name></name></author><category term="ai"/><category term="llm"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">a post with images</title><link href="https://fy222fy.github.io/zh-cn/blog/2015/images/" rel="alternate" type="text/html" title="a post with images"/><published>2015-05-15T21:01:00+00:00</published><updated>2015-05-15T21:01:00+00:00</updated><id>https://fy222fy.github.io/blog/2015/images</id><content type="html" xml:base="https://fy222fy.github.io/blog/2015/images/"><![CDATA[<p>This is an example post with image galleries.</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/9-480.webp 480w,/assets/img/9-800.webp 800w,/assets/img/9-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/9.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/7-480.webp 480w,/assets/img/7-800.webp 800w,/assets/img/7-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/7.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <div class="caption"> A simple, elegant caption looks good between image rows, after each row, or doesn't have to be there at all. </div> <p>Images can be made zoomable. Simply add <code class="language-plaintext highlighter-rouge">data-zoomable</code> to <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tags that you want to make zoomable.</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/8-480.webp 480w,/assets/img/8-800.webp 800w,/assets/img/8-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/8.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/10-480.webp 480w,/assets/img/10-800.webp 800w,/assets/img/10-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/10.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p>The rest of the images in this post are all zoomable, arranged into different mini-galleries.</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/11-480.webp 480w,/assets/img/11-800.webp 800w,/assets/img/11-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/11.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/12-480.webp 480w,/assets/img/12-800.webp 800w,/assets/img/12-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/12.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/7-480.webp 480w,/assets/img/7-800.webp 800w,/assets/img/7-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/7.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="images"/><summary type="html"><![CDATA[this is what included images could look like]]></summary></entry></feed>
