@@ -76,7 +76,7 @@ GPT3在[《Language Models are Few-Shot Learners》](https://arxiv.org/abs/2005.
 无需修改模型，通过few-shot/zero-shot/demonstrate-learning，让模型知道和标签相似的语义，提升推理能力。
 在真实场景中，例如在GPT3不那么大的模型中，Prommpt直接用在zero-shot上效果下降，且对于一些具体的任务场景，需要单独设计组件实现。
 于是出现了PET（Pattern-Exploiting Training）模型
-[《Exploiting Cloze Questions for Few Shot Text Classification and Natural Language Inference》](https://arxiv.org/pdf/2001.07676.pdf%C3%AF%C2%BC%E2%80%B0)。
+[《Exploiting Cloze Questions for Few Shot Text Classification and Natural Language Inference》](https://arxiv.org/pdf/2001.07676)。
 
 以NLI（预测两句话之间的关系）为例：
 
@@ -224,7 +224,7 @@ P-Tuning用MLP + LSTM（长短期记忆网络）的方式对Prompt Embedding进�
 预测过程中不需要这个组件，针对特定任务，LSTM输出独一无二的虚拟token embedding，插入到输入token中即可。
 
 ## Prefix Tuning
-[《Prefix-Tuning: Optimizing Continuous Prompts for Generation》](https://arxiv.org/pdf/2101.00190.pdf%EF%BC%89)
+[《Prefix-Tuning: Optimizing Continuous Prompts for Generation》](https://arxiv.org/pdf/2101.00190)
 基本概念：固定训练的LM，添加任务特定的，可训练的前缀（训练的是这个embedding的前缀）。
 
 [//]: # (![image.png]&#40;https://i-blog.csdnimg.cn/blog_migrate/71cbf8e0601d31d068838190a1de03bd.png&#41;)
