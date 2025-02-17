@@ -3,8 +3,8 @@ page_id: blog
 layout: default
 permalink: /blog/
 title: 博客
-blog_name: 冯皓楠的博客
-description: 一点点成为更好的自己。
+blog_name: F的博客
+description: 成为更好的自己
 nav: true
 nav_order: 3
 pagination:
