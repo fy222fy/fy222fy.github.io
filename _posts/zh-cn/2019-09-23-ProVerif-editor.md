@@ -13,20 +13,25 @@ tabs: true
 ProVerif是一个强大的协议形式化分析工具，它可以根据输入的pv文件自动分析协议。为了方便研究者编辑应用PI演算，Joeri de Ruiter利用Python语言开发了一款ProVerif编辑器--**ProVerif editor**。但是,这款工具最近一次的更新已经是2013年4月了，它是用Python2开发的，并且使用的相关库都是比较老版本的，在安装过程中，出了很多错误，所以在这里记录一下如何让这个工具能正常地跑起来。本文参考了[为Python添加GTK+库：pygtk（windows下安装pygtk）](http://blog.qqzzz.net/?post=34)和 [Making pygtksourceview work in windows](https://stackoverflow.com/questions/2968273/making-pygtksourceview-work-in-windows)两篇文章。
 
 # 工具下载
+
 ProVerif工具下载链接: [https://prosecco.gforge.inria.fr/personal/bblanche/proverif/](https://prosecco.gforge.inria.fr/personal/bblanche/proverif/).
 ProVerif editor工具下载链接：[https://sourceforge.net/projects/proverifeditor/](https://sourceforge.net/projects/proverifeditor/).
 
 # 工具运行需求
+
 解压proverif_editor，找到README文件，可以看到ProVerif Editor的需求。
+
 1. ProVerif
 2. Python(>=2.6)
 3. PyGTK2
 4. PyGTKSourceView2 (README中这里写错了)
 
 ## Python
+
 在Python的官网中下载大于2.6版本小于3版本的Python。我最后选择了Python2.7.8，下载地址：[https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi](https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi). 注意一定要下载32位的Python，因为后面的PyGtk只有32位版本的，与64位的Python不兼容。
 
 ## PyGTK2
+
 ### GTK安装
 
 在下载PyGTK前，确保先下载GTK，我下载的是GTK2.24.10_win32，下载地址：[http://gemmei.ftp.acc.umu.se/pub/gnome/binaries/win32/gtk+/2.24/gtk+-bundle_2.24.10-20120208_win32.zip](http://gemmei.ftp.acc.umu.se/pub/gnome/binaries/win32/gtk+/2.24/gtk+-bundle_2.24.10-20120208_win32.zip).
@@ -45,6 +50,7 @@ Windows下正常运行PyGTK还需要GTK+ for Windows Runtime Environment，下�
 我下载的是PyGTK2.24.0.win32-py2.7，下载地址：[http://ftp.gnome.org/pub/gnome/binaries/win32/pygtk/2.24/pygtk-2.24.0.win32-py2.7.msi](http://ftp.gnome.org/pub/gnome/binaries/win32/pygtk/2.24/pygtk-2.24.0.win32-py2.7.msi).下载后直接点击安装，它会自己寻找到你的Python2.7目录。
 
 ## PyGTKSourceView2
+
 我下载的是PyGTKSourceView2.10.1.win32-py2.7，下载地址：[http://ftp.gnome.org/pub/gnome/binaries/win32/gtksourceview/2.10/gtksourceview-2.10.0.zip](http://ftp.gnome.org/pub/gnome/binaries/win32/gtksourceview/2.10/gtksourceview-2.10.0.zip).
 下载后将压缩包解（为方便可以加压到Python目录下），然后将文件的bin目录添加到环境变量中。
 

@@ -22,8 +22,7 @@
     ]
   },
 
-  "volunteer": [
-  ],
+  "volunteer": [],
   "education": [
     {
       "institution": "School of Cyberspace Security, Beijing University of Posts and Telecommunications",
@@ -140,34 +139,13 @@
       "name": "Programming",
       "level": "Advanced",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Python",
-        "Java",
-        "C/C++",
-        "LaTeX",
-        "Applied-pi",
-        "Markdown",
-        "HTML",
-        "C#"
-      ]
+      "keywords": ["Python", "Java", "C/C++", "LaTeX", "Applied-pi", "Markdown", "HTML", "C#"]
     },
     {
       "name": "Profession",
       "level": "Expert",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "TEE (SGX, HyperEnclave)",
-        "K8s",
-        "Docker",
-        "MzySQL",
-        "PostgreSQL",
-        "Redis",
-        "ProVerif",
-        "Linux",
-        "Alibaba Cloud",
-        "PR",
-        "AE"
-      ]
+      "keywords": ["TEE (SGX, HyperEnclave)", "K8s", "Docker", "MzySQL", "PostgreSQL", "Redis", "ProVerif", "Linux", "Alibaba Cloud", "PR", "AE"]
     }
   ],
   "languages": [
@@ -186,20 +164,14 @@
     {
       "name": "AI Security, AI for Security",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-      ]
+      "keywords": []
     },
     {
       "name": "Formal Verification",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-      ]
+      "keywords": []
     }
   ],
-  "references": [
-
-  ],
-  "projects": [
-
-  ]
+  "references": [],
+  "projects": []
 }
