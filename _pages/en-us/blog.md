@@ -3,8 +3,8 @@ page_id: blog
 layout: default
 permalink: /blog/
 title: blog
-blog_name: Haonan Feng's blog
-description: Become a better self little by little
+blog_name: F's blog
+description: Become a better self
 nav: true
 nav_order: 3
 pagination:

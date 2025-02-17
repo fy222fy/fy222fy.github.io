@@ -3,7 +3,8 @@ page_id: about
 layout: about
 title: 关于
 permalink: /
-subtitle: <a href='', style='color:red;'> 冯皓楠 </a> ，北京邮电大学-网络空间安全学院博士生，中国-北京，fenghaonan222@gmail.com
+subtitle: 冯皓楠，北京邮电大学-网络空间安全学院博士生，中国-北京，fenghaonan222@gmail.com
+
 profile:
   align: right
   image: prof_pic.jpg
@@ -40,4 +41,3 @@ social: true # includes social icons at the bottom of the page
 TECC主要通过多异构TEE结合同网MPC技术，实现比单独TEE和MPC技术更安全，且比传统MPC技术更高性能的密态计算系统。
 我在其中参与的工作包括MPC算子研发、产品研发、产品适配TEE，以及云上部署等工作，
 申请获得了1个软件著作权，以及1个信通院测评证书。
-
