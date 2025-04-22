@@ -3,7 +3,7 @@
 
 @inproceedings{feng2021formal,
   abbr={NDSS},
-  title={A Formal Analysis of the FIDO UAF Protocol.},
+  title={A Formal Analysis of the FIDO UAF Protocol},
   author={Haonan Feng*† and Hui Li* and Xuesong Pan and Ziming Zhao},
   abstract={The FIDO protocol suite aims at allowing users to log in to remote services with a local and trusted authenticator. With FIDO, relying services do not need to store user-chosen secrets or their hashes, which eliminates a major attack surface for e-business. Given its increasing popularity, it is imperative to formally analyze whether the security promises of FIDO hold. In this paper, we present a comprehensive and formal verification of the FIDO UAF protocol by formalizing its security assumptions and goals and modeling the protocol under different scenarios in ProVerif. Our analysis identifies the minimal security assumptions required for each of the security goals of FIDO UAF to hold. We confirm previously manually discovered vulnerabilities in an automated way and disclose several new attacks. Guided by the formal verification results we also discovered 2 practical attacks on 2 popular Android FIDO apps, which we responsibly disclosed to the vendors. In addition, we offer several concrete recommendations to fix the identified problems and weaknesses in the protocol.},
   booktitle={Symposium on Network and Distributed System Security},
@@ -12,8 +12,14 @@
   google_scholar_id={u5HHmVD_uO8C},
   video={https://www.youtube.com/watch?v=H-ibGIIOwFo&list=PLfUWWM-POgQtKq_tAjjl-jR12-4JE3DtU&index=2},
   pdf={https://www.ndss-symposium.org/wp-content/uploads/ndss2021_4A-2_24363_paper.pdf},
+  dat={21},
+  month={1},
   year={2021},
-  selected={true}
+  selected={true},
+  assession_number = {WOS:000680821200046},
+  if = {None},
+  sci_index_date = {2021-08-28},
+  dimensions={true}
 }
 @article{feng2022fido,
   abbr={TDSC},
@@ -23,13 +29,16 @@
   journal={IEEE Transactions on Dependable and Secure Computing},
   volume={20},
   number={5},
-  pages={4291--4310},
+  pages={4291-4310},
   year={2022},
   publisher={IEEE},
   google_scholar_id={u-x6o8ySG0sC},
   html={https://ieeexplore.ieee.org/abstract/document/9930658},
   doi={10.1109/TDSC.2022.3217259},
-  selected={true}
+  selected={true},
+  assession_number = {WOS:001144489500047},
+  if = {6.8},
+  dimensions={true}
 }
 @article{li2020authenticator,
   abbr={WCMC},
@@ -39,6 +48,8 @@
   volume={2020},
   number={1},
   pages={8819790},
+  day = {1},
+  month = {9},
   year={2020},
   publisher={Wiley Online Library},
   abstract={We present a novel attack named “Authenticator Rebinding Attack,” which aims at the Fast IDentity Online (FIDO) Universal Authentication Framework (UAF) protocol implemented on mobile devices. The presented Authenticator Rebinding Attack rebinds the victim’s identity to the attacker’s authenticator rather than the victim’s authenticator being verified by the service in the UAF protocol, allowing the attacker to bypass the UAF protocol local authentication mechanism by imitating the victim to perform sensitive operations such as transfer and payment. The lack of effective authentication between entities in the implementations of the UAF protocol used in the actual system causes the vulnerability to the Authenticator Rebinding Attack. In this paper, we implement this attack on the Android platform and evaluate its implementability, where results show that the proposed attack is implementable in the actual system and Android applications using the UAF protocol are prone to such attack. We also discuss the possible countermeasures against the threats posed by Authenticator Rebinding Attack for different stakeholders implementing UAF on the Android platform.},
@@ -46,8 +57,35 @@
   pdf={https://onlinelibrary.wiley.com/doi/pdf/10.1155/2020/8819790},
   google_scholar_id={9yKSN-GCB0IC},
   doi={10.1155/2020/8819790},
-  selected={true}
+  selected={true},
+  assession_number = {WOS:000573611100005},
+  if = {2.1},
+  sci_index_date = {2020-10-12},
+  dimensions={true}
 }
+
+@article{android,
+  abbr={密码学报},
+  title = {Formal Analysis of Third-party Payment Protocol in Android Applications},
+  author = {Li, Hui*† and Fan, Liyan and Pan, XueSong and Feng, Haonan},
+  publisher = {Journal of Cryptologic Research},
+  abstract = {Third-party in-app payment is convenient and practical, which makes many mobile applications choose to embed third-party payment function, while its security is not systematically and comprehensively analyzed, which means that, there is no guarantee on the payment security. To solve this issue, this paper gives a formal analysis on five third-party payment protocols based on Android platform by formalizing its security assumptions and security goals, and presents the modeling the protocol flows using ProVerif. Analysis results show that the implementation of the protocol on Android platform does not resist the attacks of order tampering, order replacement, and notification forgery. Moreover, after testing 210 apps that use third-party in-app payment protocols, 13.8% of them are found to be vulnerable to these attacks. In order to resist the above attacks, specific suggestions given on the implementation of third-party payment protocols.},
+  day={1},
+  month={8},
+  year = {2022},
+  journal = {Journal of Cryptologic Research},
+  volume = {9},
+  number = {1},
+  eid = {113},
+  pages = {113-125},
+  keywords = {payment agreement|protocol analysis|formal analysis|in-app payment},
+  url = {http://www.jcr.cacrnet.org.cn/EN/10.13868/j.cnki.jcr.000507},
+  doi = {10.13868/j.cnki.jcr.000507},
+  assession_number = {CSCD:7173636},
+  dimensions={false}
+}
+
+
 @misc{ray,
   abbr={发明专利},
   author={冯皓楠 and 胡东文 and 张兴盟 and 胡晓龙 and 赵采贝},
@@ -119,7 +157,7 @@
   year = {2022}
 }
 
-@misc{data2pc,
+@misc{loudong,
   abbr={CNNVD 漏洞},
   author={冯皓楠},
   title={**产品代码问题漏洞 CNNVD-202005-1219},
