@@ -61,6 +61,61 @@ network:
 sudo netplan apply
 ```
 
+## 安装docker
+
+- 更新系统包：首先，确保系统包是最新的：
+
+```shell
+sudo apt update
+sudo apt upgrade -y
+```
+
+- 安装依赖包：安装 Docker 所需的依赖包：
+
+```shell
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+
+```
+
+-添加 Docker 官方 GPG 密钥：添加 Docker 的官方 GPG 密钥以确保下载的软件包是安全的：
+
+```shell
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+```
+
+- 添加 Docker 仓库：将 Docker 的稳定版仓库添加到 APT 源列表中：
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+- 更新包索引：更新 APT 包索引以包含 Docker 仓库：
+
+sudo apt update
+
+- 安装 Docker：安装 Docker CE（社区版）、Docker CLI 和 Containerd：
+
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+
+- 启动并启用 Docker 服务：启动 Docker 服务并设置为开机自启：
+
+sudo systemctl start docker
+sudo systemctl enable docker
+
+- 验证安装
+
+```shell
+docker ps
+```
+
+- 用户组设置，给sudo以外用户使用
+
+```shell
+sudo groupadd docker
+sudo usermod -aG docker username
+```
+
+注意执行完命令后要重新登录用户生效。
+
 ## 安装docker-compose
 
 ```shell
@@ -166,8 +221,58 @@ clashoff(){
 clash_select_proxy() {
     bash /path/to/your/select_proxy.sh
 }
+# 允许局域网访问
+clash_allow_lan(){
+  curl -X PATCH "http://127.0.0.1:9090/configs" -H "Content-Type: application/json" -H "Authorization: Bearer ${secret}" --data "{\"allow-lan\":true}"
+  curl -X GET "http://127.0.0.1:9090/configs"
+}
+
 ############## clash settings end ##########
 
+```
+
+## docker设置代理
+
+首先明确，系统级别的代理配置无法影响到docker运行，需要分别为dockerd和Container设置代理。
+
+dockerd设置代理：
+
+```shell
+mkdir /etc/systemd/system/docker.service.d/
+sudo vim /etc/systemd/system/docker.service.d/http-proxy.conf
+```
+
+写入：
+
+```text
+[Service]
+Environment="HTTP_PROXY=http://127.0.0.1:7890"
+Environment="HTTPS_PROXY=http://127.0.0.1:7890"
+Environment="NO_PROXY=localhost,127.0.0.0/24"
+```
+
+重启服务：
+
+```shell
+systemctl daemon-reload
+systemctl restart docker
+docker info
+```
+
+Container设置代理是为了能在运行期间也能够走都代理：
+
+配置`~/.docker/config.json`，注意这里要填写的是本机IP，不能写localhost，因为这是从docker里面访问，除非你已使用的是--host模式启动docker另说：
+
+```text
+{
+  "proxies": {
+    "default": {
+      "httpProxy": "http://x.x.x.x:7890",
+      "httpsProxy": "http://x.x.x.x:7890",
+      "noProxy": "localhost,127.0.0.1"
+    }
+  }
+}
 ```
 
 ## Linux Ubuntu安装oh my zsh
@@ -221,4 +326,3 @@ sudo reboot
 wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
 bash Anaconda3-2024.10-1-Linux-x86_64.sh
 ```
-
