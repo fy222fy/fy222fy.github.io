@@ -33,3 +33,9 @@ vim /etc/netplan/50-cloud-init.yaml
 ```shell
 netplan apply
 ```
+
+## 参考
+
+很多地方都找不到原因，最后是在这里找到的。
+
+https://www.reddit.com/r/Proxmox/comments/1gxhzja/no_more_network_after_adding_a_m2_ssd/
