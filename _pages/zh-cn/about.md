@@ -3,7 +3,7 @@ page_id: about
 layout: about
 title: 关于
 permalink: /
-subtitle: 冯皓楠，北京邮电大学-网络空间安全学院博士生，中国-北京，fenghaonan222@gmail.com
+subtitle: <a href='https://www.bupt.edu.cn/'>冯皓楠，北京邮电大学-网络空间安全学院博士生</a>，中国-北京，fenghaonan222@gmail.com
 
 profile:
   align: right
