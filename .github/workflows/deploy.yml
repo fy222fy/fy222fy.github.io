@@ -15,13 +15,9 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
+      - "_plugins/**"
+      - "bin/check-site-links.sh"
+      - "!.github/workflows/prettier*.yml"
       - "!lighthouse_results/**"
       - "!CONTRIBUTING.md"
       - "!CUSTOMIZE.md"
@@ -42,13 +38,9 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
+      - "_plugins/**"
+      - "bin/check-site-links.sh"
+      - "!.github/workflows/prettier*.yml"
       - "!lighthouse_results/**"
       - "!CONTRIBUTING.md"
       - "!CUSTOMIZE.md"
@@ -93,6 +85,15 @@ jobs:
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
+      - name: Check internal links 🔗
+        # 检查站内链接（页面、图片、文件、页内锚点），失败则不发布。本地运行同一脚本：bin/check-site-links.sh
+        env:
+          LYCHEE_VERSION: lychee-v0.24.2
+        run: |
+          mkdir -p "$RUNNER_TEMP/lychee"
+          curl -sSfL "https://github.com/lycheeverse/lychee/releases/download/$LYCHEE_VERSION/lychee-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar xz --strip-components=1 -C "$RUNNER_TEMP/lychee"
+          LYCHEE="$RUNNER_TEMP/lychee/lychee" bin/check-site-links.sh
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
