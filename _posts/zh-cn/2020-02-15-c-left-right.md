@@ -1,8 +1,9 @@
 ---
 layout: post
 title: C++中左值和右值是什么以及存在的理解误区
-date: 2024-05-01 00:32:13
-description: this is what included tabs in a post could look like
+date: 2020-02-15 00:00:00
+permalink: /blog/2024/c-left-right/ # keep the original URL
+description: 理解 C++ 中左值与右值的本质及常见误区
 tags: c++
 categories: c++
 tabs: true

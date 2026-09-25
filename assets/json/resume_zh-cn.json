@@ -15,13 +15,17 @@
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "GitHub",
+        "username": "fy222fy",
+        "url": "https://github.com/fy222fy"
+      },
+      {
+        "network": "Google Scholar",
+        "username": "ruPrB9wAAAAJ",
+        "url": "https://scholar.google.com/citations?user=ruPrB9wAAAAJ"
       }
     ]
   },
-
   "volunteer": [],
   "education": [
     {
@@ -62,7 +66,7 @@
       "url": "https://www.antgroup.com/",
       "startDate": "2021-07-06",
       "endDate": "2024-11-15",
-      "summary": "从事密算大模型、联邦学习、多方安全计算等方向"
+      "summary": "从事密算大模型、联邦学习、多方安全计算、TEE 等方向"
     }
   ],
   "publications": [
@@ -91,28 +95,28 @@
   "awards": [
     {
       "title": "第四届全国密码技术竞赛特等奖",
-      "date": "2018-09-1",
+      "date": "2018-09-01",
       "awarder": "中国密码学会",
       "url": "https://www.chinacodes.com.cn/login/initlogin.do",
       "summary": "设计一种支持手机安全协作的 Windows 系统登录系统，实现“人来解锁，人走锁定”的安全辅助系统，并成功申请专利。"
     },
     {
       "title": "北京邮电大学大学生创新创业实践成果一等奖",
-      "date": "2017-09-1",
+      "date": "2017-09-01",
       "awarder": "北京邮电大学",
       "url": "https://www.bupt.edu.cn/xywh/cxcy.htm",
       "summary": "设计实现支持多因子认证的，跨平台的，安全的密码管理系统。"
     },
     {
       "title": "第十届全国大学生信息安全竞赛",
-      "date": "2018-09-1",
+      "date": "2018-09-01",
       "awarder": "教育部高等学校网络空间安全专业教学指导委员会",
       "url": "http://www.ciscn.cn/index.php/announcement/view/70",
       "summary": "设计实现支持多因子认证的，跨平台的，安全的密码管理系统。"
     },
     {
       "title": "国家奖学金",
-      "date": "2019-09-1",
+      "date": "2019-09-01",
       "awarder": "北京邮电大学",
       "url": "https://gjps.xszz.moe.edu.cn/#/"
     }
@@ -122,29 +126,40 @@
       "name": "可信密态计算系统",
       "date": "2022-01-01",
       "issuer": "中国信通院",
-      "icon": "fa-solid fa-location-dot"
+      "icon": "fa-solid fa-certificate"
     },
     {
       "name": "网安国际论坛证书",
       "date": "2021-06-05",
       "issuer": "中科院计算所",
       "url": "https://www.inforsec.org/wp/",
-      "icon": "fa-solid fa-tag"
+      "icon": "fa-solid fa-award"
     }
   ],
-
   "skills": [
     {
       "name": "编程语言",
-      "level": "Advanced",
+      "level": "熟练",
       "icon": "fa-solid fa-hashtag",
       "keywords": ["Python", "Java", "C/C++", "LaTeX", "Applied-pi", "Markdown", "HTML", "C#"]
     },
     {
       "name": "专业技术",
-      "level": "Expert",
+      "level": "精通",
       "icon": "fa-solid fa-hashtag",
-      "keywords": ["TEE (SGX, HyperEnclave)", "K8s", "Docker", "MzySQL", "PostgreSQL", "Redis", "ProVerif", "Linux", "Alibaba Cloud", "PR", "AE"]
+      "keywords": [
+        "TEE (SGX, HyperEnclave)",
+        "K8s",
+        "Docker",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "ProVerif",
+        "Linux",
+        "Alibaba Cloud",
+        "Premiere Pro",
+        "After Effects"
+      ]
     }
   ],
   "languages": [

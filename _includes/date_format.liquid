@@ -13,7 +13,7 @@
   {{ month }}
   {{ day }}, {{ year }}
 {%- elsif site.active_lang == 'zh-cn' -%}
-  {{ day }} de {{ month }}, {{ year }}
+  {{ include.date | date: '%Y年%-m月%-d日' }}
 {%- else -%}
   {{ day }}
   {{ month }}

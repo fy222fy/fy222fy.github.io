@@ -2,7 +2,7 @@
 layout: post
 title: 服务器安装linux和ubuntu双系统
 date: 2025-04-09 23:17:00
-description: 双系统安装
+description: 在不同磁盘上安装 Ubuntu 与 Windows 后配置 GRUB 双系统引导
 tags: linux
 categories: learn
 ---
