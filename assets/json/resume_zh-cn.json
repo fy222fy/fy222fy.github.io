@@ -71,6 +71,12 @@
   ],
   "publications": [
     {
+      "name": "5G-RNAKA: A Random Number-based Authentication and Key Agreement Protocol for 5G Systems",
+      "publisher": "Hui Li, Haotian Li, Chi Ma, Jingjing Guan, Junchi Zeng, 冯皓楠, Ziming Zhao",
+      "releaseDate": "2025-06-06",
+      "summary": "提出面向 5G 系统的基于随机数的认证与密钥协商协议 5G-RNAKA，发表于 ACM CCS 2025。"
+    },
+    {
       "name": "A Formal Analysis of the FIDO UAF Protocol",
       "publisher": "冯皓楠, 李晖, 潘雪松, 赵子铭",
       "releaseDate": "2021-10-30",
