@@ -7,7 +7,7 @@ first_name: Haonan
 middle_name:
 last_name: Feng
 email: fenghaonan222@gmail.com
-keywords: AI Security & Formal Verification # add your own keywords or leave empty
+keywords: Haonan Feng, 冯皓楠, AI Security, LLM Security, Formal Verification, Formal Analysis, Privacy Computing, BUPT # add your own keywords or leave empty
 icon: icon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://fy222fy.github.io # the base hostname & protocol for your site
@@ -41,7 +41,7 @@ rss_icon: false
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 search_enabled: true
 socials_in_search: true
 bib_search: true
@@ -56,9 +56,9 @@ max_width: 1000px
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
 # see https://schema.org/docs/faq.html for more information
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
+serve_schema_org: true # Include Schema.org in the HTML head
+og_image: https://fy222fy.github.io/assets/img/prof_pic.jpg # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
 # Social integration
@@ -71,7 +71,7 @@ dblp_url: # your DBLP profile url
 discord_id: # your discord id (18-digit unique numerical identifier)
 facebook_id: # your facebook id
 flickr_id: # your flickr id
-github_username: # your GitHub user name
+github_username: fy222fy # your GitHub user name
 gitlab_username: # your GitLab user name
 ieee_id: # your ieeexplore.ieee.org/author/id
 inspirehep_id: # Inspire HEP author ID
@@ -150,7 +150,7 @@ giscus:
   emit_metadata: 0
 
 # Disqus comments (DEPRECATED)
-disqus_shortname: multi-language-al-folio # put your disqus shortname
+disqus_shortname: # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.
@@ -233,6 +233,21 @@ exclude:
   - package-lock.json
   - _pages/en-us/about_einstein.md
   - _pages/zh-cn/about_einstein.md
+  # unused template pages and sample content (kept in the repo for reference, not published)
+  - _pages/en-us/dropdown.md
+  - _pages/zh-cn/dropdown.md
+  - _pages/en-us/profiles.md
+  - _pages/zh-cn/profiles.md
+  - _pages/en-us/projects.md
+  - _pages/zh-cn/projects.md
+  - _pages/en-us/teaching.md
+  - _pages/zh-cn/teaching.md
+  - _projects/
+  - assets/img/prof_pic_color.png
+  - assets/img/prof_pic_old.jpg
+  - assets/pdf/pt-br/
+  - assets/pdf/en-us/example_pdf.pdf
+  - requirements.txt
   - purgecss.config.js
   - README.md
   - readme_preview/
@@ -298,15 +313,15 @@ jekyll-archives:
     category: "/blog/category/:name/"
 
 display_tags: ["llm"] # these tags will be displayed on the front page of your blog
-display_categories: ["ai", "c++", "learn"] # these categories will be displayed on the front page of your blog
+display_categories: ["ai", "c++", "learn", "security"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Feng, 冯皓楠]
+  first_name: [Haonan, H.]
 
   style: apa
   locale: en

@@ -4,7 +4,7 @@
     "label": "AI Security, AI for Security, Formal Verification",
     "image": "prof_pic.jpg",
     "email": "fenghaonan222@gmail.com",
-    "url": "fy222fy.github.io",
+    "url": "https://fy222fy.github.io",
     "summary": "PhD student at the School of Cyberspace Security, Beijing University of Posts and Telecommunications, engaged in research related to AI security and formal verification.",
     "location": {
       "address": "Beijing, China",
@@ -15,20 +15,24 @@
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "GitHub",
+        "username": "fy222fy",
+        "url": "https://github.com/fy222fy"
+      },
+      {
+        "network": "Google Scholar",
+        "username": "ruPrB9wAAAAJ",
+        "url": "https://scholar.google.com/citations?user=ruPrB9wAAAAJ"
       }
     ]
   },
-
   "volunteer": [],
   "education": [
     {
       "institution": "School of Cyberspace Security, Beijing University of Posts and Telecommunications",
       "location": "Beijing, China",
       "url": "https://scss.bupt.edu.cn/",
-      "area": "AI Security, Formal Analysis.",
+      "area": "AI Security, Formal Analysis",
       "studyType": "PhD",
       "startDate": "2024-09-01",
       "endDate": "2028-06-01",
@@ -59,11 +63,11 @@
   "work": [
     {
       "name": "Ant Group",
-      "position": "Network Security Engineer",
+      "position": "Cybersecurity Engineer",
       "url": "https://www.antgroup.com/",
       "startDate": "2021-07-06",
       "endDate": "2024-11-15",
-      "summary": "Engaged in cryptographic LLM, Federated Learning, Secure Multi-Party Computation, etc."
+      "summary": "Worked on confidential LLM computing, federated learning, secure multi-party computation (MPC) and trusted execution environments (TEE)."
     }
   ],
   "publications": [
@@ -91,29 +95,29 @@
   ],
   "awards": [
     {
-      "title": "Special Prize in the 4th National Cartographic Technology Competition",
-      "date": "2018-09-1",
+      "title": "Special Prize, the 4th National Cryptography Technology Competition",
+      "date": "2018-09-01",
       "awarder": "Chinese Association for Cryptologic Research (CACR)",
       "url": "https://www.chinacodes.com.cn/login/initlogin.do",
-      "summary": "Design a Windows system login system that supports secure collaboration on mobile phones, realizing a security assistance system that “unlocks when a person arrives and locks when a person leaves,” and successfully apply for a patent."
+      "summary": "Designed a Windows login assistant that works with the user's phone to unlock the computer when the user arrives and lock it when they leave; a patent was filed for the design."
     },
     {
-      "title": "First Prize in the College Student Innovation and Entrepreneurship Practice",
-      "date": "2017-09-1",
+      "title": "First Prize, BUPT College Student Innovation and Entrepreneurship Practice",
+      "date": "2017-09-01",
       "awarder": "Beijing University of Posts and Telecommunications",
       "url": "https://www.bupt.edu.cn/xywh/cxcy.htm",
-      "summary": "Design and implement a cross-platform, secure password management system that supports multi-factor authentication."
+      "summary": "Designed and implemented a secure, cross-platform password manager with multi-factor authentication."
     },
     {
-      "title": "Second Prize in the 10th National College Student Information Security Competition",
-      "date": "2018-09-1",
+      "title": "Second Prize, the 10th National College Student Information Security Contest",
+      "date": "2018-09-01",
       "awarder": "China Ministry of Education Higher Education Cyberspace Security Professional Teaching Steering Committee",
       "url": "http://www.ciscn.cn/index.php/announcement/view/70",
-      "summary": "Design and implement a cross-platform, secure password management system that supports multi-factor authentication."
+      "summary": "Designed and implemented a secure, cross-platform password manager with multi-factor authentication."
     },
     {
       "title": "National Scholarship",
-      "date": "2019-09-1",
+      "date": "2019-09-01",
       "awarder": "Beijing University of Posts and Telecommunications",
       "url": "https://gjps.xszz.moe.edu.cn/#/"
     }
@@ -123,17 +127,16 @@
       "name": "Trusted-Environment-based Cryptographic Computing system (TECC)",
       "date": "2022-01-01",
       "issuer": "China Academy of Information and Communications Technology",
-      "icon": "fa-solid fa-location-dot"
+      "icon": "fa-solid fa-certificate"
     },
     {
       "name": "International Forum for Security Research Certificate",
       "date": "2021-06-05",
       "issuer": "Institute of Computing Technology, Chinese Academy of Sciences",
       "url": "https://www.inforsec.org/wp/",
-      "icon": "fa-solid fa-tag"
+      "icon": "fa-solid fa-award"
     }
   ],
-
   "skills": [
     {
       "name": "Programming",
@@ -145,7 +148,19 @@
       "name": "Profession",
       "level": "Expert",
       "icon": "fa-solid fa-hashtag",
-      "keywords": ["TEE (SGX, HyperEnclave)", "K8s", "Docker", "MzySQL", "PostgreSQL", "Redis", "ProVerif", "Linux", "Alibaba Cloud", "PR", "AE"]
+      "keywords": [
+        "TEE (SGX, HyperEnclave)",
+        "K8s",
+        "Docker",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "ProVerif",
+        "Linux",
+        "Alibaba Cloud",
+        "Premiere Pro",
+        "After Effects"
+      ]
     }
   ],
   "languages": [
@@ -155,7 +170,7 @@
       "icon": ""
     },
     {
-      "language": "英文",
+      "language": "English",
       "fluency": "Fluent",
       "icon": ""
     }

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 插入新pci设备后ubuntu网络不可用
-date: 2025-04-09 23:17:00
-description: 双系统安装
+date: 2025-04-22 00:00:00
+description: 插入新 PCIe 设备后网卡名称改变导致 Ubuntu 断网的排查与修复
 tags: linux
 categories: learn
 ---
@@ -12,7 +12,7 @@ categories: learn
 自己搭建的服务器，ubuntu本来网络是好的，结果购买了一块新的m2硬盘，插入后发现网络模块不能用了。
 
 并且发现，插入新的显卡（任何pci）设备，都会导致网络不能用。
-本来以为是pci线路冲突导致的，后来发现根本也㽸是插入设备后，命名改变导致的。
+本来以为是pci线路冲突导致的，后来发现其实是插入设备后，网卡命名改变导致的。
 
 ## 确认命名问题
 

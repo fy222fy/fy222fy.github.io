@@ -1,14 +1,13 @@
 ---
 layout: post
 title: Windows系统如何安装ProVerif Editor
-date: 2024-05-01 00:32:13
-description: this is what included tabs in a post could look like
-tags: formatting code
-categories: sample-posts
+date: 2019-09-23 00:00:00
+permalink: /blog/2024/ProVerif-editor/ # keep the original URL
+description: 在 Windows 上安装与配置 ProVerif 及 ProVerif Editor
+tags: proverif formal-verification
+categories: security
 tabs: true
 ---
-
-@[TOC](Windows系统如何安装ProVerif Editor)
 
 ProVerif是一个强大的协议形式化分析工具，它可以根据输入的pv文件自动分析协议。为了方便研究者编辑应用PI演算，Joeri de Ruiter利用Python语言开发了一款ProVerif编辑器--**ProVerif editor**。但是,这款工具最近一次的更新已经是2013年4月了，它是用Python2开发的，并且使用的相关库都是比较老版本的，在安装过程中，出了很多错误，所以在这里记录一下如何让这个工具能正常地跑起来。本文参考了[为Python添加GTK+库：pygtk（windows下安装pygtk）](http://blog.qqzzz.net/?post=34)和 [Making pygtksourceview work in windows](https://stackoverflow.com/questions/2968273/making-pygtksourceview-work-in-windows)两篇文章。
 

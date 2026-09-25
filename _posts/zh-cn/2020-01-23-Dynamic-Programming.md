@@ -1,9 +1,10 @@
 ---
 layout: post
 title: 通过最大子序和算法题学习分治法、减治法、动态规划、贪心算法
-date: 2024-05-01 00:32:13
-description: this is what included tabs in a post could look like
-tags: learn
+date: 2020-01-23 00:00:00
+permalink: /blog/2024/Dynamic-Programming/ # keep the original URL
+description: 以最大子序和为例，对比分治法、减治法、动态规划与贪心算法
+tags: algorithm
 categories: learn
 tabs: true
 ---

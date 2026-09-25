@@ -1,12 +1,11 @@
 ---
 layout: post
 title: 大模型微调技术梳理
-date: 2024-05-01 00:32:13
-description: this is what included tabs in a post could look like
+date: 2024-04-05 00:00:00
+description: 大模型微调技术概览：全参数微调、PEFT、LoRA 等方法梳理
 tags: llm
 categories: ai
 tabs: true
-thumbnail: assets/img/9.jpg
 ---
 
 # 背景知识

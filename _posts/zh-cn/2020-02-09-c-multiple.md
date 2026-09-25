@@ -1,8 +1,9 @@
 ---
 layout: post
 title: C++中&和*的含义
-date: 2024-05-01 00:32:13
-description: this is what included tabs in a post could look like
+date: 2020-02-09 00:00:00
+permalink: /blog/2024/c-multiple/ # keep the original URL
+description: 梳理 C++ 中 & 与 * 在不同语境下的含义
 tags: c++
 categories: c++
 tabs: true
