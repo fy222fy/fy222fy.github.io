@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Style A — Academic, dark</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&amp;family=Noto+Serif+SC:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#0F141C}
+a{color:#93B4F5;text-decoration:none}a:hover{color:#BFD3FA;text-decoration:underline}
+</style>
+</helmet>
+<div style="width: 1440px; height: 2000px; box-sizing: border-box; display: flex; flex-direction: column; background: #0F141C; color: #D1D5DB; font-family: 'IBM Plex Sans', 'Noto Sans SC', 'PingFang SC', sans-serif">
+
+<header style="height: 72px; flex-shrink: 0; box-sizing: border-box; padding: 0 96px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #273041">
+<a href="#top" style="display: flex; align-items: baseline; gap: 10px; color: #F3F4F6; text-decoration: none">
+<span style="font-family: 'Source Serif 4', serif; font-size: 20px; font-weight: 600">Haonan Feng</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 16px; color: #9CA3AF">冯皓楠</span>
+</a>
+<nav aria-label="Main" style="display: flex; align-items: center; gap: 32px; font-size: 16px">
+<a href="#top" style="color: #93B4F5; font-weight: 600; border-bottom: 2px solid #93B4F5; padding-bottom: 4px">About</a>
+<a href="#pubs" style="color: #D1D5DB">Publications</a>
+<a href="#projects" style="color: #D1D5DB">Projects</a>
+<a href="#cv" style="color: #D1D5DB">CV</a>
+<a href="#blog" style="color: #D1D5DB">Blog</a>
+<a href="#zh" style="color: #D1D5DB">中文</a>
+<button type="button" aria-label="Switch to light theme" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid #3A4456; border-radius: 8px; background: transparent; color: #D1D5DB; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+</nav>
+</header>
+
+<section id="top" style="box-sizing: border-box; padding: 56px 96px 48px; display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 72px; align-items: center">
+<div style="display: flex; flex-direction: column">
+<div style="font-size: 15px; font-weight: 600; color: #93B4F5">Ph.D. Student · Cyberspace Security · BUPT</div>
+<h1 style="margin: 14px 0 0; font-family: 'Source Serif 4', serif; font-size: 56px; line-height: 1.1; font-weight: 600; letter-spacing: -0.015em; color: #F3F4F6">Haonan Feng</h1>
+<div style="margin-top: 8px; font-family: 'Noto Serif SC', serif; font-size: 24px; font-weight: 500; color: #9CA3AF">冯皓楠</div>
+<p style="margin: 24px 0 0; font-size: 20px; line-height: 1.65; color: #E5E7EB">I work on LLM security and formal analysis: using large language models to automate formal verification, and using formal methods to reason about the security of interacting AI agents. Before my Ph.D., I spent three years building confidential-computing systems at Ant Group.</p>
+<p style="margin: 14px 0 0; font-size: 17px; line-height: 1.7; color: #9CA3AF">School of Cyberspace Security, Beijing University of Posts and Telecommunications · Beijing, China</p>
+<div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px">
+<a href="mailto:fenghaonan222@gmail.com" style="display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 8px; background: #93B4F5; color: #0F141C; font-size: 16px; font-weight: 600; text-decoration: none">Email me</a>
+<sc-for list="{{profiles}}" as="pr" hint-placeholder-count="3">
+<a href="{{pr.href}}" style="display: inline-flex; align-items: center; height: 48px; padding: 0 20px; border-radius: 8px; border: 1px solid #3A4456; color: #F3F4F6; font-size: 16px; text-decoration: none">{{pr.label}}</a>
+</sc-for>
+</div>
+</div>
+<img src="/_blob/f4aed8ebed0a78abeaa3aed3c8e02651" alt="Portrait of Haonan Feng" style="width: 360px; height: 440px; object-fit: cover; object-position: 50% 12%; border-radius: 8px; display: block">
+</section>
+
+<section aria-label="Highlights" style="box-sizing: border-box; margin: 0 96px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px">
+<sc-for list="{{facts}}" as="f" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 18px; border-top: 2px solid #93B4F5">
+<div style="font-family: 'Source Serif 4', serif; font-size: 36px; line-height: 1.1; font-weight: 600; color: #F3F4F6">{{f.big}}</div>
+<div style="font-size: 15px; line-height: 1.55; color: #9CA3AF">{{f.small}}</div>
+</div>
+</sc-for>
+</section>
+
+<section style="box-sizing: border-box; padding: 56px 96px 0; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 600; color: #F3F4F6">Research Interests</h2>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px">
+<sc-for list="{{research}}" as="r" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 8px; padding-top: 16px; border-top: 1px solid #273041">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600; color: #F3F4F6">{{r.title}}</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #D1D5DB">{{r.body}}</p>
+</div>
+</sc-for>
+</div>
+</section>
+
+<div style="box-sizing: border-box; padding: 56px 96px 0; display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 56px; align-items: start">
+<section id="pubs" style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<h2 style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 600; color: #F3F4F6">Selected Publications</h2>
+<a href="#all" style="font-size: 16px">All publications →</a>
+</div>
+<sc-for list="{{pubs}}" as="p" hint-placeholder-count="2">
+<article style="display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 20px; padding: 20px 0; border-bottom: 1px solid #273041">
+<div><span style="display: inline-block; font-size: 15px; font-weight: 600; color: #93B4F5; border: 1px solid #93B4F5; border-radius: 6px; padding: 3px 9px">{{p.venue}}</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 20px; line-height: 1.4; font-weight: 600; color: #F3F4F6">{{p.title}}</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #D1D5DB">{{p.a1}}<strong style="font-weight: 600; color: #F3F4F6">{{p.me}}</strong>{{p.a2}}</p>
+<p style="margin: 0; font-size: 15px; font-style: italic; color: #9CA3AF">{{p.where}}</p>
+</div>
+</article>
+</sc-for>
+</section>
+<section style="display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 600; color: #F3F4F6">News</h2>
+<sc-for list="{{news}}" as="n" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 0; border-bottom: 1px solid #273041">
+<span style="font-size: 15px; font-weight: 600; color: #93B4F5">{{n.date}}</span>
+<span style="font-size: 17px; line-height: 1.6; color: #D1D5DB">{{n.text}}</span>
+</div>
+</sc-for>
+</section>
+</div>
+
+<section id="projects" style="box-sizing: border-box; padding: 56px 96px 56px; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 600; color: #F3F4F6">Selected Projects</h2>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<sc-for list="{{projects}}" as="j" hint-placeholder-count="2">
+<article style="display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid #273041; border-radius: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 15px">
+<span style="font-weight: 600; color: #93B4F5">{{j.tag}}</span>
+<span style="color: #9CA3AF">{{j.period}}</span>
+</div>
+<h3 style="margin: 0; font-size: 20px; line-height: 1.4; font-weight: 600; color: #F3F4F6">{{j.title}}</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #D1D5DB">{{j.body}}</p>
+</article>
+</sc-for>
+</div>
+</section>
+
+<div style="flex-grow: 1"></div>
+<footer style="flex-shrink: 0; box-sizing: border-box; padding: 24px 96px; border-top: 1px solid #273041; font-size: 15px; color: #9CA3AF">© 2026 Haonan Feng · 冯皓楠</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      profiles: [
+        { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=ruPrB9wAAAAJ' },
+        { label: 'GitHub', href: 'https://github.com/fy222fy' },
+        { label: 'CV (PDF)', href: '#cv-pdf' }
+      ],
+      facts: [
+        { big: '2', small: 'First-author papers at NDSS and IEEE TDSC' },
+        { big: '5 yrs', small: 'Formal-analysis research' },
+        { big: '3 yrs', small: 'Security engineering at Ant Group' },
+        { big: '6', small: 'Chinese invention patents' }
+      ],
+      research: [
+        { title: 'LLM Security', body: 'Security of large language models and multi-agent AI systems, including formal reasoning about how AI agents interact.' },
+        { title: 'LLM for Security', body: 'Using large language models to assist security analysis, especially to automate formal modeling and protocol verification.' },
+        { title: 'Formal Analysis', body: 'Protocol verification with ProVerif and the applied pi-calculus, and minimal-assumption analysis.' }
+      ],
+      pubs: [
+        { venue: 'NDSS 2021', title: 'A Formal Analysis of the FIDO UAF Protocol', a1: '', me: 'Haonan Feng', a2: ', Hui Li, Xuesong Pan, Ziming Zhao', where: 'Network and Distributed System Security Symposium' },
+        { venue: 'TDSC 2023', title: 'FIDO Gets Verified: A Formal Analysis of the Universal Authentication Framework Protocol', a1: '', me: 'Haonan Feng', a2: ', Jingjing Guan, Hui Li, Xuesong Pan, Ziming Zhao', where: 'IEEE Transactions on Dependable and Secure Computing' }
+      ],
+      news: [
+        { date: 'Jun 2025', text: '"5G-RNAKA" accepted at ACM CCS 2025.' },
+        { date: 'Jul 2024', text: 'Ant Group launched its confidential computing platform for large models.' },
+        { date: 'Mar 2022', text: '"FIDO Gets Verified" accepted by IEEE TDSC.' }
+      ],
+      projects: [
+        { tag: 'Research · NSFC-funded', period: '2018 – 2020', title: 'Formal Analysis of the FIDO UAF Protocol', body: 'A full formal model of FIDO UAF and the open-source verifier UAFVerif: 400,000+ scenarios verified, 4 attack classes, 1,856 payment apps analyzed.' },
+        { tag: 'Industry · Ant Group', period: '2024', title: 'Confidential LLM Inference in TEEs', body: 'User queries stay encrypted end to end and are decrypted only inside SGX or HyperEnclave, with remote attestation and Occlum.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

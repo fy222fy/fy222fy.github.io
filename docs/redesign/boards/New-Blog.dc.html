@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>冯皓楠 — 博客（改版）</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;family=Noto+Serif+SC:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F7F5F0}
+a{color:#1F3B73;text-decoration:none}a:hover{color:#132851;text-decoration:underline}
+</style>
+</helmet>
+<div style="width: 1440px; height: 2250px; box-sizing: border-box; display: flex; flex-direction: column; background: #F7F5F0; color: #3E434D; font-family: 'IBM Plex Sans', 'Noto Sans SC', 'PingFang SC', sans-serif">
+
+<header style="height: 72px; flex-shrink: 0; box-sizing: border-box; padding: 0 96px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E3DFD6">
+<a href="New-Mobile.dc.html" style="display: flex; align-items: baseline; gap: 10px; color: #15171C; text-decoration: none">
+<span style="font-family: 'Noto Serif SC', serif; font-size: 20px; font-weight: 600">冯皓楠</span>
+<span style="font-family: 'Source Serif 4', serif; font-size: 15px; color: #5E636C">Haonan Feng</span>
+</a>
+<nav aria-label="主导航" style="display: flex; align-items: center; gap: 32px; font-size: 15px">
+<a href="Main.dc.html" style="color: #3E434D">关于</a>
+<a href="New-Pubs.dc.html" style="color: #3E434D">发表作品</a>
+<a href="New-CV.dc.html" style="color: #3E434D">简历</a>
+<a href="#top" style="color: #15171C; font-weight: 500; border-bottom: 1.5px solid #15171C; padding-bottom: 3px">博客</a>
+<a href="#repos" style="color: #3E434D">仓库</a>
+<a href="#news" style="color: #3E434D">动态</a>
+<span style="width: 1px; height: 20px; background: #E3DFD6"></span>
+<a href="#en" style="color: #3E434D">EN</a>
+<button type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; border: 1px solid #E3DFD6; border-radius: 6px; background: #FFFFFF; color: #5E636C; font-family: inherit; font-size: 13px; cursor: pointer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+搜索
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; border: 1px solid #E3DFD6; border-radius: 4px; padding: 1px 5px">⌘K</span>
+</button>
+<button type="button" aria-label="切换到深色模式" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid #E3DFD6; border-radius: 6px; background: #FFFFFF; color: #3E434D; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+</button>
+</nav>
+</header>
+
+<section id="top" style="box-sizing: border-box; padding: 96px 96px 48px; display: flex; justify-content: space-between; align-items: flex-end; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #1F3B73">Notes · 笔记</div>
+<h1 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 56px; line-height: 1.15; font-weight: 600; color: #15171C">F 的博客</h1>
+<p style="margin: 0; max-width: 640px; font-size: 18px; line-height: 1.7; color: #3E434D">成为更好的自己。关于安全、系统与工程实践的笔记。</p>
+</div>
+<a href="#rss" style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; padding-bottom: 6px">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+RSS 订阅
+</a>
+</section>
+
+<div role="group" aria-label="按分类筛选" style="box-sizing: border-box; margin: 0 96px; padding-bottom: 20px; border-bottom: 1px solid #15171C; display: flex; gap: 8px">
+<sc-for list="{{cats}}" as="c" hint-placeholder-count="5">
+<button type="button" aria-pressed="{{c.pressed}}" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border-radius: 6px; font-family: inherit; font-size: 15px; cursor: pointer; background: {{c.bg}}; color: {{c.fg}}; border: 1px solid {{c.bd}}">{{c.label}}<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; opacity: 0.7">{{c.count}}</span></button>
+</sc-for>
+</div>
+
+<section aria-label="文章列表" style="box-sizing: border-box; padding: 0 96px">
+<sc-for list="{{years}}" as="y" hint-placeholder-count="5">
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 20px; padding-top: 40px">
+<span style="font-family: 'Source Serif 4', serif; font-size: 30px; color: #15171C">{{y.year}}</span>
+<span style="flex-grow: 1; height: 1px; background: #CFCAC0"></span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C">{{y.count}}</span>
+</div>
+<sc-for list="{{y.posts}}" as="p" hint-placeholder-count="3">
+<article style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 260px; gap: 40px; align-items: baseline; padding: 22px 0; border-top: {{p.divider}}">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5E636C">{{p.date}}</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: 'Noto Serif SC', serif; font-size: 21px; line-height: 1.45; font-weight: 600"><a href="#post" style="color: #15171C">{{p.title}}</a></h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5E636C">{{p.desc}}</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px">
+<sc-for list="{{p.tags}}" as="t" hint-placeholder-count="2">
+<span style="display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border: 1px solid #E3DFD6; border-radius: 13px; background: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #1F3B73">#{{t.label}}</span>
+</sc-for>
+</div>
+</article>
+</sc-for>
+</div>
+</sc-for>
+</section>
+
+<div style="flex-grow: 1"></div>
+
+<footer style="flex-shrink: 0; box-sizing: border-box; padding: 36px 96px; border-top: 1px solid #E3DFD6; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #5E636C">
+<span>© 2026 冯皓楠 · Haonan Feng</span>
+<div style="display: flex; gap: 24px">
+<a href="mailto:fenghaonan222@gmail.com">邮箱</a>
+<a href="https://scholar.google.com/citations?user=ruPrB9wAAAAJ">Google Scholar</a>
+<a href="https://orcid.org/0009-0002-0140-8342">ORCID</a>
+<a href="https://github.com/fy222fy">GitHub</a>
+</div>
+<span>基于 Jekyll 构建 · 托管于 GitHub Pages</span>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2250}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const btn = (on) => (on ? { bg: '#15171C', fg: '#F7F5F0', bd: '#15171C' } : { bg: 'transparent', fg: '#15171C', bd: '#CFCAC0' });
+    const P = (date, title, desc, tags) => ({ date, title, desc, tags: tags.map((label) => ({ label })) });
+    const groups = [
+      { year: '2025', posts: [
+        P('05-12', 'ubuntu系统安装postgresql数据库', 'ubuntu安装postgresql并启动远程访问', ['linux']),
+        P('04-22', '插入新pci设备后ubuntu网络不可用', '插入新 PCIe 设备后网卡名称改变导致 Ubuntu 断网的排查与修复', ['linux']),
+        P('04-18', '使用ffmpeg将声音从不同设备转移', '使用 ffmpeg 通过网络将一台设备的音频传输到另一台设备播放', ['linux']),
+        P('04-09', '服务器安装linux和ubuntu双系统', '在不同磁盘上安装 Ubuntu 与 Windows 后配置 GRUB 双系统引导', ['linux'])
+      ] },
+      { year: '2024', posts: [
+        P('12-30', '配置新的linux服务器并安装iterm2', '新 Linux 服务器初始化配置，以及使用 iTerm2 自动登录', ['linux']),
+        P('04-05', '大模型微调技术梳理', '大模型微调技术概览：全参数微调、PEFT、LoRA 等方法梳理', ['llm'])
+      ] },
+      { year: '2023', posts: [
+        P('12-01', 'kubernetes（K8s）+ pouch三主高可用集群部署', '基于 CentOS 7 部署 Kubernetes + Pouch 三主高可用集群', ['k8s', 'linux'])
+      ] },
+      { year: '2020', posts: [
+        P('02-15', 'C++中左值和右值是什么以及存在的理解误区', '理解 C++ 中左值与右值的本质及常见误区', ['c++']),
+        P('02-09', 'C++实现不同的排序算法，以及实现过程中的难点', '常见排序算法的原理、C++ 实现与实现中的难点', ['c++', 'algorithm']),
+        P('02-09', 'C++中&和*的含义', '梳理 C++ 中 & 与 * 在不同语境下的含义', ['c++']),
+        P('01-23', '通过最大子序和算法题学习分治法、减治法、动态规划、贪心算法', '以最大子序和为例，对比分治法、减治法、动态规划与贪心算法', ['algorithm'])
+      ] },
+      { year: '2019', posts: [
+        P('09-23', 'Windows系统如何安装ProVerif Editor', '在 Windows 上安装与配置 ProVerif 及 ProVerif Editor', ['proverif', 'formal-verification'])
+      ] }
+    ];
+    return {
+      cats: [
+        { label: '全部', count: '12', pressed: 'true', ...btn(true) },
+        { label: '学习', count: '7', pressed: 'false', ...btn(false) },
+        { label: 'C++', count: '3', pressed: 'false', ...btn(false) },
+        { label: 'AI', count: '1', pressed: 'false', ...btn(false) },
+        { label: '安全', count: '1', pressed: 'false', ...btn(false) }
+      ],
+      years: groups.map((g) => ({ ...g, count: g.posts.length + ' 篇', posts: g.posts.map((p, i) => ({ ...p, divider: i === 0 ? '0' : '1px solid #E3DFD6' })) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

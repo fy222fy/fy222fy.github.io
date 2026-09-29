@@ -218,6 +218,7 @@ kramdown:
 include: ["_pages"]
 exclude:
   - bin/
+  - docs/ # redesign hand-off notes and design sources, not part of the site
   - CONTRIBUTING.md
   - CUSTOMIZE.md
   - Dockerfile

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Haonan Feng — Projects (redesign)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;family=Noto+Serif+SC:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F7F5F0}
+a{color:#1F3B73;text-decoration:none}a:hover{color:#132851;text-decoration:underline}
+</style>
+</helmet>
+<div style="width: 1440px; height: 4000px; box-sizing: border-box; display: flex; flex-direction: column; background: #F7F5F0; color: #3E434D; font-family: 'IBM Plex Sans', 'Noto Sans SC', 'PingFang SC', sans-serif">
+
+<header style="height: 72px; flex-shrink: 0; box-sizing: border-box; padding: 0 96px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E3DFD6">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 10px; color: #15171C; text-decoration: none">
+<span style="font-family: 'Source Serif 4', serif; font-size: 21px; font-weight: 600; letter-spacing: -0.01em">Haonan Feng</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 14px; color: #5E636C">冯皓楠</span>
+</a>
+<nav aria-label="Main" style="display: flex; align-items: center; gap: 30px; font-size: 15px">
+<a href="Main.dc.html" style="color: #3E434D">About</a>
+<a href="New-Pubs.dc.html" style="color: #3E434D">Publications</a>
+<a href="#top" style="color: #15171C; font-weight: 500; border-bottom: 1.5px solid #15171C; padding-bottom: 3px">Projects</a>
+<a href="New-CV.dc.html" style="color: #3E434D">CV</a>
+<a href="New-Blog.dc.html" style="color: #3E434D">Blog</a>
+<a href="#repos" style="color: #3E434D">Repositories</a>
+<span style="width: 1px; height: 20px; background: #E3DFD6"></span>
+<a href="#zh" style="color: #3E434D; font-family: 'Noto Sans SC', sans-serif">中文</a>
+<button type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; border: 1px solid #E3DFD6; border-radius: 6px; background: #FFFFFF; color: #5E636C; font-family: inherit; font-size: 13px; cursor: pointer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+Search
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; border: 1px solid #E3DFD6; border-radius: 4px; padding: 1px 5px">⌘K</span>
+</button>
+<button type="button" aria-label="Switch to dark theme" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid #E3DFD6; border-radius: 6px; background: #FFFFFF; color: #3E434D; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+</button>
+</nav>
+</header>
+
+<section id="top" style="box-sizing: border-box; padding: 88px 96px 40px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #1F3B73">Selected work, 2016 – 2024</div>
+<h1 style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 64px; line-height: 1.05; font-weight: 500; letter-spacing: -0.02em; color: #15171C">Projects</h1>
+<p style="margin: 0; max-width: 820px; font-size: 19px; line-height: 1.6; color: #3E434D">Research, industry and open-source work, from verifying authentication protocols to confidential computing for large models.</p>
+</section>
+
+<div role="group" aria-label="Filter by type" style="box-sizing: border-box; margin: 0 96px; padding-bottom: 20px; border-bottom: 1px solid #15171C; display: flex; gap: 8px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="6">
+<button type="button" aria-pressed="{{f.pressed}}" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border-radius: 6px; font-family: inherit; font-size: 15px; cursor: pointer; background: {{f.bg}}; color: {{f.fg}}; border: 1px solid {{f.bd}}">{{f.label}}<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; opacity: 0.7">{{f.count}}</span></button>
+</sc-for>
+</div>
+
+<section aria-labelledby="fido-h" style="box-sizing: border-box; margin: 48px 96px 0; padding: 44px 48px; background: #FFFFFF; border: 1px solid #E3DFD6; border-radius: 10px; display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 64px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; gap: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 12px">
+<span style="color: #1F3B73; letter-spacing: 0.06em; text-transform: uppercase">Featured · Research · NSFC-funded</span>
+<span style="color: #5E636C">2018.09 – 2020.03</span>
+</div>
+<h2 id="fido-h" style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 38px; line-height: 1.2; font-weight: 500; color: #15171C">Formal Analysis of the FIDO UAF Protocol</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3E434D">FIDO UAF replaces passwords with biometric authentication, but had never been analyzed comprehensively. This project built a general method for formally analyzing such protocols, and an open-source tool that automates it.</p>
+<ul style="margin: 10px 0 0; padding-left: 18px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; row-gap: 12px; font-size: 15px; line-height: 1.65; color: #3E434D">
+<sc-for list="{{fidoWork}}" as="w" hint-placeholder-count="6">
+<li>{{w.text}}</li>
+</sc-for>
+</ul>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px">
+<a href="New-Pubs.dc.html" style="display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border: 1px solid #E3DFD6; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: #1F3B73">NDSS 2021 PAPER</a>
+<a href="New-Pubs.dc.html" style="display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border: 1px solid #E3DFD6; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: #1F3B73">IEEE TDSC PAPER</a>
+<a href="https://github.com/CactiLab/UAFVerif" style="display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border: 1px solid #E3DFD6; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: #1F3B73">UAFVERIF ON GITHUB</a>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; border-left: 1px solid #E3DFD6; padding-left: 40px">
+<sc-for list="{{fidoStats}}" as="s" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 18px 0; border-top: {{s.divider}}">
+<span style="font-family: 'Source Serif 4', serif; font-size: 40px; line-height: 1; font-weight: 500; color: #15171C">{{s.big}}</span>
+<span style="font-size: 14px; line-height: 1.5; color: #5E636C">{{s.small}}</span>
+</div>
+</sc-for>
+<div style="padding-top: 18px; border-top: 1px solid #E3DFD6; font-size: 14px; line-height: 1.7; color: #3E434D">NDSS 2021 · IEEE TDSC · CNNVD-202005-1219 (medium) · InForSec 2022 talk · book chapter</div>
+</div>
+</section>
+
+<section style="box-sizing: border-box; padding: 88px 96px 0; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #15171C">
+<h2 style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 34px; font-weight: 500; color: #15171C">At Ant Group</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5E636C">2021 – 2024 · Cybersecurity Engineer</span>
+</div>
+<div style="margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<sc-for list="{{ant}}" as="j" hint-placeholder-count="5">
+<article style="display: flex; flex-direction: column; gap: 10px; padding: 30px 32px; background: #FFFFFF; border: 1px solid #E3DFD6; border-radius: 8px">
+<div style="display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px">
+<span style="color: #1F3B73; letter-spacing: 0.06em; text-transform: uppercase">{{j.tag}}</span>
+<span style="color: #5E636C">{{j.period}}</span>
+</div>
+<h3 style="margin: 4px 0 0; font-family: 'Source Serif 4', serif; font-size: 25px; line-height: 1.3; font-weight: 500; color: #15171C">{{j.title}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #5E636C">{{j.context}}</p>
+<ul style="margin: 6px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.65; color: #3E434D">
+<sc-for list="{{j.work}}" as="w" hint-placeholder-count="3">
+<li>{{w.text}}</li>
+</sc-for>
+</ul>
+</article>
+</sc-for>
+<article style="display: flex; flex-direction: column; gap: 10px; padding: 30px 32px; background: #15171C; border-radius: 8px; color: #E9E6DF">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B8DA">Outputs at Ant Group</span>
+<sc-for list="{{outputs}}" as="o" hint-placeholder-count="5">
+<div style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 12px 0; border-top: 1px solid #2E323B">
+<span style="font-family: 'Source Serif 4', serif; font-size: 30px; line-height: 1; color: #FFFFFF">{{o.big}}</span>
+<span style="font-size: 15px; line-height: 1.55; color: #D6D3CC">{{o.text}}</span>
+</div>
+</sc-for>
+</article>
+</div>
+</section>
+
+<section style="box-sizing: border-box; padding: 88px 96px 96px; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #15171C">
+<h2 style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 34px; font-weight: 500; color: #15171C">Competitions, coursework &amp; side projects</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5E636C">2016 – 2024</span>
+</div>
+<div style="margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<sc-for list="{{earlier}}" as="j" hint-placeholder-count="4">
+<article style="display: flex; flex-direction: column; gap: 10px; padding: 30px 32px; border: 1px solid #E3DFD6; border-radius: 8px">
+<div style="display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px">
+<span style="color: #1F3B73; letter-spacing: 0.06em; text-transform: uppercase">{{j.tag}}</span>
+<span style="color: #5E636C">{{j.period}}</span>
+</div>
+<h3 style="margin: 4px 0 0; font-family: 'Source Serif 4', serif; font-size: 23px; line-height: 1.3; font-weight: 500; color: #15171C">{{j.title}}</h3>
+<ul style="margin: 6px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.65; color: #3E434D">
+<sc-for list="{{j.work}}" as="w" hint-placeholder-count="3">
+<li>{{w.text}}</li>
+</sc-for>
+</ul>
+<sc-if value="{{j.award}}" hint-placeholder-val="{{true}}">
+<span style="align-self: flex-start; margin-top: 6px; display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 15px; background: #EEF1F7; font-size: 13px; color: #1F3B73">{{j.award}}</span>
+</sc-if>
+</article>
+</sc-for>
+</div>
+</section>
+
+<div style="flex-grow: 1"></div>
+
+<footer style="flex-shrink: 0; box-sizing: border-box; padding: 36px 96px; border-top: 1px solid #E3DFD6; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #5E636C">
+<span>© 2026 Haonan Feng · 冯皓楠</span>
+<div style="display: flex; gap: 24px">
+<a href="mailto:fenghaonan222@gmail.com">Email</a>
+<a href="https://scholar.google.com/citations?user=ruPrB9wAAAAJ">Google Scholar</a>
+<a href="https://orcid.org/0009-0002-0140-8342">ORCID</a>
+<a href="https://github.com/fy222fy">GitHub</a>
+</div>
+<span>Built with Jekyll · Hosted on GitHub Pages</span>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const btn = (on) => (on ? { bg: '#15171C', fg: '#F7F5F0', bd: '#15171C' } : { bg: 'transparent', fg: '#15171C', bd: '#CFCAC0' });
+    const T = (xs) => xs.map((text) => ({ text }));
+    const div = (x, i) => ({ ...x, divider: i === 0 ? '0' : '1px solid #E3DFD6' });
+    return {
+      filters: [
+        { label: 'All', count: '10', pressed: 'true', ...btn(true) },
+        { label: 'Research', count: '1', pressed: 'false', ...btn(false) },
+        { label: 'Industry', count: '4', pressed: 'false', ...btn(false) },
+        { label: 'Open source', count: '1', pressed: 'false', ...btn(false) },
+        { label: 'Competitions', count: '2', pressed: 'false', ...btn(false) },
+        { label: 'Other', count: '2', pressed: 'false', ...btn(false) }
+      ],
+      fidoWork: T([
+        'Extracted the security goals and assumptions of UAF from 500+ pages of standards, and modeled confidentiality, authentication and unlinkability.',
+        'Proposed a way to model inter-process communication inside a device, distinct from how network protocols are modeled.',
+        'Proposed a minimal-assumption analysis method and built the open-source verifier UAFVerif, verifying 400,000+ protocol scenarios.',
+        'Found and classified 4 classes of attacks covering all known attacks, and the minimal assumptions under which UAF is secure.',
+        'Analyzed 1,856 payment-related apps: 42 apps using UAF carried 2 classes of risk; demonstrated arbitrary-amount transfer attacks on 2 of them.',
+        'Found a bug in the ProVerif verifier and contributed the fix.'
+      ]),
+      fidoStats: [
+        { big: '500+', small: 'pages of FIDO specifications formalized' },
+        { big: '400,000+', small: 'protocol scenarios verified automatically' },
+        { big: '4', small: 'classes of attacks, covering all known ones' },
+        { big: '1,856', small: 'payment apps analyzed; 42 at risk' }
+      ].map(div),
+      ant: [
+        { tag: 'Product + research', period: '2024.02 – 2024.05', title: 'Confidential LLM Inference in TEEs', context: 'SecretFlow Cloud (2024) deploys models inside trusted execution environments, so that neither the model nor users’ queries are exposed to the hosting platform.', work: T([
+          'Designed the authentication flow between the user platform and cloud TEEs, and key generation and encrypted transport based on remote attestation.',
+          'Deployed LLMs in SGX and HyperEnclave with Occlum, Ant Group’s open-source TEE OS.',
+          'Built the path in which queries are encrypted on the platform, decrypted and computed inside the TEE, and returned encrypted.'
+        ]) },
+        { tag: 'Product + research', period: '2024.02 – 2024.05', title: 'Federated Fine-tuning of LLMs Across Institutions', context: 'Joint training or fine-tuning of large models across institutions, where both model providers and data providers need strong privacy guarantees.', work: T([
+          'Designed a federated-learning architecture for training and fine-tuning large models.',
+          'Validated federated LLM fine-tuning with Accelerate, DeepSpeed and PyTorch, measuring performance and usability.'
+        ]) },
+        { tag: 'Open source · SecretFlow', period: '2023.06 – 2024.03', title: 'Federated Learning AutoAttack', context: 'Many attack and defense algorithms exist for federated learning, but they are hard to apply in practice.', work: T([
+          'Designed an automated attack-and-defense framework that searches hyperparameters with Ray (1 patent).',
+          'Implemented mainstream ML models and state-of-the-art attacks and defenses, producing benchmarks across models and scenarios.',
+          'Open-sourced it in SecretFlow, presented it in a Bilibili livestream and promoted it to 3 universities.'
+        ]) },
+        { tag: 'Product + algorithms', period: '2022.01 – 2023.06', title: 'Trusted-Environment-based Cryptographic Computing (TECC)', context: 'Heterogeneous TEEs run in one LAN together with MPC: faster than MPC over public networks, and more secure than a single TEE.', work: T([
+          'Proved the privacy of the semi-honest ABY3 protocol under a malicious model, after comparing MPC algorithms.',
+          'Implemented ABY3 operators and optimized vector XOR, matrix dot product and sorting (4 patents).',
+          'Adapted operators to SGX and HyperEnclave, deployed to the cloud and onboarded 1 business application.'
+        ]) },
+        { tag: 'Product', period: '2021.06 – 2021.09', title: 'Large Object Storage for OceanBase', context: 'OceanBase’s LSM-tree architecture did not support large objects (LOB), and replicas store them at different physical addresses.', work: T([
+          'Flushed LOB data to disk in real time on insert and update.',
+          'Designed a virtual file system that hides physical addresses from the database layer, keeping replicas strongly consistent.',
+          'Used tiered indexing to support TB-scale LOB storage.'
+        ]) }
+      ],
+      outputs: [
+        { big: '5', text: 'Chinese invention patents in MPC and distributed computing' },
+        { big: '1', text: 'Software copyright: Ant TECC engine system (2022SR1504853)' },
+        { big: '1', text: 'CAICT MPC security evaluation certificate for TECC (IY2022102700)' },
+        { big: '1', text: 'Trusted Encrypted Computing white paper, co-written' },
+        { big: '1', text: 'Open-source framework in SecretFlow' }
+      ],
+      earlier: [
+        { tag: 'Competition', period: '2018.11', title: 'Windows Login with Secure Phone Collaboration', award: 'Special Prize · 4th National Cryptography Technology Competition', work: T([
+          'Unlocks the computer when its owner arrives and locks it when they leave, over Bluetooth.',
+          'Designed the Bluetooth protocol, implemented Chinese national (SM) algorithms with OpenSSL, and proved the protocol secure by formal analysis.',
+          'Built the C# server and the Windows app; filed 1 patent (CN110717177A); led the team and the final presentation.'
+        ]) },
+        { tag: 'Competition', period: '2017.05', title: 'Keyper: Cross-platform Password Manager with Fingerprint', award: 'First Prize · BUPT Innovation Practice; Second Prize · 10th CISCN', work: T([
+          'Tiered password management on top of Windows Key Container.',
+          'Adapted a fingerprint USB key so that stored keys unlock with a fingerprint.',
+          'Led the team; the results were adopted by a company.'
+        ]) },
+        { tag: 'Coursework & self-study', period: '2016 – 2019', title: 'Encrypted Cloud Drive, Messaging and Backup Systems', award: '', work: T([
+          'Encrypted cloud drive server: SM-algorithm encryption at rest, concurrent connections, heartbeats, instant upload and resumable transfer.',
+          'Encrypted instant messaging with client/server authentication and peer-to-peer messaging; a cloud backup system with rollback.',
+          'A face-recognition library management site with Flask and MySQL.'
+        ]) },
+        { tag: 'Side project', period: '2023 – 2024', title: 'AI Quantitative Investment Framework', award: '', work: T([
+          'A quantitative investment framework that supports multiple kinds of financial products.',
+          'Uses AI and large models for stock selection and asset allocation, and connects to live trading.'
+        ]) }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

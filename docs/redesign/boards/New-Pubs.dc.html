@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Haonan Feng — Publications (redesign)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;family=Noto+Serif+SC:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F7F5F0}
+a{color:#1F3B73;text-decoration:none}a:hover{color:#132851;text-decoration:underline}
+</style>
+</helmet>
+<div style="width: 1440px; height: 3100px; box-sizing: border-box; display: flex; flex-direction: column; background: #F7F5F0; color: #3E434D; font-family: 'IBM Plex Sans', 'Noto Sans SC', 'PingFang SC', sans-serif">
+
+<header style="height: 72px; flex-shrink: 0; box-sizing: border-box; padding: 0 96px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E3DFD6">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 10px; color: #15171C; text-decoration: none">
+<span style="font-family: 'Source Serif 4', serif; font-size: 21px; font-weight: 600; letter-spacing: -0.01em">Haonan Feng</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 14px; color: #5E636C">冯皓楠</span>
+</a>
+<nav aria-label="Main" style="display: flex; align-items: center; gap: 32px; font-size: 15px">
+<a href="Main.dc.html" style="color: #3E434D">About</a>
+<a href="#top" style="color: #15171C; font-weight: 500; border-bottom: 1.5px solid #15171C; padding-bottom: 3px">Publications</a>
+<a href="New-CV.dc.html" style="color: #3E434D">CV</a>
+<a href="New-Blog.dc.html" style="color: #3E434D">Blog</a>
+<a href="#repos" style="color: #3E434D">Repositories</a>
+<a href="#news" style="color: #3E434D">News</a>
+<span style="width: 1px; height: 20px; background: #E3DFD6"></span>
+<a href="#zh" style="color: #3E434D; font-family: 'Noto Sans SC', sans-serif">中文</a>
+<button type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; border: 1px solid #E3DFD6; border-radius: 6px; background: #FFFFFF; color: #5E636C; font-family: inherit; font-size: 13px; cursor: pointer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+Search
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; border: 1px solid #E3DFD6; border-radius: 4px; padding: 1px 5px">⌘K</span>
+</button>
+<button type="button" aria-label="Switch to dark theme" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid #E3DFD6; border-radius: 6px; background: #FFFFFF; color: #3E434D; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+</button>
+</nav>
+</header>
+
+<section id="top" style="box-sizing: border-box; padding: 96px 96px 48px; display: flex; justify-content: space-between; align-items: flex-end; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #1F3B73">Research output</div>
+<h1 style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 60px; line-height: 1.05; font-weight: 500; letter-spacing: -0.02em; color: #15171C">Publications</h1>
+<p style="margin: 0; max-width: 680px; font-size: 18px; line-height: 1.6; color: #3E434D">Peer-reviewed papers, Chinese invention patents and a vulnerability disclosure, newest first.</p>
+</div>
+<div style="display: flex; gap: 24px; font-size: 15px; padding-bottom: 6px">
+<a href="https://scholar.google.com/citations?user=ruPrB9wAAAAJ">Google Scholar →</a>
+<a href="https://orcid.org/0009-0002-0140-8342">ORCID →</a>
+</div>
+</section>
+
+<div style="box-sizing: border-box; margin: 0 96px; padding-bottom: 20px; border-bottom: 1px solid #15171C; display: flex; justify-content: space-between; align-items: center; gap: 24px">
+<div role="group" aria-label="Filter by type" style="display: flex; gap: 8px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="4">
+<button type="button" aria-pressed="{{f.pressed}}" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border-radius: 6px; font-family: inherit; font-size: 15px; cursor: pointer; background: {{f.bg}}; color: {{f.fg}}; border: 1px solid {{f.bd}}">{{f.label}}<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; opacity: 0.7">{{f.count}}</span></button>
+</sc-for>
+</div>
+<label style="display: flex; align-items: center; gap: 10px; width: 360px; height: 44px; box-sizing: border-box; padding: 0 14px; border: 1px solid #CFCAC0; border-radius: 6px; background: #FFFFFF; color: #5E636C">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search publications</span>
+<input type="search" placeholder="Search title, author or venue" style="flex-grow: 1; border: 0; outline: 0; background: transparent; font-family: inherit; font-size: 15px; color: #15171C">
+</label>
+</div>
+
+<section aria-label="Papers" style="box-sizing: border-box; padding: 8px 96px 0">
+<sc-for list="{{years}}" as="y" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 20px; padding-top: 40px">
+<span style="font-family: 'Source Serif 4', serif; font-size: 30px; color: #15171C">{{y.year}}</span>
+<span style="flex-grow: 1; height: 1px; background: #CFCAC0"></span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C">{{y.count}}</span>
+</div>
+<sc-for list="{{y.items}}" as="p" hint-placeholder-count="2">
+<article style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 64px; padding: 26px 0; border-top: {{p.divider}}">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 24px; line-height: 1.35; font-weight: 500; color: #15171C">{{p.title}}</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3E434D">{{p.a1}}<strong style="font-weight: 600; color: #15171C; text-decoration: underline; text-decoration-color: #C9D2E6; text-underline-offset: 3px">{{p.me}}</strong><sup style="font-size: 10px">{{p.meSup}}</sup>{{p.a2}}</p>
+<p style="margin: 0; font-size: 15px; font-style: italic; color: #5E636C">{{p.where}}</p>
+<sc-if value="{{p.abstract}}" hint-placeholder-val="{{false}}">
+<div style="margin-top: 8px; padding: 18px 20px; background: #FFFFFF; border: 1px solid #E3DFD6; border-radius: 6px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #5E636C">Abstract</div>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.7; color: #3E434D">{{p.abstract}}</p>
+</div>
+</sc-if>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 4px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; color: #1F3B73; background: #EEF1F7; border: 1px solid #C9D2E6; border-radius: 3px; padding: 4px 8px">{{p.venue}}</span>
+<span style="font-size: 14px; color: #5E636C">{{p.kind}}</span>
+</div>
+<sc-if value="{{p.hasLinks}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{p.links}}" as="l" hint-placeholder-count="3">
+<a href="{{l.href}}" style="display: inline-flex; align-items: center; height: 30px; padding: 0 10px; border: 1px solid #E3DFD6; border-radius: 4px; background: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: #1F3B73; text-decoration: none">{{l.label}}</a>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</article>
+</sc-for>
+</div>
+</sc-for>
+</section>
+
+<section aria-labelledby="talks-h" style="box-sizing: border-box; padding: 96px 96px 0">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 20px; border-bottom: 1px solid #15171C">
+<h2 id="talks-h" style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 34px; font-weight: 500; color: #15171C">Talks &amp; book chapters</h2>
+<span style="font-size: 15px; color: #5E636C">2 items</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px">
+<sc-for list="{{talks}}" as="t" hint-placeholder-count="2">
+<article style="display: flex; flex-direction: column; gap: 8px; padding: 26px 28px; background: #FFFFFF; border: 1px solid #E3DFD6; border-radius: 8px">
+<div style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 12px">
+<span style="color: #1F3B73; letter-spacing: 0.06em; text-transform: uppercase">{{t.kind}}</span>
+<span style="color: #5E636C">{{t.year}}</span>
+</div>
+<h3 style="margin: 2px 0 0; font-family: 'Source Serif 4', serif; font-size: 22px; line-height: 1.35; font-weight: 500; color: #15171C">{{t.title}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5E636C">{{t.where}}</p>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section aria-labelledby="patents-h" style="box-sizing: border-box; padding: 96px 96px 0">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 20px; border-bottom: 1px solid #15171C">
+<h2 id="patents-h" style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 34px; font-weight: 500; color: #15171C">Patents, software &amp; disclosures</h2>
+<span style="font-size: 15px; color: #5E636C">6 invention patents · 1 software copyright · 1 evaluation certificate · 1 CNNVD vulnerability</span>
+</div>
+<table style="width: 100%; border-collapse: collapse; font-size: 15px">
+<thead>
+<tr style="text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5E636C">
+<th scope="col" style="padding: 14px 0; width: 80px; font-weight: 500">Year</th>
+<th scope="col" style="padding: 14px 24px 14px 0; width: 170px; font-weight: 500">Type</th>
+<th scope="col" style="padding: 14px 24px 14px 0; font-weight: 500">Title</th>
+<th scope="col" style="padding: 14px 24px 14px 0; width: 330px; font-weight: 500">Inventors / holder</th>
+<th scope="col" style="padding: 14px 0; width: 170px; font-weight: 500">Number</th>
+</tr>
+</thead>
+<tbody>
+<sc-for list="{{patents}}" as="t" hint-placeholder-count="9">
+<tr style="border-top: 1px solid #E3DFD6; vertical-align: top">
+<td style="padding: 18px 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5E636C">{{t.year}}</td>
+<td style="padding: 18px 24px 18px 0"><span style="display: inline-block; font-size: 13px; line-height: 1.4; color: {{t.typeFg}}; background: {{t.typeBg}}; border-radius: 3px; padding: 3px 8px">{{t.type}}</span></td>
+<td style="padding: 18px 24px 18px 0; font-family: 'Noto Serif SC', serif; font-size: 16px; line-height: 1.6; color: #15171C">{{t.title}}</td>
+<td style="padding: 18px 24px 18px 0; line-height: 1.6; color: #3E434D">{{t.i1}}<strong style="font-weight: 600; color: #15171C">{{t.me}}</strong>{{t.i2}}</td>
+<td style="padding: 18px 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #3E434D">{{t.no}}</td>
+</tr>
+</sc-for>
+</tbody>
+</table>
+</section>
+
+<div style="flex-grow: 1"></div>
+
+<footer style="flex-shrink: 0; box-sizing: border-box; padding: 36px 96px; border-top: 1px solid #E3DFD6; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #5E636C">
+<span>© 2026 Haonan Feng · 冯皓楠</span>
+<div style="display: flex; gap: 24px">
+<a href="mailto:fenghaonan222@gmail.com">Email</a>
+<a href="https://scholar.google.com/citations?user=ruPrB9wAAAAJ">Google Scholar</a>
+<a href="https://orcid.org/0009-0002-0140-8342">ORCID</a>
+<a href="https://github.com/fy222fy">GitHub</a>
+</div>
+<span>Built with Jekyll · Hosted on GitHub Pages</span>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const btn = (on) => (on ? { bg: '#15171C', fg: '#F7F5F0', bd: '#15171C' } : { bg: 'transparent', fg: '#15171C', bd: '#CFCAC0' });
+    const L = (label, href) => ({ label, href });
+    const item = (p, i) => ({ ...p, divider: i === 0 ? '0' : '1px solid #E3DFD6', hasLinks: p.links.length > 0, abstract: p.abstract || '' });
+    const years = [
+      { year: '2025', items: [
+        { venue: 'CCS 2025', kind: 'Conference paper', title: '5G-RNAKA: A Random Number-based Authentication and Key Agreement Protocol for 5G Systems', a1: 'Hui Li, Haotian Li, Chi Ma, Jingjing Guan, Junchi Zeng, ', me: 'Haonan Feng', meSup: '', a2: ', Ziming Zhao', where: 'Proceedings of the 2025 ACM SIGSAC Conference on Computer and Communications Security, pp. 1634–1648', links: [] }
+      ] },
+      { year: '2023', items: [
+        { venue: 'TDSC 2023', kind: 'Journal article', title: 'FIDO Gets Verified: A Formal Analysis of the Universal Authentication Framework Protocol', a1: '', me: 'Haonan Feng', meSup: '*†', a2: ', Jingjing Guan, Hui Li*, Xuesong Pan, Ziming Zhao', where: 'IEEE Transactions on Dependable and Secure Computing, vol. 20, no. 5, pp. 4291–4310', links: [L('ABSTRACT', '#abs'), L('DOI', 'https://doi.org/10.1109/TDSC.2022.3217259'), L('IEEE XPLORE', 'https://ieeexplore.ieee.org/abstract/document/9930658')] }
+      ] },
+      { year: '2022', items: [
+        { venue: '密码学报 2022', kind: 'Journal article', title: 'Formal Analysis of Third-party Payment Protocol in Android Applications', a1: 'Hui Li*†, Liyan Fan, Xuesong Pan, ', me: 'Haonan Feng', meSup: '', a2: '', where: 'Journal of Cryptologic Research, vol. 9, no. 1, pp. 113–125', links: [L('ABSTRACT', '#abs'), L('DOI', 'https://doi.org/10.13868/j.cnki.jcr.000507')] }
+      ] },
+      { year: '2021', items: [
+        { venue: 'NDSS 2021', kind: 'Conference paper', title: 'A Formal Analysis of the FIDO UAF Protocol', a1: '', me: 'Haonan Feng', meSup: '*†', a2: ', Hui Li*, Xuesong Pan, Ziming Zhao', where: 'Network and Distributed System Security Symposium (NDSS), 2021', abstract: 'The FIDO protocol suite aims at allowing users to log in to remote services with a local and trusted authenticator. In this paper, we present a comprehensive and formal verification of the FIDO UAF protocol by formalizing its security assumptions and goals and modeling the protocol under different scenarios in ProVerif. Our analysis identifies the minimal security assumptions required for each of the security goals of FIDO UAF to hold. We confirm previously manually discovered vulnerabilities in an automated way and disclose several new attacks.', links: [L('HIDE ABSTRACT', '#abs'), L('PDF', 'https://www.ndss-symposium.org/wp-content/uploads/ndss2021_4A-2_24363_paper.pdf'), L('DOI', 'https://doi.org/10.14722/ndss.2021.24363'), L('VIDEO', 'https://www.youtube.com/watch?v=H-ibGIIOwFo'), L('CODE', 'https://github.com/CactiLab/UAFVerif')] }
+      ] },
+      { year: '2020', items: [
+        { venue: 'WCMC 2020', kind: 'Journal article', title: 'Authenticator Rebinding Attack of the UAF Protocol on Mobile Devices', a1: 'Hui Li*†, Xuesong Pan, Xinluo Wang, ', me: 'Haonan Feng', meSup: '', a2: ', Chengjie Shi', where: 'Wireless Communications and Mobile Computing, 2020, Article 8819790', links: [L('ABSTRACT', '#abs'), L('PDF', 'https://onlinelibrary.wiley.com/doi/pdf/10.1155/2020/8819790'), L('DOI', 'https://doi.org/10.1155/2020/8819790')] }
+      ] }
+    ].map((y) => ({ ...y, count: y.items.length + (y.items.length === 1 ? ' paper' : ' papers'), items: y.items.map(item) }));
+    return {
+      filters: [
+        { label: 'All', count: '16', pressed: 'true', ...btn(true) },
+        { label: 'Papers', count: '5', pressed: 'false', ...btn(false) },
+        { label: 'Talks & chapters', count: '2', pressed: 'false', ...btn(false) },
+        { label: 'Patents', count: '6', pressed: 'false', ...btn(false) },
+        { label: 'Software & disclosures', count: '3', pressed: 'false', ...btn(false) }
+      ],
+      talks: [
+        { kind: 'Invited talk', year: '2022', title: 'Formal Analysis of the FIDO UAF Protocol', where: 'InForSec 2022 (International Forum for Security Research), Tsinghua University' },
+        { kind: 'Book chapter', year: '2022', title: 'FIDO UAF 协议的形式化分析', where: 'Included in International Academic Research Progress in Cybersecurity (网络安全国际学术研究进展), 2022' }
+      ],
+      years,
+      patents: [
+        { year: '2024', kind: 'pub', title: '数据处理方法、装置和分布式数据处理系统', i1: '', me: '冯皓楠', i2: '，胡东文，张兴盟，胡晓龙，赵采贝', no: 'CN118227316A' },
+        { year: '2023', kind: 'pub', title: '一种程序执行的方法、装置、存储介质及电子设备', i1: '潘无穷，韦韬，', me: '冯皓楠', i2: '，钱中天，李婷婷，王泽铭', no: 'CN116108498A' },
+        { year: '2023', kind: 'pub', title: '一种保护数据隐私的多方联合进行数据处理的方法及装置', i1: '潘无穷，', me: '冯皓楠', i2: '，钱中天，李天一，胡涌涛', no: 'CN116186760A' },
+        { year: '2022', kind: 'pub', title: '一种数据排序方法、装置、设备及可读存储介质', i1: '潘无穷，韦韬，', me: '冯皓楠', i2: '，李婷婷，李天一，钱中天', no: 'CN116166216A' },
+        { year: '2022', kind: 'pub', title: '保护数据隐私的双方联合进行数据处理的方法及装置', i1: '潘无穷，', me: '冯皓楠', i2: '，韦韬，李婷婷，卫振强', no: 'CN113987559B' },
+        { year: '2022', kind: 'software', title: '蚂蚁可信密态计算引擎系统', i1: '—', me: '', i2: '', no: '2022SR1504853' },
+        { year: '2022', kind: 'cert', title: '信通院多方安全计算安全评测证书：可信密态计算系统', i1: '—', me: '', i2: '', no: 'IY2022102700' },
+        { year: '2020', kind: 'pub', title: '一种利用移动终端实时安全解锁计算机的方法', i1: '李晖，潘雪松，', me: '冯皓楠', i2: '，曾扬', no: 'CN110717177A' },
+        { year: '2020', kind: 'vuln', title: '某产品代码问题漏洞（中危）', i1: '', me: '冯皓楠', i2: '', no: 'CNNVD-202005-1219' }
+      ].map((t) => ({ ...t, ...({
+        pub: { type: 'Invention patent', typeFg: '#1F3B73', typeBg: '#EEF1F7' },
+        software: { type: 'Software copyright', typeFg: '#3E434D', typeBg: '#ECE9E2' },
+        cert: { type: 'Evaluation certificate', typeFg: '#3E434D', typeBg: '#ECE9E2' },
+        vuln: { type: 'Vulnerability', typeFg: '#8A2B1F', typeBg: '#F6E7E3' }
+      })[t.kind] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

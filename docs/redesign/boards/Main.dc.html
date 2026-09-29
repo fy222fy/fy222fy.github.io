@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Haonan Feng — Home (redesign)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;family=Noto+Serif+SC:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#F7F5F0}
+a{color:#1F3B73;text-decoration:none}a:hover{color:#132851;text-decoration:underline}
+</style>
+</helmet>
+<div style="width: 1440px; height: 4200px; box-sizing: border-box; display: flex; flex-direction: column; background: #F7F5F0; color: #3E434D; font-family: 'IBM Plex Sans', 'Noto Sans SC', 'PingFang SC', sans-serif">
+
+<header style="height: 72px; flex-shrink: 0; box-sizing: border-box; padding: 0 96px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E3DFD6">
+<a href="#top" style="display: flex; align-items: baseline; gap: 10px; color: #15171C; text-decoration: none">
+<span style="font-family: 'Source Serif 4', serif; font-size: 21px; font-weight: 600; letter-spacing: -0.01em">Haonan Feng</span>
+<span style="font-family: 'Noto Serif SC', serif; font-size: 14px; color: #5E636C">冯皓楠</span>
+</a>
+<nav aria-label="Main" style="display: flex; align-items: center; gap: 30px; font-size: 15px">
+<a href="#top" style="color: #15171C; font-weight: 500; border-bottom: 1.5px solid #15171C; padding-bottom: 3px">About</a>
+<a href="New-Pubs.dc.html" style="color: #3E434D">Publications</a>
+<a href="New-Projects.dc.html" style="color: #3E434D">Projects</a>
+<a href="New-CV.dc.html" style="color: #3E434D">CV</a>
+<a href="New-Blog.dc.html" style="color: #3E434D">Blog</a>
+<a href="#repos" style="color: #3E434D">Repositories</a>
+<span style="width: 1px; height: 20px; background: #E3DFD6"></span>
+<a href="New-Mobile.dc.html" style="color: #3E434D; font-family: 'Noto Sans SC', sans-serif">中文</a>
+<button type="button" style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 12px; border: 1px solid #E3DFD6; border-radius: 6px; background: #FFFFFF; color: #5E636C; font-family: inherit; font-size: 13px; cursor: pointer">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+Search
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; border: 1px solid #E3DFD6; border-radius: 4px; padding: 1px 5px">⌘K</span>
+</button>
+<button type="button" aria-label="Switch to dark theme" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid #E3DFD6; border-radius: 6px; background: #FFFFFF; color: #3E434D; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+</button>
+</nav>
+</header>
+
+<section id="top" style="box-sizing: border-box; padding: 80px 96px 64px; display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 96px; align-items: center">
+<div style="display: flex; flex-direction: column">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #1F3B73">Ph.D. Student · Cyberspace Security · BUPT</div>
+<h1 style="margin: 20px 0 0; font-family: 'Source Serif 4', serif; font-size: 88px; line-height: 1; font-weight: 500; letter-spacing: -0.03em; color: #15171C">Haonan Feng</h1>
+<div style="margin-top: 12px; font-family: 'Noto Serif SC', serif; font-size: 26px; font-weight: 500; color: #5E636C">冯皓楠</div>
+<p style="margin: 34px 0 0; max-width: 740px; font-size: 22px; line-height: 1.55; color: #2A2E36">I work on LLM security and formal analysis: using large language models to automate formal verification, and using formal methods to reason about the security of interacting AI agents. Before my Ph.D., I spent three years building confidential-computing systems at Ant Group.</p>
+<p style="margin: 20px 0 0; font-size: 16px; line-height: 1.65; color: #5E636C"><a href="https://scss.bupt.edu.cn/">School of Cyberspace Security</a>, <a href="https://www.bupt.edu.cn/">Beijing University of Posts and Telecommunications</a> · Beijing, China</p>
+<div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px">
+<a href="mailto:fenghaonan222@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 6px; background: #15171C; color: #F7F5F0; font-size: 15px; font-weight: 500; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+Email me
+</a>
+<sc-for list="{{profiles}}" as="pr" hint-placeholder-count="4">
+<a href="{{pr.href}}" style="display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 18px; border-radius: 6px; border: 1px solid #CFCAC0; color: #15171C; font-size: 15px; text-decoration: none">
+{{pr.label}}
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg>
+</a>
+</sc-for>
+</div>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 14px">
+<img src="/_blob/f4aed8ebed0a78abeaa3aed3c8e02651" alt="Portrait of Haonan Feng" style="width: 420px; height: 520px; object-fit: cover; object-position: 50% 12%; border-radius: 4px; display: block">
+<figcaption style="display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C"><span>Beijing, China</span><span>fenghaonan222@gmail.com</span></figcaption>
+</figure>
+</section>
+
+<section aria-label="Highlights" style="box-sizing: border-box; margin: 0 96px; padding: 32px 0; border-top: 1px solid #15171C; border-bottom: 1px solid #E3DFD6; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px">
+<sc-for list="{{facts}}" as="f" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: 'Source Serif 4', serif; font-size: 40px; line-height: 1; font-weight: 500; color: #15171C; letter-spacing: -0.02em">{{f.big}}</div>
+<div style="font-size: 14px; line-height: 1.5; color: #5E636C">{{f.small}}</div>
+</div>
+</sc-for>
+</section>
+
+<section style="box-sizing: border-box; padding: 80px 96px 0; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: baseline; gap: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C">01</span>
+<h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1F3B73">Research Interests</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px">
+<sc-for list="{{research}}" as="r" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 14px; padding-top: 22px; border-top: 1px solid #CFCAC0">
+<h3 style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 28px; font-weight: 500; color: #15171C">{{r.title}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3E434D">{{r.body}}</p>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="box-sizing: border-box; padding: 88px 96px 0; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #15171C">
+<div style="display: flex; align-items: baseline; gap: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C">02</span>
+<h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1F3B73">Selected Projects</h2>
+</div>
+<a href="New-Projects.dc.html" style="font-size: 14px">All projects →</a>
+</div>
+<div style="margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<sc-for list="{{projects}}" as="j" hint-placeholder-count="4">
+<article style="display: flex; flex-direction: column; gap: 12px; padding: 28px 30px; background: #FFFFFF; border: 1px solid #E3DFD6; border-radius: 8px">
+<div style="display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px">
+<span style="color: #1F3B73; letter-spacing: 0.06em; text-transform: uppercase">{{j.tag}}</span>
+<span style="color: #5E636C">{{j.period}}</span>
+</div>
+<h3 style="margin: 4px 0 0; font-family: 'Source Serif 4', serif; font-size: 25px; line-height: 1.3; font-weight: 500; color: #15171C">{{j.title}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.65; color: #3E434D">{{j.body}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px">
+<sc-for list="{{j.metrics}}" as="m" hint-placeholder-count="3">
+<span style="display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 15px; background: #EEF1F7; font-size: 13px; color: #1F3B73">{{m.label}}</span>
+</sc-for>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<div style="box-sizing: border-box; padding: 88px 96px 0; display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 72px; align-items: start">
+
+<section id="pubs" style="display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #15171C">
+<div style="display: flex; align-items: baseline; gap: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C">03</span>
+<h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1F3B73">Selected Publications</h2>
+</div>
+<a href="New-Pubs.dc.html" style="font-size: 14px">All publications →</a>
+</div>
+<sc-for list="{{pubs}}" as="p" hint-placeholder-count="4">
+<article style="display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 24px; padding: 26px 0; border-top: {{p.divider}}">
+<div><span style="display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; color: #1F3B73; background: #EEF1F7; border: 1px solid #C9D2E6; border-radius: 3px; padding: 5px 8px">{{p.venue}}</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: 'Source Serif 4', serif; font-size: 22px; line-height: 1.35; font-weight: 500; color: #15171C">{{p.title}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3E434D">{{p.a1}}<strong style="font-weight: 600; color: #15171C; text-decoration: underline; text-decoration-color: #C9D2E6; text-underline-offset: 3px">{{p.me}}</strong><sup style="font-size: 10px">{{p.meSup}}</sup>{{p.a2}}</p>
+<p style="margin: 0; font-size: 15px; font-style: italic; color: #5E636C">{{p.where}}</p>
+<sc-if value="{{p.hasLinks}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px">
+<sc-for list="{{p.links}}" as="l" hint-placeholder-count="3">
+<a href="{{l.href}}" style="display: inline-flex; align-items: center; height: 30px; padding: 0 10px; border: 1px solid #E3DFD6; border-radius: 4px; background: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: #1F3B73; text-decoration: none">{{l.label}}</a>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</article>
+</sc-for>
+<p style="margin: 0; padding-top: 20px; border-top: 1px solid #E3DFD6; font-size: 15px; color: #5E636C">Also: a journal paper in the Journal of Cryptologic Research, 6 Chinese invention patents and 1 CNNVD-listed vulnerability. <a href="New-Pubs.dc.html">See all →</a></p>
+</section>
+
+<aside id="news" style="display: flex; flex-direction: column; gap: 56px">
+<section style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid #15171C">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C">04</span>
+<h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1F3B73">News</h2>
+</div>
+<sc-for list="{{news}}" as="n" hint-placeholder-count="5">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 0; border-top: {{n.divider}}">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C">{{n.date}}</span>
+<span style="font-size: 15px; line-height: 1.6; color: #3E434D">{{n.text}}</span>
+</div>
+</sc-for>
+</section>
+<section style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid #15171C">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C">05</span>
+<h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1F3B73">Talks &amp; Writing</h2>
+</div>
+<sc-for list="{{talks}}" as="t" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 0; border-top: {{t.divider}}">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C">{{t.meta}}</span>
+<span style="font-size: 15px; line-height: 1.6; color: #15171C">{{t.title}}</span>
+<span style="font-size: 14px; line-height: 1.55; color: #5E636C">{{t.where}}</span>
+</div>
+</sc-for>
+</section>
+</aside>
+
+</div>
+
+<section id="cv" style="box-sizing: border-box; padding: 88px 96px 0; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid #15171C">
+<div style="display: flex; align-items: baseline; gap: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C">06</span>
+<h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1F3B73">Education &amp; Experience</h2>
+</div>
+<a href="New-CV.dc.html" style="font-size: 14px">Full CV →</a>
+</div>
+<ol style="margin: 32px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0">
+<sc-for list="{{timeline}}" as="e" hint-placeholder-count="4">
+<li style="display: flex; flex-direction: column; gap: 6px; padding-right: 32px">
+<div style="display: flex; align-items: center; margin-bottom: 16px">
+<span style="width: 12px; height: 12px; border-radius: 6px; background: {{e.dot}}; border: 2px solid #15171C; box-sizing: border-box; flex-shrink: 0"></span>
+<span style="flex-grow: 1; height: 1px; background: #CFCAC0; margin-right: -32px"></span>
+</div>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5E636C">{{e.period}}</span>
+<span style="margin-top: 4px; font-family: 'Source Serif 4', serif; font-size: 22px; font-weight: 500; color: #15171C">{{e.role}}</span>
+<span style="font-size: 15px; line-height: 1.5; color: #3E434D">{{e.org}}</span>
+<p style="margin: 6px 0 0; font-size: 14px; line-height: 1.65; color: #5E636C">{{e.body}}</p>
+</li>
+</sc-for>
+</ol>
+</section>
+
+<section style="box-sizing: border-box; padding: 88px 96px 96px; display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid #15171C">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C">07</span>
+<h2 style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #1F3B73">Honors</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 48px">
+<sc-for list="{{honors}}" as="h" hint-placeholder-count="6">
+<div style="display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-bottom: 1px solid #E3DFD6">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E636C; padding-top: 3px">{{h.year}}</span>
+<span style="font-size: 15px; line-height: 1.55; color: #15171C">{{h.text}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<div style="flex-grow: 1"></div>
+
+<footer style="flex-shrink: 0; box-sizing: border-box; padding: 36px 96px; border-top: 1px solid #E3DFD6; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #5E636C">
+<span>© 2026 Haonan Feng · 冯皓楠</span>
+<div style="display: flex; gap: 24px">
+<a href="mailto:fenghaonan222@gmail.com">Email</a>
+<a href="https://scholar.google.com/citations?user=ruPrB9wAAAAJ">Google Scholar</a>
+<a href="https://orcid.org/0009-0002-0140-8342">ORCID</a>
+<a href="https://github.com/fy222fy">GitHub</a>
+</div>
+<span>Built with Jekyll · Hosted on GitHub Pages</span>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const div = (x, i) => ({ ...x, divider: i === 0 ? '0' : '1px solid #E3DFD6' });
+    const pills = (xs) => xs.map((label) => ({ label }));
+    return {
+      profiles: [
+        { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=ruPrB9wAAAAJ' },
+        { label: 'ORCID', href: 'https://orcid.org/0009-0002-0140-8342' },
+        { label: 'GitHub', href: 'https://github.com/fy222fy' },
+        { label: 'CV (PDF)', href: '#cv-pdf' }
+      ],
+      facts: [
+        { big: '2', small: 'First-author papers at NDSS and IEEE TDSC' },
+        { big: '5 yrs', small: 'Of formal-analysis research, from undergraduate to Ph.D.' },
+        { big: '3 yrs', small: 'Security engineering at Ant Group' },
+        { big: '6', small: 'Chinese invention patents, plus 1 software copyright and 1 CAICT certificate' }
+      ],
+      research: [
+        { title: 'LLM Security', body: 'Security of large language models and of multi-agent AI systems, including formal reasoning about how groups of AI agents interact.' },
+        { title: 'LLM for Security', body: 'Using large language models to assist security analysis, in particular to automate formal modeling and protocol verification.' },
+        { title: 'Formal Analysis', body: 'Protocol verification with ProVerif and the applied pi-calculus, minimal-assumption analysis, and modeling inter-process communication on devices.' }
+      ],
+      projects: [
+        { tag: 'Research · NSFC-funded', period: '2018.09 – 2020.03', title: 'Formal Analysis of the FIDO UAF Protocol', body: 'A full formal model of FIDO UAF built from 500+ pages of specifications, a minimal-assumption verification method, and the open-source tool UAFVerif. Led to NDSS 2021, IEEE TDSC and a CNNVD vulnerability.', metrics: pills(['400,000+ scenarios verified', '4 attack classes', '1,856 payment apps analyzed']) },
+        { tag: 'Industry · Ant Group', period: '2024.02 – 2024.05', title: 'Confidential LLM Inference in TEEs', body: 'Part of the SecretFlow Cloud confidential computing platform for large models: user data stays encrypted end to end and is only decrypted inside a trusted execution environment.', metrics: pills(['Remote attestation', 'SGX · HyperEnclave', 'Occlum TEE OS']) },
+        { tag: 'Open source · SecretFlow', period: '2023.06 – 2024.03', title: 'Federated Learning AutoAttack', body: 'An automated attack-and-defense framework for federated learning that searches hyperparameters over existing algorithms to find the best practices, producing benchmarks across models and scenarios.', metrics: pills(['Ray distributed tuning', '1 patent', 'Promoted to 3 universities']) },
+        { tag: 'Industry · Ant Group', period: '2022.01 – 2023.06', title: 'Trusted-Environment-based Cryptographic Computing (TECC)', body: 'Heterogeneous TEEs combined with same-network MPC: more secure than a single TEE and faster than conventional MPC. Selected as one of the Top Ten Hardcore Technologies at the 5th Digital China Summit.', metrics: pills(['ABY3 operators', '4 patents', 'Software copyright · CAICT certificate']) }
+      ],
+      pubs: [
+        { venue: 'CCS 2025', title: '5G-RNAKA: A Random Number-based Authentication and Key Agreement Protocol for 5G Systems', a1: 'Hui Li, Haotian Li, Chi Ma, Jingjing Guan, Junchi Zeng, ', me: 'Haonan Feng', meSup: '', a2: ', Ziming Zhao', where: 'ACM Conference on Computer and Communications Security (CCS), 2025', links: [] },
+        { venue: 'TDSC 2023', title: 'FIDO Gets Verified: A Formal Analysis of the Universal Authentication Framework Protocol', a1: '', me: 'Haonan Feng', meSup: '*†', a2: ', Jingjing Guan, Hui Li*, Xuesong Pan, Ziming Zhao', where: 'IEEE Transactions on Dependable and Secure Computing, vol. 20, no. 5', links: [
+          { label: 'ABSTRACT', href: '#abstract' },
+          { label: 'DOI', href: 'https://doi.org/10.1109/TDSC.2022.3217259' },
+          { label: 'IEEE XPLORE', href: 'https://ieeexplore.ieee.org/abstract/document/9930658' }
+        ] },
+        { venue: 'NDSS 2021', title: 'A Formal Analysis of the FIDO UAF Protocol', a1: '', me: 'Haonan Feng', meSup: '*†', a2: ', Hui Li*, Xuesong Pan, Ziming Zhao', where: 'Network and Distributed System Security Symposium (NDSS), 2021', links: [
+          { label: 'ABSTRACT', href: '#abstract' },
+          { label: 'PDF', href: 'https://www.ndss-symposium.org/wp-content/uploads/ndss2021_4A-2_24363_paper.pdf' },
+          { label: 'DOI', href: 'https://doi.org/10.14722/ndss.2021.24363' },
+          { label: 'VIDEO', href: 'https://www.youtube.com/watch?v=H-ibGIIOwFo' },
+          { label: 'CODE', href: 'https://github.com/CactiLab/UAFVerif' }
+        ] },
+        { venue: 'WCMC 2020', title: 'Authenticator Rebinding Attack of the UAF Protocol on Mobile Devices', a1: 'Hui Li*†, Xuesong Pan, Xinluo Wang, ', me: 'Haonan Feng', meSup: '', a2: ', Chengjie Shi', where: 'Wireless Communications and Mobile Computing, 2020', links: [
+          { label: 'ABSTRACT', href: '#abstract' },
+          { label: 'PDF', href: 'https://onlinelibrary.wiley.com/doi/pdf/10.1155/2020/8819790' },
+          { label: 'DOI', href: 'https://doi.org/10.1155/2020/8819790' }
+        ] }
+      ].map((p, i) => ({ ...div(p, i), hasLinks: p.links.length > 0 })),
+      news: [
+        { date: 'Jun 2025', text: '"5G-RNAKA" accepted at ACM CCS 2025.' },
+        { date: 'Jul 2024', text: 'Ant Group launched its confidential computing platform for large models.' },
+        { date: 'Sep 2022', text: 'Ant Group released the Trusted Encrypted Computing white paper, which I co-wrote.' },
+        { date: 'Mar 2022', text: '"FIDO Gets Verified" accepted by IEEE TDSC.' },
+        { date: 'Mar 2021', text: '"A Formal Analysis of the FIDO UAF Protocol" accepted at NDSS 2021.' }
+      ].map(div),
+      talks: [
+        { meta: 'Talk · 2022', title: 'Formal analysis of the FIDO UAF protocol', where: 'InForSec 2022, Tsinghua University' },
+        { meta: 'Book chapter · 2022', title: 'Formal Analysis of the FIDO UAF Protocol', where: 'Included in International Academic Research Progress in Cybersecurity (网络安全国际学术研究进展)' },
+        { meta: 'Livestream', title: 'Federated learning AutoAttack in SecretFlow', where: 'Open-source release livestream on Bilibili' }
+      ].map(div),
+      timeline: [
+        { period: '2014 — 2018', role: 'B.S.', org: 'Beijing University of Posts and Telecommunications', body: 'Information Security. Special Prize at the 4th National Cryptography Technology Competition.', dot: '#F7F5F0' },
+        { period: '2018 — 2021', role: 'M.S.', org: 'School of Cyberspace Security, BUPT', body: 'Formal analysis of security protocols; first-author papers at NDSS 2021 and IEEE TDSC.', dot: '#F7F5F0' },
+        { period: '2021 — 2024', role: 'Cybersecurity Engineer', org: 'Ant Group', body: 'Confidential LLM computing, TEEs, federated learning and secure multi-party computation.', dot: '#F7F5F0' },
+        { period: '2024 — 2028 (expected)', role: 'Ph.D.', org: 'School of Cyberspace Security, BUPT', body: 'LLM security, LLM for security, and formal analysis.', dot: '#15171C' }
+      ],
+      honors: [
+        { year: '2019', text: 'National Scholarship' },
+        { year: '2018 – 2020', text: 'First-Class Scholarship, BUPT' },
+        { year: '2018', text: 'Outstanding Undergraduate Thesis, BUPT' },
+        { year: '2018', text: 'Special Prize, 4th National Cryptography Technology Competition' },
+        { year: '2018', text: 'Second Prize, 10th National College Student Information Security Contest' },
+        { year: '2017', text: 'First Prize, BUPT Innovation and Entrepreneurship Practice' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
