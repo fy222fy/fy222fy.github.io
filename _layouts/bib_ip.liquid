@@ -1,0 +1,17 @@
+---
+---
+{%- comment -%} One row of the patents, software and disclosures table. {%- endcomment -%}
+{%- assign t = site.data[site.active_lang].strings.publications -%}
+<div class="ip-row" id="{{ entry.key }}">
+  <span class="year">{{ entry.year }}</span>
+  <span class="type">{{ t.kinds[entry.kind] | default: entry.abbr }}</span>
+  <span class="title" lang="zh-CN">{{ entry.title }}</span>
+  <span class="people" lang="zh-CN">
+    {%- if entry.author_array -%}
+      {%- include pub_authors.liquid entry=entry -%}
+    {%- else -%}
+      —
+    {%- endif -%}
+  </span>
+  <span class="number">{{ entry.number }}</span>
+</div>

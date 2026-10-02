@@ -1,0 +1,2 @@
+# 由 bin/build-fonts.py 生成，请不要手动修改。页面用它来提前加载西文字体。
+latin: source-serif-4.woff2?v=a04d4c43

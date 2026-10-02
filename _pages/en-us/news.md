@@ -1,10 +1,8 @@
 ---
 page_id: news
-layout: page
-title: news
+layout: news
 permalink: /news/
-nav: true
-nav_order: 8
+title: News
+nav: false
+# News items are the files in _news/en-us/.
 ---
-
-{% include news.liquid %}

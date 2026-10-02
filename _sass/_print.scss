@@ -1,0 +1,114 @@
+// Printing, mainly so that the CV page can be saved as a PDF.
+
+@media print {
+  :root,
+  :root[data-theme="dark"] {
+    --paper: #fff;
+    --ink: #000;
+    --lead: #111;
+    --text: #1a1a1a;
+    --muted: #444;
+    --rule: #cfcfcf;
+    --rule-strong: #000;
+    --accent: #7b1a10;
+    --tint: #f4f4f4;
+    --gutter: 0rem;
+    --section: 1.6rem;
+    --fs-small: 9.5pt;
+    --fs-body: 10.5pt;
+    --fs-lead: 12pt;
+    --fs-h3: 11.5pt;
+    --fs-h2: 15pt;
+    --fs-h1: 26pt;
+    --fs-hero: 34pt;
+    --fs-figure: 22pt;
+    color-scheme: light;
+  }
+
+  @page {
+    margin: 16mm 16mm 18mm;
+  }
+
+  body {
+    display: block;
+    line-height: 1.5;
+  }
+
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .cv-tools,
+  .page-index,
+  .more,
+  .toc,
+  .article-nav,
+  .copy-code,
+  .pub__links,
+  .pub__panel {
+    display: none !important;
+  }
+
+  .page-head,
+  .article-head {
+    padding-top: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .ext::after {
+    content: none;
+  }
+
+  .section-head {
+    margin-bottom: 0.8rem;
+    padding-top: 0.5rem;
+    break-after: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  li,
+  .cv-entry,
+  .project,
+  .pub,
+  .talk {
+    break-inside: avoid;
+  }
+
+  .ruled > *,
+  .cv-rows > li,
+  .cv-skills > div {
+    padding-block: 0.45rem;
+  }
+
+  // Keep side-by-side sections side by side on paper
+  .cv-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 1.6rem;
+  }
+
+  .cv-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .cv-rows > li {
+    grid-template-columns: 8.5em minmax(0, 1fr) 7em;
+    gap: 0 1rem;
+  }
+
+  .cv-rows.two > li,
+  .cv-rows.numbered > li {
+    grid-template-columns: 6.5em minmax(0, 1fr);
+  }
+
+  .prose pre {
+    white-space: pre-wrap;
+  }
+}

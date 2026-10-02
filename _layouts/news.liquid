@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{%- assign t = site.data[site.active_lang].strings -%}
+<div class="wrap">
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ t.news.lead }}</p>
+  </header>
+  <section class="section">
+    <ul class="ruled news-list">
+      {%- assign news = site.news | reverse -%}
+      {% for item in news -%}
+        <li>
+          <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{% include date.liquid date=item.date %}</time>
+          {{ item.content | markdownify | strip }}
+        </li>
+      {%- endfor %}
+    </ul>
+  </section>
+</div>

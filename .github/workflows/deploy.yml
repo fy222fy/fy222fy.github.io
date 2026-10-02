@@ -16,8 +16,8 @@ on:
       - "Gemfile"
       - "Gemfile.lock"
       - "_plugins/**"
+      - "_sass/**"
       - "bin/check-site-links.sh"
-      - "!.github/workflows/prettier*.yml"
       - "!lighthouse_results/**"
       - "!CONTRIBUTING.md"
       - "!CUSTOMIZE.md"
@@ -39,8 +39,8 @@ on:
       - "Gemfile"
       - "Gemfile.lock"
       - "_plugins/**"
+      - "_sass/**"
       - "bin/check-site-links.sh"
-      - "!.github/workflows/prettier*.yml"
       - "!lighthouse_results/**"
       - "!CONTRIBUTING.md"
       - "!CUSTOMIZE.md"
@@ -64,27 +64,10 @@ jobs:
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
-      - name: Setup Python 🐍
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
-          cache: "pip" # caching pip dependencies
-      - name: Update _config.yml ⚙️
-        uses: fjogeleit/yaml-update-action@main
-        with:
-          commitChange: false
-          valueFile: "_config.yml"
-          propertyPath: "giscus.repo"
-          value: ${{ github.repository }}
       - name: Install and Build 🔧
         run: |
-          pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
-      - name: Purge unused CSS 🧹
-        run: |
-          npm install -g purgecss
-          purgecss -c purgecss.config.js
       - name: Check internal links 🔗
         # 检查站内链接（页面、图片、文件、页内锚点），失败则不发布。本地运行同一脚本：bin/check-site-links.sh
         env:

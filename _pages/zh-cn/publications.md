@@ -1,21 +1,9 @@
 ---
 page_id: publications
-layout: page
+layout: publications
 permalink: /publications/
-title: 发表作品
-description: 论文、期刊、专利
+title: 论文
 nav: true
 nav_order: 1
+# Entries come from _bibliography/papers.bib; talks from _data/zh-cn/talks.yml.
 ---
-
-<!-- _pages/publications.md -->
-
-<!-- Bibsearch Feature -->
-
-{% include bib_search.liquid %}
-
-<div class="publications">
-
-{% bibliography %}
-
-</div>

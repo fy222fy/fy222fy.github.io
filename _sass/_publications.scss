@@ -1,0 +1,306 @@
+// Publications: entries rendered by _layouts/bib.liquid (papers) and _layouts/bib_ip.liquid (patents).
+
+// In-page contents under a page title: "Papers 5 · Talks 2 · Patents 9"
+.page-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem clamp(1.1rem, 0.8rem + 1vw, 1.75rem);
+  margin-top: clamp(0.9rem, 0.7rem + 0.6vw, 1.25rem);
+  font-size: var(--fs-body);
+
+  a {
+    color: var(--ink);
+    text-decoration-color: transparent;
+  }
+
+  a:hover {
+    color: var(--accent);
+  }
+
+  .count {
+    margin-left: 0.35em;
+    color: var(--muted);
+    font-size: 0.85em;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+}
+
+// jekyll-scholar wraps entries in <ol class="bibliography"><li>
+ol.bibliography > li {
+  padding-block: clamp(1rem, 0.85rem + 0.5vw, 1.3rem);
+  border-top: 1px solid var(--rule);
+
+  &:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.pub {
+  scroll-margin-top: 2rem;
+}
+
+.pub__venue {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.7em;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  font-variant-numeric: lining-nums tabular-nums;
+
+  .abbr {
+    color: var(--tag);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+}
+
+.pub__title {
+  margin-top: 0.2rem;
+  font-size: var(--fs-h3);
+  line-height: 1.3;
+  letter-spacing: -0.008em;
+}
+
+.pub__authors {
+  margin-top: 0.3rem;
+  line-height: 1.5;
+
+  .me {
+    color: var(--accent);
+    font-weight: 600;
+  }
+}
+
+.pub__where {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.pub__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.25rem;
+  margin-top: 0.45rem;
+  color: var(--ink);
+  font-size: var(--fs-small);
+
+  button {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.24em;
+    text-decoration-color: color-mix(in srgb, currentColor 32%, transparent);
+    transition: color 0.15s ease;
+
+    &:hover,
+    &[aria-expanded="true"] {
+      color: var(--accent);
+      text-decoration-color: currentColor;
+    }
+  }
+}
+
+.pub__panel {
+  max-width: var(--measure);
+  margin-top: 0.75rem;
+  padding-left: clamp(1rem, 0.8rem + 1vw, 1.6rem);
+  border-left: 2px solid var(--accent);
+  color: var(--text);
+  font-size: var(--fs-small);
+  line-height: 1.7;
+
+  &[hidden] {
+    display: none;
+  }
+
+  pre {
+    margin: 0;
+    overflow-x: auto;
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .copy {
+    margin-top: 0.6rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.24em;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+// Papers grouped by year: the year sits in its own column
+.by-year {
+  display: grid;
+  grid-template-columns: clamp(4.5rem, 3rem + 4vw, 7rem) minmax(0, 1fr);
+
+  > h3.bibliography {
+    grid-column: 1;
+    padding-top: clamp(1rem, 0.85rem + 0.5vw, 1.3rem);
+    border-top: 1px solid var(--rule);
+    color: var(--ink);
+    font-size: var(--fs-h2);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  > ol.bibliography {
+    grid-column: 2;
+    padding-block: clamp(1rem, 0.85rem + 0.5vw, 1.3rem);
+    border-top: 1px solid var(--rule);
+  }
+
+  > h3.bibliography:first-of-type,
+  > h3.bibliography:first-of-type + ol.bibliography {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  > ol.bibliography:last-of-type {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .by-year {
+    grid-template-columns: minmax(0, 1fr);
+
+    > h3.bibliography,
+    > ol.bibliography {
+      grid-column: 1;
+    }
+
+    > h3.bibliography {
+      padding-bottom: 0;
+    }
+
+    > ol.bibliography,
+    > h3.bibliography:first-of-type + ol.bibliography {
+      padding-top: 1rem;
+      border-top: 0;
+    }
+  }
+}
+
+// Talks and book chapters
+.talk {
+  h3 {
+    margin-top: 0.35rem;
+    font-size: var(--fs-h3);
+    line-height: 1.3;
+  }
+
+  .where {
+    margin-top: 0.5rem;
+    color: var(--muted);
+    font-size: var(--fs-small);
+    line-height: 1.6;
+  }
+}
+
+// Patents, software and disclosures: a table made of rows
+.ip-table {
+  font-variant-numeric: lining-nums tabular-nums;
+
+  .ip-row {
+    display: grid;
+    grid-template-columns: 4.5rem 11.5rem minmax(0, 1.6fr) minmax(0, 1.15fr) 11.5rem;
+    gap: 0.2rem clamp(1rem, 0.5rem + 1vw, 1.75rem);
+    align-items: baseline;
+  }
+
+  .ip-head {
+    padding-bottom: 0.9rem;
+    color: var(--muted);
+    font-size: var(--fs-small);
+  }
+
+  ol.bibliography > li {
+    padding-block: clamp(0.7rem, 0.6rem + 0.3vw, 0.9rem);
+    border-top: 1px solid var(--rule);
+
+    &:first-child {
+      padding-top: clamp(0.7rem, 0.6rem + 0.3vw, 0.9rem);
+      border-top: 1px solid var(--rule);
+    }
+
+    &:last-child {
+      padding-bottom: clamp(0.7rem, 0.6rem + 0.3vw, 0.9rem);
+      border-bottom: 1px solid var(--rule);
+    }
+  }
+
+  .year,
+  .type,
+  .number {
+    color: var(--muted);
+    font-size: var(--fs-small);
+  }
+
+  .number {
+    font-variant-numeric: lining-nums tabular-nums;
+    overflow-wrap: anywhere;
+  }
+
+  .title {
+    color: var(--ink);
+    font-weight: 600;
+    line-height: 1.55;
+  }
+
+  .people {
+    font-size: var(--fs-small);
+    line-height: 1.65;
+
+    .me {
+      color: var(--accent);
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .ip-table {
+    .ip-head {
+      display: none;
+    }
+
+    .ip-row {
+      grid-template-columns: 4.5rem minmax(0, 1fr);
+      gap: 0.1rem 1rem;
+    }
+
+    .type,
+    .title,
+    .people,
+    .number {
+      grid-column: 2;
+    }
+
+    .year {
+      grid-row: 1 / span 4;
+    }
+
+    .title {
+      margin-block: 0.15rem;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+---
+---
+{%- comment -%} One patent, software copyright or certificate, as a row in the CV. {%- endcomment -%}
+{%- assign t = site.data[site.active_lang].strings.publications -%}
+<div class="cv-ip">
+  <span class="title" lang="zh-CN">{{ entry.title }}</span>
+  <span class="text">{{ t.kinds[entry.kind] | default: entry.abbr }} · {{ entry.number }}</span>
+</div>

@@ -1,0 +1,147 @@
+// Code highlighting (Rouge). Deliberately quiet: a few muted hues on the code background.
+
+@mixin syntax-light {
+  --syn-comment: #737780;
+  --syn-keyword: #8f2318;
+  --syn-string: #2f6a3f;
+  --syn-number: #8a5a00;
+  --syn-name: #1f4f8f;
+  --syn-meta: #6a4a9c;
+}
+
+@mixin syntax-dark {
+  --syn-comment: #8d8c87;
+  --syn-keyword: #f08c7b;
+  --syn-string: #9ccfa4;
+  --syn-number: #e5c07b;
+  --syn-name: #8ab4f0;
+  --syn-meta: #c4a7e7;
+}
+
+:root {
+  @include syntax-light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @include syntax-dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  @include syntax-dark;
+}
+
+.highlight {
+  color: var(--text);
+
+  // comments
+  .c,
+  .ch,
+  .cd,
+  .cm,
+  .cpf,
+  .c1,
+  .cs {
+    color: var(--syn-comment);
+    font-style: italic;
+  }
+
+  // preprocessor, decorators, doctype
+  .cp,
+  .nd,
+  .ni,
+  .gh,
+  .gu {
+    color: var(--syn-meta);
+  }
+
+  // keywords
+  .k,
+  .kc,
+  .kd,
+  .kn,
+  .kp,
+  .kr,
+  .kv,
+  .ow,
+  .nt {
+    color: var(--syn-keyword);
+  }
+
+  // types, classes, functions, builtins
+  .kt,
+  .nc,
+  .nf,
+  .fm,
+  .nb,
+  .bp,
+  .ne,
+  .nn,
+  .na {
+    color: var(--syn-name);
+  }
+
+  // strings
+  .s,
+  .sa,
+  .sb,
+  .sc,
+  .dl,
+  .sd,
+  .s2,
+  .se,
+  .sh,
+  .si,
+  .sx,
+  .sr,
+  .s1,
+  .ss {
+    color: var(--syn-string);
+  }
+
+  // numbers and constants
+  .m,
+  .mb,
+  .mf,
+  .mh,
+  .mi,
+  .il,
+  .mo,
+  .mx,
+  .no,
+  .nv,
+  .vc,
+  .vg,
+  .vi {
+    color: var(--syn-number);
+  }
+
+  // diffs
+  .gd {
+    color: var(--syn-keyword);
+  }
+
+  .gi {
+    color: var(--syn-string);
+  }
+
+  .ge {
+    font-style: italic;
+  }
+
+  .gs {
+    font-weight: 600;
+  }
+
+  .err {
+    color: inherit;
+    background: none;
+  }
+}
+
+html:lang(zh-CN) .highlight .c,
+html:lang(zh-CN) .highlight .c1,
+html:lang(zh-CN) .highlight .cm {
+  font-style: normal;
+}

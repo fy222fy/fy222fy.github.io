@@ -1,0 +1,13 @@
+# 学术报告、书章与其它（中文）。publications: false 表示不在“论文”页显示。
+- kind: 学术报告
+  year: 2022
+  title: FIDO UAF 协议的形式化分析
+  where: InForSec 2022 网络安全研究国际学术论坛，清华大学
+- kind: 书章
+  year: 2022
+  title: FIDO UAF 协议的形式化分析
+  where: 收录于《网络安全国际学术研究进展》，2022
+- kind: 直播
+  title: 隐语联邦学习自动攻防框架
+  where: 开源发布后在 Bilibili 直播推广
+  publications: false

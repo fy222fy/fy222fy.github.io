@@ -1,0 +1,99 @@
+# Content of the home page (English). The Chinese version is _data/zh-cn/home.yml.
+
+name: Haonan Feng
+name_alt: 冯皓楠
+name_alt_lang: zh-CN
+photo_alt: Portrait of Haonan Feng
+
+role: >-
+  Ph.D. student, <a href="https://scss.bupt.edu.cn/">School of Cyberspace Security</a>,
+  <a href="https://www.bupt.edu.cn/">Beijing University of Posts and Telecommunications</a>
+location: Beijing, China
+
+
+facts:
+  - figure: "2"
+    text: First-author papers at NDSS and IEEE TDSC
+  - figure: "5"
+    unit: yrs
+    text: Of formal-analysis research, from undergraduate to Ph.D.
+  - figure: "3"
+    unit: yrs
+    text: Security engineering at Ant Group
+  - figure: "6"
+    text: Chinese invention patents, plus 1 software copyright and 1 CAICT certificate
+
+about:
+  title: About Me
+
+research:
+  title: Research Interests
+  items:
+    - title: LLM Security
+      text: >-
+        Security of large language models and of multi-agent AI systems,
+        including formal reasoning about how groups of AI agents interact.
+    - title: LLM for Security
+      text: >-
+        Using large language models to assist security analysis,
+        in particular to automate formal modeling and protocol verification.
+    - title: Formal Analysis
+      text: >-
+        Protocol verification with ProVerif and the applied pi-calculus, minimal-assumption analysis,
+        and modeling inter-process communication on devices.
+
+projects:
+  title: Selected Projects
+  more: All projects
+
+publications:
+  title: Selected Publications
+  more: All publications
+  note: >-
+    Also: a journal paper in the Journal of Cryptologic Research, 6 Chinese invention patents
+    and 1 CNNVD-listed vulnerability.
+
+news:
+  title: News
+  more: All news
+
+talks:
+  title: Talks & Writing
+
+timeline:
+  title: Education & Experience
+  more: Full CV
+  items:
+    - period: 2014 – 2018
+      role: B.S.
+      org: Beijing University of Posts and Telecommunications
+      text: Information Security. Special Prize at the 4th National Cryptography Technology Competition.
+    - period: 2018 – 2021
+      role: M.S.
+      org: School of Cyberspace Security, BUPT
+      text: Formal analysis of security protocols; first-author papers at NDSS 2021 and IEEE TDSC.
+    - period: 2021 – 2024
+      role: Cybersecurity Engineer
+      org: Ant Group
+      text: Confidential LLM computing, TEEs, federated learning and secure multi-party computation.
+    - period: 2024 – 2028 (expected)
+      role: Ph.D.
+      org: School of Cyberspace Security, BUPT
+      text: LLM security, LLM for security, and formal analysis.
+      current: true
+
+honors:
+  title: Honors
+  items:
+    - year: "2019"
+      text: National Scholarship
+    - year: 2018 – 2020
+      text: First-Class Scholarship, BUPT
+    - year: "2018"
+      text: Outstanding Undergraduate Thesis, BUPT
+    - year: "2018"
+      text: Special Prize, 4th National Cryptography Technology Competition
+    - year: "2018"
+      text: Second Prize, 10th National College Student Information Security Contest
+    - year: "2017"
+      text: First Prize, BUPT Innovation and Entrepreneurship Practice

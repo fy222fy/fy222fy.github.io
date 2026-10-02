@@ -1,0 +1,14 @@
+# Talks, book chapters and other writing (English). `publications: false` keeps an item off the Publications page.
+- kind: Invited talk
+  year: 2022
+  title: Formal Analysis of the FIDO UAF Protocol
+  where: InForSec 2022 (International Forum for Security Research), Tsinghua University
+- kind: Book chapter
+  year: 2022
+  title: FIDO UAF 协议的形式化分析
+  title_lang: zh-CN
+  where: Included in International Academic Research Progress in Cybersecurity (网络安全国际学术研究进展), 2022
+- kind: Livestream
+  title: Federated Learning AutoAttack in SecretFlow
+  where: Open-source release livestream on Bilibili
+  publications: false

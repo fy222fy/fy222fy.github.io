@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Ant Group releases the [“Trusted Encrypted Computing White Paper”](https://gw.alipayobjects.com/os/bmw-prod/56176409-5afa-4e86-85f7-1060116c01af.pdf).
+Ant Group released the [Trusted Encrypted Computing white paper](https://gw.alipayobjects.com/os/bmw-prod/56176409-5afa-4e86-85f7-1060116c01af.pdf), which I co-wrote.

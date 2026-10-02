@@ -1,0 +1,7 @@
+# “开源”页面上的仓库（中文）。英文版在 _data/en-us/repositories.yml。
+- repo: CactiLab/UAFVerif
+  text: 基于 ProVerif 的 FIDO UAF 协议自动化形式化验证工具：自动遍历应用场景，找出每个安全目标成立所需的最小假设。
+  role: 作者
+- repo: secretflow/secretflow
+  text: 隐语：统一的隐私计算框架，用于隐私保护的数据分析与机器学习。我贡献了联邦学习自动攻防框架。
+  role: 贡献者

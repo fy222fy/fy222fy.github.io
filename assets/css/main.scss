@@ -3,24 +3,15 @@
 ---
 @charset "utf-8";
 
-// Dimensions
-$max-content-width: {{ site.max_width }};
-
-@import
-  "variables",
-  "themes",
-  "layout",
-  "base",
-  "distill",
-  "cv",
-  "tabs",
-  "typograms",
-  "font-awesome/fontawesome",
-  "font-awesome/brands",
-  "font-awesome/solid",
-  "font-awesome/regular",
-  "tabler-icons/tabler-icons.scss",
-  "tabler-icons/tabler-icons-filled.scss",
-  "tabler-icons/tabler-icons-outline.scss",
-  "flag-icons/flag-icons"
-;
+@use "fonts";
+@use "tokens";
+@use "base";
+@use "chrome";
+@use "home";
+@use "publications";
+@use "projects";
+@use "cv";
+@use "blog";
+@use "prose";
+@use "syntax";
+@use "print";

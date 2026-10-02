@@ -1,0 +1,11 @@
+---
+---
+{%- comment -%} One paper, as a line in the CV. {%- endcomment -%}
+<div class="ref-row">
+  <span class="abbr">{{ entry.abbr }} {{ entry.year }}</span>
+  <div class="ref" lang="en">
+    {%- include pub_authors.liquid entry=entry -%}.
+    <span class="ref-title">{{ entry.title }}.</span>
+    <span class="ref-where">{{ entry.where }}.</span>
+  </div>
+</div>

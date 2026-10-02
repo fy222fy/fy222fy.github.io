@@ -1,0 +1,7 @@
+# Repositories shown on the Repositories page (English). The Chinese version is _data/zh-cn/repositories.yml.
+- repo: CactiLab/UAFVerif
+  text: An automated formal verifier for the FIDO UAF protocol, built on ProVerif. It enumerates scenarios and finds the minimal assumptions under which each security goal holds.
+  role: Author
+- repo: secretflow/secretflow
+  text: A unified framework for privacy-preserving data analysis and machine learning. I contributed the federated-learning AutoAttack framework.
+  role: Contributor

@@ -1,106 +1,79 @@
 ---
 layout: default
 ---
-{% assign year = page.date | date: '%Y' %}
-{% assign tags = page.tags | join: '' %}
-{% assign categories = page.categories | join: '' %}
-
-{% if page._styles %}
-  <!-- Page/Post style -->
-  <style type="text/css">
-    {{ page._styles }}
-  </style>
-{% endif %}
-
-{% assign url_beginning = page.url | slice: 0, 6 %}
-
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">
-      {{ site.data[site.active_lang].strings.post.created_in }}
-      {% include date_format.liquid format='long' date=page.date -%}
-      {%- if page.author -%}
-        {{- site.data[site.active_lang].strings.post.created_by }}
-        {{ page.author -}}
-      {%- endif -%}
-      {%- if page.last_updated -%}
-        , {{ site.data[site.active_lang].strings.post.last_updated }}
-        {% include date_format.liquid format='long' date=page.last_updated -%}
+{%- assign t = site.data[site.active_lang].strings -%}
+{%- assign toc = content | toc_only -%}
+{%- assign has_toc = false -%}
+{%- if page.toc and toc contains '<li' -%}{%- assign has_toc = true -%}{%- endif -%}
+<article class="wrap" lang="{{ page.lang | default: 'zh-CN' }}">
+  <header class="article-head">
+    <a class="back" href="{{ '/blog/' | relative_url }}"><span class="arrow" aria-hidden="true">←</span>{{ t.blog.back }}</a>
+    <h1>{{ page.title }}</h1>
+    {% if page.description -%}
+      <p class="lead">{{ page.description }}</p>
+    {%- endif %}
+    <p class="meta">
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{% include date.liquid date=page.date %}</time>
+      {% for category in page.categories -%}
+        <a href="{{ category | slugify | prepend: '/blog/category/' | append: '/' | relative_url }}">{{ t.blog.categories[category] | default: category }}</a>
+      {%- endfor %}
+      {% if page.tags.size > 0 -%}
+        <span class="tags">
+          {%- for tag in page.tags -%}
+            <a href="{{ tag | slugify | prepend: '/blog/tag/' | append: '/' | relative_url }}">{{ tag }}</a>
+          {%- endfor -%}
+        </span>
       {%- endif %}
-      {% if page.meta %}• {{ page.meta }}{% endif %}
-    </p>
-    <p class="post-tags">
-      {% if url_beginning == '/blog/' %}
-        <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}"> <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
-      {% else %}
-        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
-      {% endif %}
-      {% if tags != '' %}
-        &nbsp; &middot; &nbsp;
-        {% for tag in page.tags %}
-          {% if url_beginning == '/blog/' %}
-            <a href="{{ tag | slugify | prepend: '/blog/tag/' | prepend: site.baseurl}}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
-          {% else %}
-            <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}
-          {% endif %}
-          {% unless forloop.last %}
-            &nbsp;
-          {% endunless %}
-        {% endfor %}
-      {% endif %}
-
-      {% if categories != '' %}
-        &nbsp; &middot; &nbsp;
-        {% for category in page.categories %}
-          {% if url_beginning == '/blog/' %}
-            <a href="{{ category | slugify | prepend: '/blog/category/' | prepend: site.baseurl}}">
-              <i class="fa-solid fa-tag fa-sm"></i> {{ category -}}
-            </a>
-          {% else %}
-            <i class="fa-solid fa-tag fa-sm"></i> {{ category }}
-          {% endif %}
-          {% unless forloop.last %}
-            &nbsp;
-          {% endunless %}
-        {% endfor %}
-      {% endif %}
     </p>
   </header>
 
-  <article class="post-content">
-    {% if page.toc and page.toc.beginning %}
-      <div id="table-of-contents">
-        {% toc %}
-      </div>
-      <hr>
-    {% endif %}
-    <div id="markdown-content">
-      {{ content }}
+  <div class="article-layout {% if has_toc %}has-toc{% endif %}">
+    {% if has_toc -%}
+      <nav class="toc" aria-labelledby="toc-title">
+        <h2 class="toc__title" id="toc-title">{{ t.blog.contents }}</h2>
+        {{ toc }}
+      </nav>
+    {%- endif %}
+    <div class="prose" data-copy="{{ t.publications.copy }}" data-copied="{{ t.publications.copied }}">
+      {{ content | inject_anchors }}
     </div>
-  </article>
+  </div>
 
-  {% if page.citation %}
-    {% include citation.liquid %}
-  {% endif %}
+  {% if site.giscus.repo -%}
+    <section class="section comments" id="comments">
+      <script
+        src="https://giscus.app/client.js"
+        data-repo="{{ site.giscus.repo }}"
+        data-repo-id="{{ site.giscus.repo_id }}"
+        data-category="{{ site.giscus.category }}"
+        data-category-id="{{ site.giscus.category_id }}"
+        data-mapping="{{ site.giscus.mapping | default: 'title' }}"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="{% if site.active_lang == 'zh-cn' %}zh-CN{% else %}en{% endif %}"
+        crossorigin="anonymous"
+        async
+      ></script>
+    </section>
+  {%- endif %}
 
-  {% if page.related_publications %}
-    <h2>{{ site.data[site.active_lang].strings.references }}</h2>
-    <div class="publications">
-      {% bibliography --cited_in_order %}
-    </div>
-  {% endif %}
-
-  {% if site.related_blog_posts.enabled %}
-    {% if page.related_posts == null or page.related_posts %}
-      {% include related_posts.liquid %}
-    {% endif %}
-  {% endif %}
-
-  {% if site.disqus_shortname and page.disqus_comments %}
-    {% include disqus.liquid %}
-  {% endif %}
-  {% if site.giscus and page.giscus_comments %}
-    {% include giscus.liquid %}
-  {% endif %}
-</div>
+  {% if page.previous or page.next -%}
+    <nav class="article-nav" aria-label="{{ t.blog.back }}">
+      {% if page.previous -%}
+        <a class="prev" href="{{ page.previous.url | relative_url }}">
+          <span class="label">← {{ t.blog.older }}</span>
+          <span class="title">{{ page.previous.title }}</span>
+        </a>
+      {%- endif %}
+      {% if page.next -%}
+        <a class="next" href="{{ page.next.url | relative_url }}">
+          <span class="label">{{ t.blog.newer }} →</span>
+          <span class="title">{{ page.next.title }}</span>
+        </a>
+      {%- endif %}
+    </nav>
+  {%- endif %}
+</article>

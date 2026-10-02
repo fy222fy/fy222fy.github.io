@@ -1,198 +1,193 @@
 {
   "basics": {
     "name": "Haonan Feng",
-    "label": "AI Security, AI for Security, Formal Verification",
+    "label": "Ph.D. Student, School of Cyberspace Security, Beijing University of Posts and Telecommunications",
     "image": "prof_pic.jpg",
     "email": "fenghaonan222@gmail.com",
     "url": "https://fy222fy.github.io",
-    "summary": "PhD student at the School of Cyberspace Security, Beijing University of Posts and Telecommunications, engaged in research related to AI security and formal verification.",
+    "summary": "Ph.D. student in cyberspace security, with five years of formal-analysis research and three years of security engineering at Ant Group.",
     "location": {
-      "address": "Beijing, China",
-      "postalCode": "100000",
       "city": "Beijing",
-      "countryCode": "CHN",
-      "region": "Haidian"
+      "countryCode": "CN",
+      "address": "Beijing, China"
     },
     "profiles": [
-      {
-        "network": "GitHub",
-        "username": "fy222fy",
-        "url": "https://github.com/fy222fy"
-      },
       {
         "network": "Google Scholar",
         "username": "ruPrB9wAAAAJ",
         "url": "https://scholar.google.com/citations?user=ruPrB9wAAAAJ"
+      },
+      {
+        "network": "ORCID",
+        "username": "0009-0002-0140-8342",
+        "url": "https://orcid.org/0009-0002-0140-8342"
+      },
+      {
+        "network": "GitHub",
+        "username": "fy222fy",
+        "url": "https://github.com/fy222fy"
+      }
+    ],
+    "highlights": [
+      {
+        "figure": "2",
+        "text": "first-author papers at top-tier venues (NDSS, IEEE TDSC)"
+      },
+      {
+        "figure": "5",
+        "unit": "yrs",
+        "text": "of formal-analysis research, cyberspace security from B.S. to Ph.D."
+      },
+      {
+        "figure": "3",
+        "unit": "yrs",
+        "text": "of security engineering, product development and open source at Ant Group"
       }
     ]
   },
-  "volunteer": [],
   "education": [
     {
       "institution": "School of Cyberspace Security, Beijing University of Posts and Telecommunications",
-      "location": "Beijing, China",
       "url": "https://scss.bupt.edu.cn/",
-      "area": "AI Security, Formal Analysis",
-      "studyType": "PhD",
+      "studyType": "Ph.D.",
+      "area": "Cyberspace Security",
       "startDate": "2024-09-01",
       "endDate": "2028-06-01",
-      "score": "10",
-      "courses": []
+      "expected": true,
+      "summary": "LLM security, LLM for security, formal analysis"
     },
     {
       "institution": "School of Cyberspace Security, Beijing University of Posts and Telecommunications",
       "url": "https://scss.bupt.edu.cn/",
-      "area": "Formal Analysis of Security Protocols",
-      "studyType": "Master",
+      "studyType": "M.S.",
+      "area": "Cyberspace Security",
       "startDate": "2018-09-01",
       "endDate": "2021-06-01",
-      "score": "10",
-      "courses": []
+      "summary": "Formal analysis of security protocols; papers at NDSS and IEEE TDSC"
     },
     {
       "institution": "School of Cyberspace Security, Beijing University of Posts and Telecommunications",
       "url": "https://scss.bupt.edu.cn/",
+      "studyType": "B.S.",
       "area": "Information Security",
-      "studyType": "Undergraduate",
       "startDate": "2014-09-01",
       "endDate": "2018-06-01",
-      "score": "10",
-      "courses": []
+      "summary": "Outstanding Undergraduate Thesis (2018)"
     }
   ],
   "work": [
     {
       "name": "Ant Group",
+      "description": "confidential computing",
       "position": "Cybersecurity Engineer",
       "url": "https://www.antgroup.com/",
       "startDate": "2021-07-06",
       "endDate": "2024-11-15",
-      "summary": "Worked on confidential LLM computing, federated learning, secure multi-party computation (MPC) and trusted execution environments (TEE)."
-    }
-  ],
-  "publications": [
-    {
-      "name": "5G-RNAKA: A Random Number-based Authentication and Key Agreement Protocol for 5G Systems",
-      "publisher": "Hui Li, Haotian Li, Chi Ma, Jingjing Guan, Junchi Zeng, Haonan Feng, Ziming Zhao",
-      "releaseDate": "2025-06-06",
-      "summary": "A random number-based authentication and key agreement protocol for 5G systems, published at ACM CCS 2025."
-    },
-    {
-      "name": "A Formal Analysis of the FIDO UAF Protocol",
-      "publisher": "Haonan Feng, Hui Li, Xuesong Pan, Ziming Zhao",
-      "releaseDate": "2021-10-30",
-      "url": "https://www.ndss-symposium.org/ndss-paper/a-formal-analysis-of-the-fido-uaf-protocol/",
-      "summary": "Conducted formal analysis of the FIDO UAF protocol; proposed a new verification method, developed an open-source automated verification tools (UAFVerif); published 2 papers (NDSS/TDSC); reported a CNNVD vulnerability."
-    },
-    {
-      "name": "FIDO gets verified: A formal analysis of the universal authentication framework protocol",
-      "publisher": "Haonan Feng, Jingjing Guan, Hui Li, Xuesong Pan, Ziming Zhao",
-      "releaseDate": "2022-03-18",
-      "url": "https://ieeexplore.ieee.org/abstract/document/9930658",
-      "summary": "The FIDO UAF protocol is further analyzed using the proposed minimal assumption verification method, and a complete analysis method and analysis conclusion are proposed."
-    },
-    {
-      "name": "Authenticator rebinding attack of the UAF protocol on mobile devices",
-      "publisher": "Hui Li, Xuesong Pan, Xinluo Wang, Haonan Feng",
-      "releaseDate": "2020-10-20",
-      "url": "https://onlinelibrary.wiley.com/doi/full/10.1155/2020/8819790",
-      "summary": "The paper proposed an authenticator rebinding attack on the FIDO UAF protocol, verified it in practice on an actual APP, and published related vulnerabilities."
-    }
-  ],
-  "awards": [
-    {
-      "title": "Special Prize, the 4th National Cryptography Technology Competition",
-      "date": "2018-09-01",
-      "awarder": "Chinese Association for Cryptologic Research (CACR)",
-      "url": "https://www.chinacodes.com.cn/login/initlogin.do",
-      "summary": "Designed a Windows login assistant that works with the user's phone to unlock the computer when the user arrives and lock it when they leave; a patent was filed for the design."
-    },
-    {
-      "title": "First Prize, BUPT College Student Innovation and Entrepreneurship Practice",
-      "date": "2017-09-01",
-      "awarder": "Beijing University of Posts and Telecommunications",
-      "url": "https://www.bupt.edu.cn/xywh/cxcy.htm",
-      "summary": "Designed and implemented a secure, cross-platform password manager with multi-factor authentication."
-    },
-    {
-      "title": "Second Prize, the 10th National College Student Information Security Contest",
-      "date": "2018-09-01",
-      "awarder": "China Ministry of Education Higher Education Cyberspace Security Professional Teaching Steering Committee",
-      "url": "http://www.ciscn.cn/index.php/announcement/view/70",
-      "summary": "Designed and implemented a secure, cross-platform password manager with multi-factor authentication."
-    },
-    {
-      "title": "National Scholarship",
-      "date": "2019-09-01",
-      "awarder": "Beijing University of Posts and Telecommunications",
-      "url": "https://gjps.xszz.moe.edu.cn/#/"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Trusted-Environment-based Cryptographic Computing system (TECC)",
-      "date": "2022-01-01",
-      "issuer": "China Academy of Information and Communications Technology",
-      "icon": "fa-solid fa-certificate"
-    },
-    {
-      "name": "International Forum for Security Research Certificate",
-      "date": "2021-06-05",
-      "issuer": "Institute of Computing Technology, Chinese Academy of Sciences",
-      "url": "https://www.inforsec.org/wp/",
-      "icon": "fa-solid fa-award"
-    }
-  ],
-  "skills": [
-    {
-      "name": "Programming",
-      "level": "Advanced",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": ["Python", "Java", "C/C++", "LaTeX", "Applied-pi", "Markdown", "HTML", "C#"]
-    },
-    {
-      "name": "Profession",
-      "level": "Expert",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "TEE (SGX, HyperEnclave)",
-        "K8s",
-        "Docker",
-        "MySQL",
-        "PostgreSQL",
-        "Redis",
-        "ProVerif",
-        "Linux",
-        "Alibaba Cloud",
-        "Premiere Pro",
-        "After Effects"
+      "summary": "Worked on confidential LLM computing, federated learning, secure multi-party computation (MPC) and trusted execution environments (TEE).",
+      "highlights": [
+        "<strong>Confidential LLM computing.</strong> Confidential LLM inference in TEEs (SGX, HyperEnclave) with remote attestation; federated fine-tuning of LLMs across institutions.",
+        "<strong>Federated learning.</strong> An automated attack-and-defense framework open-sourced in SecretFlow, with benchmarks across models and scenarios.",
+        "<strong>MPC and TEE (TECC).</strong> ABY3 operators, SGX and HyperEnclave adaptation, cloud deployment; co-wrote the white paper; 1 software copyright and a CAICT certificate. TECC was selected as one of the Top Ten Hardcore Technologies at the 5th Digital China Summit.",
+        "<strong>Distributed storage.</strong> Large-object (LOB) storage for the OceanBase distributed database."
       ]
     }
   ],
+  "projects": [
+    {
+      "name": "Confidential LLM inference in TEEs",
+      "period": "2024.02 – 2024.05",
+      "description": "Attestation-based authentication and key exchange; LLM deployment in SGX and HyperEnclave with Occlum.",
+      "entity": "Ant Group"
+    },
+    {
+      "name": "Federated fine-tuning of LLMs",
+      "period": "2024.02 – 2024.05",
+      "description": "Federated-learning architecture for cross-institution LLM training, validated with DeepSpeed and PyTorch.",
+      "entity": "Ant Group"
+    },
+    {
+      "name": "Federated Learning AutoAttack",
+      "period": "2023.06 – 2024.03",
+      "description": "Automated attack-and-defense framework with Ray-based tuning; 1 patent; open-sourced in SecretFlow.",
+      "entity": "Open source"
+    },
+    {
+      "name": "TECC",
+      "period": "2022.01 – 2023.06",
+      "description": "ABY3 operators and security proof under a malicious model; 4 patents; deployed in the cloud.",
+      "entity": "Ant Group"
+    },
+    {
+      "name": "OceanBase LOB storage",
+      "period": "2021.06 – 2021.09",
+      "description": "Real-time flushing, a virtual file system for replica consistency, and tiered indexes for TB-scale objects.",
+      "entity": "Ant Group"
+    },
+    {
+      "name": "Formal analysis of FIDO UAF",
+      "period": "2018.09 – 2020.03",
+      "description": "400,000+ scenarios verified, 4 attack classes, 1,856 apps analyzed; UAFVerif; NDSS and IEEE TDSC.",
+      "entity": "Research · NSFC"
+    },
+    {
+      "name": "Windows login with phone collaboration",
+      "period": "2018.11",
+      "description": "Bluetooth protocol with SM algorithms, proved secure by formal analysis; 1 patent; team lead.",
+      "entity": "Competition"
+    },
+    {
+      "name": "Keyper password manager",
+      "period": "2017.05",
+      "description": "Tiered password management with fingerprint unlocking; adopted by a company; team lead.",
+      "entity": "Competition"
+    },
+    {
+      "name": "Encrypted systems coursework",
+      "period": "2016 – 2019",
+      "description": "Encrypted cloud drive, encrypted messaging, cloud backup and a Flask + MySQL web app.",
+      "entity": "Coursework"
+    },
+    {
+      "name": "AI quantitative investment framework",
+      "period": "2023 – 2024",
+      "description": "Multi-market framework with AI-based stock selection and asset allocation, connected to live trading.",
+      "entity": "Side project"
+    }
+  ],
+  "awards": [
+    { "category": "Academic", "date": "2019", "title": "National Scholarship" },
+    { "category": "Academic", "date": "2018 – 2020", "title": "First-Class Scholarship, BUPT" },
+    { "category": "Academic", "date": "2018", "title": "Outstanding Undergraduate Thesis, BUPT" },
+    { "category": "Competitions", "date": "2018", "title": "Special Prize, 4th National Cryptography Technology Competition" },
+    { "category": "Competitions", "date": "2018", "title": "Second Prize, 10th National College Student Information Security Contest" },
+    { "category": "Competitions", "date": "2017", "title": "First Prize, BUPT College Student Innovation and Entrepreneurship Practice" },
+    { "category": "Security", "date": "2020", "title": "CNNVD medium-risk vulnerability (CNNVD-202005-1219)" }
+  ],
+  "skills": [
+    {
+      "name": "Security & systems",
+      "keywords": ["ProVerif", "Applied pi-calculus", "TEE (SGX, HyperEnclave)", "Occlum", "Kubernetes", "Docker", "Linux", "Alibaba Cloud"]
+    },
+    {
+      "name": "Knowledge",
+      "keywords": ["Formal verification", "Privacy computing", "Large language models", "Machine learning", "Cryptography"]
+    },
+    {
+      "name": "Programming",
+      "keywords": ["Python", "C/C++", "Java", "C#", "LaTeX", "HTML"]
+    },
+    {
+      "name": "Data & media",
+      "keywords": ["MySQL", "PostgreSQL", "Redis", "Premiere Pro", "After Effects"]
+    }
+  ],
   "languages": [
-    {
-      "language": "Chinese",
-      "fluency": "Native speaker",
-      "icon": ""
-    },
-    {
-      "language": "English",
-      "fluency": "Fluent",
-      "icon": ""
-    }
+    { "language": "Chinese", "fluency": "Native" },
+    { "language": "English", "fluency": "Fluent" }
   ],
-  "interests": [
-    {
-      "name": "AI Security, AI for Security",
-      "icon": "fa-solid fa-tag",
-      "keywords": []
-    },
-    {
-      "name": "Formal Verification",
-      "icon": "fa-solid fa-tag",
-      "keywords": []
-    }
-  ],
-  "references": [],
-  "projects": []
+  "activities": [
+    "Undergraduate class monitor; the class was named a Beijing Excellent Class Collective.",
+    "Outstanding Class Cadre for 3 consecutive years; Outstanding Graduate.",
+    "University volunteer; college basketball and badminton teams."
+  ]
 }

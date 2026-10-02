@@ -1,0 +1,91 @@
+# 首页内容（中文）。英文版在 _data/en-us/home.yml。
+
+name: 冯皓楠
+name_alt: Haonan Feng
+name_alt_lang: en
+photo_alt: 冯皓楠的照片
+
+role: '<a href="https://www.bupt.edu.cn/">北京邮电大学</a><a href="https://scss.bupt.edu.cn/">网络空间安全学院</a>博士研究生'
+location: 中国 · 北京
+
+
+facts:
+  - figure: "2"
+    unit: 篇
+    text: 第一作者论文，发表于 NDSS 与 IEEE TDSC
+  - figure: "5"
+    unit: 年
+    text: 形式化分析研究经历，从本科到博士
+  - figure: "3"
+    unit: 年
+    text: 蚂蚁集团网络安全工程师
+  - figure: "6"
+    unit: 项
+    text: 发明专利，另有软件著作权与信通院评测证书各 1 项
+
+about:
+  title: 关于我
+
+research:
+  title: 研究方向
+  items:
+    - title: 大模型安全
+      text: 大模型与多智能体系统的安全，以及对人工智能群体交互的形式化推理。
+    - title: 大模型 for 安全
+      text: 用大模型辅助安全分析，尤其是自动化的形式化建模与协议验证。
+    - title: 形式化分析
+      text: 基于 ProVerif 与应用 π 演算的协议验证、最小化假设分析，以及设备内进程间通信的建模。
+
+projects:
+  title: 重点项目
+  more: 全部项目
+
+publications:
+  title: 代表论文
+  more: 全部论文
+  note: 另有《密码学报》论文 1 篇、发明专利 6 项、CNNVD 收录漏洞 1 个。
+
+news:
+  title: 动态
+  more: 全部动态
+
+talks:
+  title: 学术报告与著作
+
+timeline:
+  title: 教育与经历
+  more: 完整简历
+  items:
+    - period: 2014 – 2018
+      role: 本科
+      org: 北京邮电大学
+      text: 信息安全专业。获第四届全国密码技术竞赛特等奖。
+    - period: 2018 – 2021
+      role: 硕士
+      org: 北京邮电大学网络空间安全学院
+      text: 安全协议形式化分析；以第一作者在 NDSS 2021、IEEE TDSC 发表论文。
+    - period: 2021 – 2024
+      role: 网络安全工程师
+      org: 蚂蚁集团
+      text: 密算大模型、可信执行环境、联邦学习与多方安全计算。
+    - period: 2024 – 2028（预计）
+      role: 博士
+      org: 北京邮电大学网络空间安全学院
+      text: 大模型安全、大模型 for 安全、形式化分析。
+      current: true
+
+honors:
+  title: 荣誉
+  items:
+    - year: "2019"
+      text: 国家奖学金
+    - year: 2018 – 2020
+      text: 北京邮电大学一等奖学金
+    - year: "2018"
+      text: 北京邮电大学优秀毕业论文
+    - year: "2018"
+      text: 第四届全国密码技术竞赛特等奖
+    - year: "2018"
+      text: 第十届全国大学生信息安全竞赛二等奖
+    - year: "2017"
+      text: 北京邮电大学大学生创新创业实践成果一等奖

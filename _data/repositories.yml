@@ -1,8 +1,0 @@
-github_users:
-  - fy222fy
-
-repo_description_lines_max: 2
-
-github_repos:
-  - CactiLab/UAFVerif
-  - secretflow/secretflow

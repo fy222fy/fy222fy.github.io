@@ -1,0 +1,105 @@
+---
+layout: default
+---
+{%- assign t = site.data[site.active_lang].strings -%}
+{%- assign projects = site.data[site.active_lang].projects -%}
+{%- assign featured = projects.featured -%}
+<div class="wrap">
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ projects.intro }}</p>
+  </header>
+
+  <section class="featured" id="{{ featured.anchor }}" aria-labelledby="{{ featured.anchor }}-title">
+    <p class="meta-line"><span class="tag">{{ featured.tag }}</span><span>{{ featured.period }}</span></p>
+    <h2 id="{{ featured.anchor }}-title">{{ featured.title }}</h2>
+    <p class="intro">{{ featured.text }}</p>
+    <div class="featured__body">
+      <div class="featured__work">
+        <ul class="bullets">
+          {% for item in featured.work -%}
+            <li>{{ item }}</li>
+          {%- endfor %}
+        </ul>
+        <p class="outcomes"><span class="label">{{ t.projects.outcomes }}</span> · {{ featured.outcomes }}</p>
+        <ul class="links">
+          {% for link in featured.links -%}
+            <li>
+              {%- if link.url contains '://' -%}
+                <a class="ext" href="{{ link.url }}">{{ link.label }}</a>
+              {%- else -%}
+                <a href="{{ link.url | relative_url }}">{{ link.label }}</a>
+              {%- endif -%}
+            </li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <dl class="stats">
+        {% for stat in featured.stats -%}
+          <div>
+            <dt class="figure-number">{{ stat.figure }}</dt>
+            <dd>{{ stat.text }}</dd>
+          </div>
+        {%- endfor %}
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ant">
+    <header class="section-head">
+      <h2 id="ant">{{ projects.ant.title }}</h2>
+      <span class="meta">{{ projects.ant.meta }}</span>
+    </header>
+    <div class="cols-2">
+      {% for item in projects.ant.items -%}
+        <article class="project" id="{{ item.anchor }}">
+          <p class="meta-line"><span class="tag">{{ item.tag }}</span><span>{{ item.period }}</span></p>
+          <h3>{{ item.title }}</h3>
+          <p class="context">{{ item.text }}</p>
+          <ul class="bullets">
+            {% for work in item.work -%}
+              <li>{{ work }}</li>
+            {%- endfor %}
+          </ul>
+        </article>
+      {%- endfor %}
+      <aside class="outputs" aria-labelledby="outputs">
+        <h3 id="outputs">{{ projects.ant.outputs.title }}</h3>
+        <ul>
+          {% for item in projects.ant.outputs.items -%}
+            <li>
+              <span class="figure-number">
+                {{- item.figure -}}
+                {%- if item.unit %}<span class="unit">{{ item.unit }}</span>{% endif -%}
+              </span>
+              <span>{{ item.text }}</span>
+            </li>
+          {%- endfor %}
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="earlier">
+    <header class="section-head">
+      <h2 id="earlier">{{ projects.earlier.title }}</h2>
+      <span class="meta">{{ projects.earlier.meta }}</span>
+    </header>
+    <div class="cols-2">
+      {% for item in projects.earlier.items -%}
+        <article class="project" id="{{ item.anchor }}">
+          <p class="meta-line"><span class="tag">{{ item.tag }}</span><span>{{ item.period }}</span></p>
+          <h3>{{ item.title }}</h3>
+          <ul class="bullets">
+            {% for work in item.work -%}
+              <li>{{ work }}</li>
+            {%- endfor %}
+          </ul>
+          {% if item.award -%}
+            <p class="award">{{ item.award }}</p>
+          {%- endif %}
+        </article>
+      {%- endfor %}
+    </div>
+  </section>
+</div>

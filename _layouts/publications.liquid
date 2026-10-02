@@ -1,0 +1,58 @@
+---
+layout: default
+---
+{%- assign t = site.data[site.active_lang].strings -%}
+{%- assign talks = site.data[site.active_lang].talks | where_exp: 'talk', 'talk.publications != false' -%}
+<div class="wrap">
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ t.publications.lead }}</p>
+    <nav class="page-index" aria-label="{{ page.title }}">
+      <a href="#papers">{{ t.publications.papers }}<span class="count">{% bibliography_count --query @article @inproceedings %}</span></a>
+      <a href="#talks">{{ t.publications.talks }}<span class="count">{{ talks | size }}</span></a>
+      <a href="#ip">{{ t.publications.ip }}<span class="count">{% bibliography_count --query @misc %}</span></a>
+      <a class="ext" href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">{{ t.links.scholar }}</a>
+      <a class="ext" href="https://orcid.org/{{ site.orcid_id }}">{{ t.links.orcid }}</a>
+    </nav>
+  </header>
+
+  <section class="section" aria-labelledby="papers">
+    <header class="section-head">
+      <h2 id="papers">{{ t.publications.papers }}</h2>
+    </header>
+    <div class="by-year">
+      {% bibliography --query @article @inproceedings %}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="talks">
+    <header class="section-head">
+      <h2 id="talks">{{ t.publications.talks }}</h2>
+    </header>
+    <div class="cols-2">
+      {% for talk in talks -%}
+        <article class="talk">
+          <p class="meta-line"><span class="tag">{{ talk.kind }}</span><span>{{ talk.year }}</span></p>
+          <h3 {% if talk.title_lang %}lang="{{ talk.title_lang }}"{% endif %}>{{ talk.title }}</h3>
+          <p class="where">{{ talk.where }}</p>
+        </article>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ip">
+    <header class="section-head">
+      <h2 id="ip">{{ t.publications.ip }}</h2>
+    </header>
+    <div class="ip-table">
+      <div class="ip-row ip-head" aria-hidden="true">
+        <span>{{ t.publications.columns.year }}</span>
+        <span>{{ t.publications.columns.type }}</span>
+        <span>{{ t.publications.columns.title }}</span>
+        <span>{{ t.publications.columns.people }}</span>
+        <span>{{ t.publications.columns.number }}</span>
+      </div>
+      {% bibliography --query @misc --group_by none --template bib_ip %}
+    </div>
+  </section>
+</div>

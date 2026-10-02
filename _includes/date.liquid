@@ -1,0 +1,23 @@
+{%- comment -%}
+  A date in the language of the page.
+  format: "month" (Jun 2025 / 2025 年 6 月), "day" (Jun 6 / 6 月 6 日), default full (Jun 6, 2025 / 2025 年 6 月 6 日)
+{%- endcomment -%}
+{%- if site.active_lang == 'zh-cn' -%}
+  {%- if include.format == 'month' -%}
+    {{- include.date | date: '%Y 年 %-m 月' -}}
+  {%- elsif include.format == 'day' -%}
+    {{- include.date | date: '%-m 月 %-d 日' -}}
+  {%- else -%}
+    {{- include.date | date: '%Y 年 %-m 月 %-d 日' -}}
+  {%- endif -%}
+{%- else -%}
+  {%- assign month_index = include.date | date: '%-m' | minus: 1 -%}
+  {%- assign month = site.data[site.active_lang].strings.months[month_index] -%}
+  {%- if include.format == 'month' -%}
+    {{- month }} {{ include.date | date: '%Y' -}}
+  {%- elsif include.format == 'day' -%}
+    {{- month }} {{ include.date | date: '%-d' -}}
+  {%- else -%}
+    {{- month }} {{ include.date | date: '%-d, %Y' -}}
+  {%- endif -%}
+{%- endif -%}

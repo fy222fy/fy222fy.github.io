@@ -1,0 +1,221 @@
+# Projects (English). The Chinese version is _data/zh-cn/projects.yml.
+# `selected` is shown on the home page; the rest make up the Projects page.
+
+intro: >-
+  Research, industry and open-source work, from verifying authentication protocols
+  to confidential computing for large models.
+
+selected:
+  - tag: Research · NSFC-funded
+    period: 2018.09 – 2020.03
+    title: Formal Analysis of the FIDO UAF Protocol
+    anchor: fido-uaf
+    text: >-
+      A full formal model of FIDO UAF built from 500+ pages of specifications, a minimal-assumption
+      verification method, and the open-source tool UAFVerif. Led to NDSS 2021, IEEE TDSC and a CNNVD vulnerability.
+    metrics:
+      - 400,000+ scenarios verified
+      - 4 attack classes
+      - 1,856 payment apps analyzed
+  - tag: Industry · Ant Group
+    period: 2024.02 – 2024.05
+    title: Confidential LLM Inference in TEEs
+    anchor: tee-llm
+    text: >-
+      Part of the SecretFlow Cloud confidential computing platform for large models: user data stays encrypted
+      end to end and is only decrypted inside a trusted execution environment.
+    metrics:
+      - Remote attestation
+      - SGX · HyperEnclave
+      - Occlum TEE OS
+  - tag: Open source · SecretFlow
+    period: 2023.06 – 2024.03
+    title: Federated Learning AutoAttack
+    anchor: fl-autoattack
+    text: >-
+      An automated attack-and-defense framework for federated learning that searches hyperparameters over
+      existing algorithms to find the best practices, producing benchmarks across models and scenarios.
+    metrics:
+      - Ray distributed tuning
+      - 1 patent
+      - Promoted to 3 universities
+  - tag: Industry · Ant Group
+    period: 2022.01 – 2023.06
+    title: Trusted-Environment-based Cryptographic Computing (TECC)
+    anchor: tecc
+    text: >-
+      Heterogeneous TEEs combined with same-network MPC: more secure than a single TEE and faster than
+      conventional MPC. Selected as one of the Top Ten Hardcore Technologies at the 5th Digital China Summit.
+    metrics:
+      - ABY3 operators
+      - 4 patents
+      - Software copyright · CAICT certificate
+
+featured:
+  anchor: fido-uaf
+  tag: Research · NSFC-funded
+  period: 2018.09 – 2020.03
+  title: Formal Analysis of the FIDO UAF Protocol
+  text: >-
+    FIDO UAF replaces passwords with biometric authentication, but had never been analyzed comprehensively.
+    This project built a general method for formally analyzing such protocols, and an open-source tool that automates it.
+  work:
+    - >-
+      Extracted the security goals and assumptions of UAF from 500+ pages of standards,
+      and modeled confidentiality, authentication and unlinkability.
+    - >-
+      Proposed a way to model inter-process communication inside a device,
+      distinct from how network protocols are modeled.
+    - >-
+      Proposed a minimal-assumption analysis method and built the open-source verifier UAFVerif,
+      verifying 400,000+ protocol scenarios.
+    - >-
+      Found and classified 4 classes of attacks covering all known attacks,
+      and the minimal assumptions under which UAF is secure.
+    - >-
+      Analyzed 1,856 payment-related apps: 42 apps using UAF carried 2 classes of risk;
+      demonstrated arbitrary-amount transfer attacks on 2 of them.
+    - Found a bug in the ProVerif verifier and contributed the fix.
+  stats:
+    - figure: "500+"
+      text: pages of FIDO specifications formalized
+    - figure: "400,000+"
+      text: protocol scenarios verified automatically
+    - figure: "4"
+      text: classes of attacks, covering all known ones
+    - figure: "1,856"
+      text: payment apps analyzed; 42 at risk
+  outcomes: NDSS 2021 · IEEE TDSC · CNNVD-202005-1219 (medium) · InForSec 2022 talk · book chapter
+  links:
+    - label: NDSS 2021 paper
+      url: /publications/#feng2021formal
+    - label: IEEE TDSC paper
+      url: /publications/#feng2022fido
+    - label: UAFVerif on GitHub
+      url: https://github.com/CactiLab/UAFVerif
+
+ant:
+  title: At Ant Group
+  meta: 2021 – 2024 · Cybersecurity Engineer
+  items:
+    - anchor: tee-llm
+      tag: Product + research
+      period: 2024.02 – 2024.05
+      title: Confidential LLM Inference in TEEs
+      text: >-
+        SecretFlow Cloud (2024) deploys models inside trusted execution environments,
+        so that neither the model nor users’ queries are exposed to the hosting platform.
+      work:
+        - >-
+          Designed the authentication flow between the user platform and cloud TEEs,
+          and key generation and encrypted transport based on remote attestation.
+        - Deployed LLMs in SGX and HyperEnclave with Occlum, Ant Group’s open-source TEE OS.
+        - >-
+          Built the path in which queries are encrypted on the platform,
+          decrypted and computed inside the TEE, and returned encrypted.
+    - anchor: fl-llm
+      tag: Product + research
+      period: 2024.02 – 2024.05
+      title: Federated Fine-tuning of LLMs Across Institutions
+      text: >-
+        Joint training or fine-tuning of large models across institutions,
+        where both model providers and data providers need strong privacy guarantees.
+      work:
+        - Designed a federated-learning architecture for training and fine-tuning large models.
+        - >-
+          Validated federated LLM fine-tuning with Accelerate, DeepSpeed and PyTorch,
+          measuring performance and usability.
+    - anchor: fl-autoattack
+      tag: Open source · SecretFlow
+      period: 2023.06 – 2024.03
+      title: Federated Learning AutoAttack
+      text: Many attack and defense algorithms exist for federated learning, but they are hard to apply in practice.
+      work:
+        - Designed an automated attack-and-defense framework that searches hyperparameters with Ray (1 patent).
+        - >-
+          Implemented mainstream ML models and state-of-the-art attacks and defenses,
+          producing benchmarks across models and scenarios.
+        - Open-sourced it in SecretFlow, presented it in a Bilibili livestream and promoted it to 3 universities.
+    - anchor: tecc
+      tag: Product + algorithms
+      period: 2022.01 – 2023.06
+      title: Trusted-Environment-based Cryptographic Computing (TECC)
+      text: >-
+        Heterogeneous TEEs run in one LAN together with MPC:
+        faster than MPC over public networks, and more secure than a single TEE.
+      work:
+        - Proved the privacy of the semi-honest ABY3 protocol under a malicious model, after comparing MPC algorithms.
+        - Implemented ABY3 operators and optimized vector XOR, matrix dot product and sorting (4 patents).
+        - Adapted operators to SGX and HyperEnclave, deployed to the cloud and onboarded 1 business application.
+    - anchor: oceanbase-lob
+      tag: Product
+      period: 2021.06 – 2021.09
+      title: Large Object Storage for OceanBase
+      text: >-
+        OceanBase’s LSM-tree architecture did not support large objects (LOB),
+        and replicas store them at different physical addresses.
+      work:
+        - Flushed LOB data to disk in real time on insert and update.
+        - >-
+          Designed a virtual file system that hides physical addresses from the database layer,
+          keeping replicas strongly consistent.
+        - Used tiered indexing to support TB-scale LOB storage.
+  outputs:
+    title: Outputs at Ant Group
+    items:
+      - figure: "5"
+        text: Chinese invention patents in MPC and distributed computing
+      - figure: "1"
+        text: "Software copyright: Ant TECC engine system (2022SR1504853)"
+      - figure: "1"
+        text: CAICT MPC security evaluation certificate for TECC (IY2022102700)
+      - figure: "1"
+        text: Trusted Encrypted Computing white paper, co-written
+      - figure: "1"
+        text: Open-source framework in SecretFlow
+
+earlier:
+  title: Competitions, Coursework & Side Projects
+  meta: 2016 – 2024
+  items:
+    - anchor: windows-login
+      tag: Competition
+      period: "2018.11"
+      title: Windows Login with Secure Phone Collaboration
+      award: Special Prize · 4th National Cryptography Technology Competition
+      work:
+        - Unlocks the computer when its owner arrives and locks it when they leave, over Bluetooth.
+        - >-
+          Designed the Bluetooth protocol, implemented Chinese national (SM) algorithms with OpenSSL,
+          and proved the protocol secure by formal analysis.
+        - >-
+          Built the C# server and the Windows app; filed 1 patent (CN110717177A);
+          led the team and the final presentation.
+    - anchor: keyper
+      tag: Competition
+      period: "2017.05"
+      title: "Keyper: Cross-platform Password Manager with Fingerprint"
+      award: First Prize · BUPT Innovation Practice; Second Prize · 10th CISCN
+      work:
+        - Tiered password management on top of Windows Key Container.
+        - Adapted a fingerprint USB key so that stored keys unlock with a fingerprint.
+        - Led the team; the results were adopted by a company.
+    - anchor: coursework
+      tag: Coursework & self-study
+      period: 2016 – 2019
+      title: Encrypted Cloud Drive, Messaging and Backup Systems
+      work:
+        - >-
+          Encrypted cloud drive server: SM-algorithm encryption at rest, concurrent connections,
+          heartbeats, instant upload and resumable transfer.
+        - >-
+          Encrypted instant messaging with client/server authentication and peer-to-peer messaging;
+          a cloud backup system with rollback.
+        - A face-recognition library management site with Flask and MySQL.
+    - anchor: quant
+      tag: Side project
+      period: 2023 – 2024
+      title: AI Quantitative Investment Framework
+      work:
+        - A quantitative investment framework that supports multiple kinds of financial products.
+        - Uses AI and large models for stock selection and asset allocation, and connects to live trading.

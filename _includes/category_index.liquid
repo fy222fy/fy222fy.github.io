@@ -1,0 +1,15 @@
+{%- comment -%} Links to the blog and its categories, with the number of posts in each. {%- endcomment -%}
+{%- assign t = site.data[site.active_lang].strings.blog -%}
+<nav class="page-index" aria-label="{{ t.in_category }}">
+  <a href="{{ '/blog/' | relative_url }}" {% if include.current == 'all' %}aria-current="page"{% endif %}>
+    {{- t.all }}<span class="count">{{ site.posts | size }}</span>
+  </a>
+  {% for category in site.display_categories -%}
+    {%- assign posts = site.categories[category] -%}
+    {%- if posts.size > 0 -%}
+      <a href="{{ category | slugify | prepend: '/blog/category/' | append: '/' | relative_url }}" {% if include.current == category %}aria-current="page"{% endif %}>
+        {{- t.categories[category] | default: category }}<span class="count">{{ posts.size }}</span>
+      </a>
+    {%- endif -%}
+  {%- endfor %}
+</nav>

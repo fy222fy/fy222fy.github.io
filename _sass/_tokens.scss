@@ -1,0 +1,66 @@
+// Design tokens: colors, type scale, spacing.
+//
+// The palette is ink on white with a cinnabar accent. The accent marks what matters most on a page:
+// key figures, the site owner's name in author lists, highlighted phrases and the current item.
+// --tag colors small category labels (project type, venue, blog tags) in navy, so that red stays for what matters most.
+
+@mixin dark {
+  --paper: #111214;
+  --ink: #f3f2ed;
+  --lead: #e7e6e1;
+  --text: #d0cfca;
+  --muted: #a2a19b;
+  --rule: #2d2e31;
+  --rule-strong: #8b8a85;
+  --accent: #f08c7b;
+  --accent-strong: #f7ab9d;
+  --tag: #8fb3e8;
+  --tint: #1b1c1f;
+  --selection: #5a2a23;
+  color-scheme: dark;
+}
+
+:root {
+  --paper: #ffffff;
+  --ink: #15171a;
+  --lead: #22252a;
+  --text: #33363c;
+  --muted: #60646c;
+  --rule: #e2e2de;
+  --rule-strong: #15171a;
+  --accent: #a4281c;
+  --accent-strong: #7b1a10;
+  --tag: #1d4e89;
+  --tint: #f6f6f3;
+  --selection: #f3d9d4;
+  color-scheme: light;
+
+  --serif: "Source Serif 4", "Noto Serif SC", "Source Han Serif SC", "Source Han Serif CN", "Songti SC", "STSong", "SimSun", serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  // Type scale, sized for reading a desktop screen at arm's length; it shrinks a little on phones.
+  // Nothing is smaller than 15px.
+  --fs-small: 0.9375rem; // 15
+  --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem); // 16 → 17
+  --fs-lead: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem); // 18 → 20
+  --fs-h3: clamp(1.125rem, 1.07rem + 0.25vw, 1.25rem); // 18 → 20
+  --fs-h2: clamp(1.5rem, 1.35rem + 0.65vw, 1.75rem); // 24 → 28
+  --fs-h1: clamp(2.125rem, 1.8rem + 1.4vw, 2.75rem); // 34 → 44
+  --fs-hero: clamp(2.5rem, 2rem + 2.2vw, 3.5rem); // 40 → 56
+  --fs-figure: clamp(1.875rem, 1.7rem + 0.75vw, 2.25rem); // 30 → 36
+
+  --content: 1160px; // widest the content gets, so that lines stay readable on large screens
+  --gutter: clamp(1.25rem, 0.3rem + 4vw, 3rem); // page side margin
+  --measure: 40em; // comfortable line length for running text
+  --section: clamp(2.75rem, 2.2rem + 2.2vw, 4rem); // space between sections, 44 → 64
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @include dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  @include dark;
+}

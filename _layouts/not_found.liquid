@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{%- assign t = site.data[site.active_lang].strings -%}
+<div class="wrap">
+  <header class="page-head not-found">
+    <p class="code">404</p>
+    <h1>{{ t.not_found.title }}</h1>
+    <p class="lead">{{ t.not_found.text }}</p>
+    <nav class="page-index">
+      <a href="{{ '/' | relative_url }}">{{ t.not_found.home }}<span aria-hidden="true"> →</span></a>
+    </nav>
+  </header>
+</div>

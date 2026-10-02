@@ -1,0 +1,27 @@
+{%- comment -%}
+  Posts grouped by year. Pass the posts, newest first: {% include post_list.liquid posts=site.posts %}
+{%- endcomment -%}
+{%- assign years = include.posts | group_by_exp: 'post', "post.date | date: '%Y'" -%}
+<div class="post-years">
+  {% for year in years -%}
+    <h2 id="y{{ year.name }}">{{ year.name }}</h2>
+    <ol>
+      {% for post in year.items -%}
+        <li class="post-row">
+          <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%m-%d' }}</time>
+          <div lang="{{ post.lang | default: 'zh-CN' }}">
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            {% if post.description -%}
+              <p class="desc">{{ post.description }}</p>
+            {%- endif %}
+          </div>
+          <p class="tags">
+            {%- for tag in post.tags -%}
+              <a href="{{ tag | slugify | prepend: '/blog/tag/' | append: '/' | relative_url }}">{{ tag }}</a>
+            {%- endfor -%}
+          </p>
+        </li>
+      {%- endfor %}
+    </ol>
+  {%- endfor %}
+</div>

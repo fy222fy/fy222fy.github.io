@@ -1,0 +1,28 @@
+{%- comment -%}
+  Author list of a bibliography entry. The site owner is emphasized; markers such as * and † become superscripts.
+  Names written as a single word (Chinese names) are separated with a Chinese comma.
+{%- endcomment -%}
+{%- assign entry = include.entry -%}
+{%- for author in entry.author_array -%}
+  {%- assign last = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+  {%- assign marks = author.last | regex_replace: '[^*∗†‡§¶‖&^]', '' -%}
+  {%- assign is_self = false -%}
+  {%- if site.scholar.last_name contains last -%}
+    {%- if author.first == blank or site.scholar.first_name contains author.first -%}
+      {%- assign is_self = true -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- capture name -%}
+    {%- if author.first != blank -%}{{ author.first }} {% endif -%}
+    {{- last -}}
+  {%- endcapture -%}
+  {%- unless forloop.first -%}
+    {%- if author.first == blank -%}，{%- else -%}, {% endif -%}
+  {%- endunless -%}
+  {%- if is_self -%}
+    <span class="me">{{ name }}</span>
+  {%- else -%}
+    {{- name -}}
+  {%- endif -%}
+  {%- if marks != blank -%}<sup>{{ marks }}</sup>{%- endif -%}
+{%- endfor -%}

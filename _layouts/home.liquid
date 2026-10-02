@@ -1,0 +1,192 @@
+---
+layout: default
+---
+{%- assign lang = site.active_lang -%}
+{%- assign t = site.data[lang].strings -%}
+{%- assign home = site.data[lang].home -%}
+{%- assign projects = site.data[lang].projects -%}
+{%- assign talks = site.data[lang].talks -%}
+<div class="wrap">
+  <section class="hero" aria-labelledby="name">
+    <div class="hero__text">
+      <h1 class="hero__name" id="name">
+        <span class="main">{{ home.name }}</span>
+        <span class="alt" lang="{{ home.name_alt_lang }}">{{ home.name_alt }}</span>
+      </h1>
+      <p class="hero__role">{{ home.role }} · {{ home.location }}</p>
+      {%- comment -%} The self-description is the text of _pages/<lang>/about.md: the first two paragraphs go here, the rest below {%- endcomment -%}
+      {%- comment -%} line breaks inside a Chinese paragraph would show up as spaces between characters {%- endcomment -%}
+      {%- if lang == 'zh-cn' -%}{%- assign body = content | replace: '
+', '' -%}{%- else -%}{%- assign body = content -%}{%- endif -%}
+      {%- assign paragraphs = body | split: '</p>' -%}
+      <div class="hero__lead">
+        {%- for paragraph in paragraphs limit: 2 -%}{{ paragraph }}</p>{%- endfor -%}
+      </div>
+      <ul class="hero__links">
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li><a class="ext" href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">{{ t.links.scholar }}</a></li>
+        <li><a class="ext" href="https://orcid.org/{{ site.orcid_id }}">{{ t.links.orcid }}</a></li>
+        <li><a class="ext" href="https://github.com/{{ site.github_username }}">{{ t.links.github }}</a></li>
+        <li><a href="{{ '/cv/' | relative_url }}">{{ t.links.cv }}</a></li>
+      </ul>
+    </div>
+    <figure class="hero__photo">
+      {%- assign photo = page.photo | default: 'prof_pic.jpg' -%}
+      {%- assign photo_base = photo | split: '.' | first -%}
+      <picture>
+        {% if site.imagemagick.enabled -%}
+          <source
+            type="image/webp"
+            srcset="{% for w in site.imagemagick.widths %}{{ '/assets/img/' | append: photo_base | append: '-' | append: w | append: '.webp' | relative_url }} {{ w }}w{% unless forloop.last %}, {% endunless %}{% endfor %}"
+            sizes="(min-width: 1200px) 264px, (min-width: 761px) 22vw, 100vw"
+          >
+        {%- endif %}
+        <img
+          src="{{ '/assets/img/' | append: photo | relative_url }}"
+          alt="{{ home.photo_alt }}"
+          width="800"
+          height="1000"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </picture>
+    </figure>
+    <dl class="facts">
+      {% for fact in home.facts -%}
+        <div>
+          <dt class="figure-number">
+            {{- fact.figure -}}
+            {%- if fact.unit %}<span class="unit">{{ fact.unit }}</span>{% endif -%}
+          </dt>
+          <dd>{{ fact.text }}</dd>
+        </div>
+      {%- endfor %}
+    </dl>
+  </section>
+
+  {%- if paragraphs.size > 2 %}
+    <section class="section" aria-labelledby="about">
+      <header class="section-head">
+        <h2 id="about">{{ home.about.title }}</h2>
+      </header>
+      <div class="about-body">
+        {%- for paragraph in paragraphs offset: 2 -%}
+          {%- assign text = paragraph | strip -%}
+          {%- if text != '' -%}{{ text }}</p>{%- endif -%}
+        {%- endfor -%}
+      </div>
+    </section>
+  {%- endif %}
+
+  <section class="section" aria-labelledby="research">
+    <header class="section-head">
+      <h2 id="research">{{ home.research.title }}</h2>
+    </header>
+    <div class="cols-3">
+      {% for item in home.research.items -%}
+        <div class="topic">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </div>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="projects">
+    <header class="section-head">
+      <h2 id="projects">{{ home.projects.title }}</h2>
+      <a class="more" href="{{ '/projects/' | relative_url }}">{{ home.projects.more }}<span class="arrow" aria-hidden="true">→</span></a>
+    </header>
+    <div class="cols-2">
+      {% for item in projects.selected -%}
+        <article class="project-brief">
+          <p class="meta-line"><span class="tag">{{ item.tag }}</span><span class="period">{{ item.period }}</span></p>
+          <h3><a href="{{ '/projects/' | relative_url }}#{{ item.anchor }}">{{ item.title }}</a></h3>
+          <p>{{ item.text }}</p>
+          <ul class="metrics">
+            {%- for metric in item.metrics -%}
+              {%- comment -%} numbers such as "400,000+" or "40 万+" are marked in the accent colour {%- endcomment -%}
+              <li>{{ metric | regex_replace: '(?<![A-Za-z0-9])([0-9][0-9,.]*(?: ?万)?\+?)', '<span class="num">\1</span>' }}</li>
+            {%- endfor -%}
+          </ul>
+        </article>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <div class="split">
+    <section aria-labelledby="publications">
+      <header class="section-head">
+        <h2 id="publications">{{ home.publications.title }}</h2>
+        <a class="more" href="{{ '/publications/' | relative_url }}">{{ home.publications.more }}<span class="arrow" aria-hidden="true">→</span></a>
+      </header>
+      {% bibliography --group_by none --query @*[selected=true]* %}
+      <p class="footnote">{{ home.publications.note }}</p>
+    </section>
+
+    <div class="stack">
+      <section class="section" aria-labelledby="news">
+        <header class="section-head">
+          <h2 id="news">{{ home.news.title }}</h2>
+          <a class="more" href="{{ '/news/' | relative_url }}">{{ home.news.more }}<span class="arrow" aria-hidden="true">→</span></a>
+        </header>
+        <ul class="ruled tight brief">
+          {%- assign news = site.news | reverse -%}
+          {% for item in news limit: 5 -%}
+            <li>
+              <time class="date" datetime="{{ item.date | date: '%Y-%m-%d' }}">{% include date.liquid date=item.date format='month' %}</time>
+              {{ item.content | markdownify | strip }}
+            </li>
+          {%- endfor %}
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="talks">
+        <header class="section-head">
+          <h2 id="talks">{{ home.talks.title }}</h2>
+        </header>
+        <ul class="ruled tight brief">
+          {% for talk in talks -%}
+            <li>
+              <span class="kind">{{ talk.kind }}{% if talk.year %} · {{ talk.year }}{% endif %}</span>
+              <span class="title" {% if talk.title_lang %}lang="{{ talk.title_lang }}"{% endif %}>{{ talk.title }}</span>
+              <span class="where">{{ talk.where }}</span>
+            </li>
+          {%- endfor %}
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="timeline">
+    <header class="section-head">
+      <h2 id="timeline">{{ home.timeline.title }}</h2>
+      <a class="more" href="{{ '/cv/' | relative_url }}">{{ home.timeline.more }}<span class="arrow" aria-hidden="true">→</span></a>
+    </header>
+    <ol class="timeline">
+      {% for item in home.timeline.items -%}
+        <li {% if item.current %}class="is-current"{% endif %}>
+          <span class="period">{{ item.period }}</span>
+          <h3>{{ item.role }}</h3>
+          <p class="org">{{ item.org }}</p>
+          <p class="text">{{ item.text }}</p>
+        </li>
+      {%- endfor %}
+    </ol>
+  </section>
+
+  <section class="section" aria-labelledby="honors">
+    <header class="section-head">
+      <h2 id="honors">{{ home.honors.title }}</h2>
+    </header>
+    <ul class="honors">
+      {% for item in home.honors.items -%}
+        <li>
+          <span class="year">{{ item.year }}</span>
+          <span class="text">{{ item.text }}</span>
+        </li>
+      {%- endfor %}
+    </ul>
+  </section>
+</div>

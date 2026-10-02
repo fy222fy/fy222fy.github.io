@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{%- comment -%} Posts of one year, one tag or one category (jekyll-archives). {%- endcomment -%}
+{%- assign t = site.data[site.active_lang].strings.blog -%}
+{%- if page.type == 'category' -%}
+  {%- assign label = t.in_category -%}
+  {%- assign name = t.categories[page.title] | default: page.title -%}
+  {%- assign current = page.title -%}
+{%- elsif page.type == 'tag' -%}
+  {%- assign label = t.tagged -%}
+  {%- assign name = page.title | prepend: '#' -%}
+{%- else -%}
+  {%- assign label = t.from_year -%}
+  {%- assign name = page.date | date: '%Y' -%}
+{%- endif -%}
+<div class="wrap">
+  <header class="page-head">
+    <p class="kicker">{{ label }}</p>
+    <h1>{{ name }}</h1>
+    {% include category_index.liquid current=current %}
+  </header>
+  <section class="section">
+    {% include post_list.liquid posts=page.posts %}
+  </section>
+</div>
