@@ -13,7 +13,7 @@ layout: default
   <section class="featured" id="{{ featured.anchor }}" aria-labelledby="{{ featured.anchor }}-title">
     <p class="meta-line"><span class="tag">{{ featured.tag }}</span><span>{{ featured.period }}</span></p>
     <h2 id="{{ featured.anchor }}-title">{{ featured.title }}</h2>
-    <p class="intro">{{ featured.text }}</p>
+    {% if featured.text %}<p class="intro">{{ featured.text }}</p>{% endif %}
     <div class="featured__body">
       <div class="featured__work">
         <ul class="bullets">
@@ -55,7 +55,7 @@ layout: default
         <article class="project" id="{{ item.anchor }}">
           <p class="meta-line"><span class="tag">{{ item.tag }}</span><span>{{ item.period }}</span></p>
           <h3>{{ item.title }}</h3>
-          <p class="context">{{ item.text }}</p>
+          {% if item.text %}<p class="context">{{ item.text }}</p>{% endif %}
           <ul class="bullets">
             {% for work in item.work -%}
               <li>{{ work }}</li>
@@ -63,6 +63,7 @@ layout: default
           </ul>
         </article>
       {%- endfor %}
+      {% if projects.ant.outputs -%}
       <aside class="outputs" aria-labelledby="outputs">
         <h3 id="outputs">{{ projects.ant.outputs.title }}</h3>
         <ul>
@@ -77,6 +78,7 @@ layout: default
           {%- endfor %}
         </ul>
       </aside>
+      {%- endif %}
     </div>
   </section>
 

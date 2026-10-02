@@ -68,6 +68,8 @@ cv:
   skills: Skills
   languages: Languages
   activities: Activities
+  certificates: Certificates
+  interests: Interests
   present: present
   expected: " (expected)"
   all_projects: Project details

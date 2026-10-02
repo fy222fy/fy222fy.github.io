@@ -23,7 +23,7 @@
 
 .cv-summary {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   gap: 1.5rem clamp(1rem, 0.5rem + 1.5vw, 2rem);
 
   dd {
@@ -346,4 +346,19 @@ html:lang(zh-CN) .ref-row .ref-where:lang(zh-CN) {
   .cv-activities {
     margin-top: 1.25rem;
   }
+}
+
+.ref-row .ref-summary {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--text);
+  font-size: var(--fs-small);
+}
+
+.cv-skills .level {
+  margin-left: 0.15em;
+}
+
+.cv-rows .text + .text {
+  margin-top: 0.1rem;
 }

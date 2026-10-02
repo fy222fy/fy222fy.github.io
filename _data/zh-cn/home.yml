@@ -12,16 +12,16 @@ location: 中国 · 北京
 facts:
   - figure: "2"
     unit: 篇
-    text: 第一作者论文，发表于 NDSS 与 IEEE TDSC
+    text: 第一作者论文（NDSS、IEEE TDSC）
   - figure: "5"
     unit: 年
-    text: 形式化分析研究经历，从本科到博士
+    text: 形式化分析研究经历
   - figure: "3"
     unit: 年
     text: 蚂蚁集团网络安全工程师
   - figure: "6"
     unit: 项
-    text: 发明专利，另有软件著作权与信通院评测证书各 1 项
+    text: 发明专利，另有软著与信通院证书各 1 项
 
 about:
   title: 关于我
@@ -56,22 +56,22 @@ timeline:
   title: 教育与经历
   more: 完整简历
   items:
-    - period: 2014 – 2018
-      role: 本科
+    - period: 2014 — 2018
+      role: 本科 · 信息安全
       org: 北京邮电大学
-      text: 信息安全专业。获第四届全国密码技术竞赛特等奖。
-    - period: 2018 – 2021
+      text: 第四届全国密码技术竞赛特等奖。
+    - period: 2018 — 2021
       role: 硕士
-      org: 北京邮电大学网络空间安全学院
-      text: 安全协议形式化分析；以第一作者在 NDSS 2021、IEEE TDSC 发表论文。
-    - period: 2021 – 2024
+      org: 北京邮电大学 网络空间安全学院
+      text: 安全协议形式化分析：FIDO UAF 协议的完整验证（NDSS 2021、IEEE TDSC）与开源工具 UAFVerif。
+    - period: 2021 — 2024
       role: 网络安全工程师
       org: 蚂蚁集团
-      text: 密算大模型、可信执行环境、联邦学习与多方安全计算。
-    - period: 2024 – 2028（预计）
-      role: 博士
-      org: 北京邮电大学网络空间安全学院
-      text: AI for Security（AI 安全）、形式化分析、隐私计算。
+      text: 密态大模型推理与密态知识图谱平台；联邦学习自动攻防框架（在隐语开源）；可信密态计算系统 TECC 的 MPC 算子、TEE 适配与云上部署。
+    - period: 2024 — 至今
+      role: 博士研究生
+      org: 北京邮电大学 网络空间安全学院
+      text: 大模型辅助的形式化分析，以及人工智能群体交互安全。
       current: true
 
 honors:

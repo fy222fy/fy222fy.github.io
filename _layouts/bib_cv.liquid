@@ -7,5 +7,11 @@
     {%- include pub_authors.liquid entry=entry -%}.
     <span class="ref-title">{{ entry.title }}.</span>
     <span class="ref-where">{{ entry.where }}.</span>
+    {%- assign resume_key = site.active_lang | prepend: 'resume_' -%}
+    {%- assign title = entry.title | downcase | strip -%}
+    {%- for p in site.data[resume_key].publications -%}
+      {%- assign name = p.name | downcase | strip -%}
+      {%- if name == title and p.summary %}<span class="ref-summary" lang="{% if site.active_lang == 'zh-cn' %}zh-CN{% else %}en{% endif %}">{{ p.summary }}</span>{% endif -%}
+    {%- endfor -%}
   </div>
 </div>
