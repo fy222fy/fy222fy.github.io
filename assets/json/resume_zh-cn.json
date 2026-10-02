@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "冯皓楠",
-    "label": "AI 安全，AI for 安全，形式化分析，量化投资",
+    "label": "AI for Security（AI 安全），形式化分析，隐私计算，量化投资",
     "image": "prof_pic.jpg",
     "email": "fenghaonan222@gmail.com",
     "url": "https://fy222fy.github.io",
@@ -58,7 +58,7 @@
     {
       "institution": "北京邮电大学网络空间安全学院",
       "url": "https://scss.bupt.edu.cn/",
-      "area": "AI 安全、形式化分析",
+      "area": "AI for Security（AI 安全）、形式化分析、隐私计算",
       "studyType": "博士",
       "startDate": "2024-09-01",
       "endDate": "2028-06-01",
@@ -231,12 +231,17 @@
   ],
   "interests": [
     {
-      "name": "大模型安全、大模型 for 安全",
+      "name": "AI for Security（AI 安全）",
       "icon": "fa-solid fa-tag",
       "keywords": []
     },
     {
       "name": "形式化分析",
+      "icon": "fa-solid fa-tag",
+      "keywords": []
+    },
+    {
+      "name": "隐私计算",
       "icon": "fa-solid fa-tag",
       "keywords": []
     }
