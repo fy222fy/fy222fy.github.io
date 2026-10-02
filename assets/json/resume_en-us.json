@@ -155,39 +155,114 @@
     }
   ],
   "awards": [
-    { "category": "Academic", "date": "2019", "title": "National Scholarship" },
-    { "category": "Academic", "date": "2018 – 2020", "title": "First-Class Scholarship, BUPT" },
-    { "category": "Academic", "date": "2018", "title": "Outstanding Undergraduate Thesis, BUPT" },
-    { "category": "Competitions", "date": "2018", "title": "Special Prize, 4th National Cryptography Technology Competition" },
-    { "category": "Competitions", "date": "2018", "title": "Second Prize, 10th National College Student Information Security Contest" },
-    { "category": "Competitions", "date": "2017", "title": "First Prize, BUPT College Student Innovation and Entrepreneurship Practice" },
-    { "category": "Security", "date": "2020", "title": "CNNVD medium-risk vulnerability (CNNVD-202005-1219)" }
+    {
+      "category": "Academic",
+      "date": "2019",
+      "title": "National Scholarship"
+    },
+    {
+      "category": "Academic",
+      "date": "2018 – 2020",
+      "title": "First-Class Scholarship, BUPT"
+    },
+    {
+      "category": "Academic",
+      "date": "2018",
+      "title": "Outstanding Undergraduate Thesis, BUPT"
+    },
+    {
+      "category": "Competitions",
+      "date": "2018",
+      "title": "Special Prize, 4th National Cryptography Technology Competition"
+    },
+    {
+      "category": "Competitions",
+      "date": "2018",
+      "title": "Second Prize, 10th National College Student Information Security Contest"
+    },
+    {
+      "category": "Competitions",
+      "date": "2017",
+      "title": "First Prize, BUPT College Student Innovation and Entrepreneurship Practice"
+    },
+    {
+      "category": "Security",
+      "date": "2020",
+      "title": "CNNVD medium-risk vulnerability (CNNVD-202005-1219)"
+    }
   ],
   "skills": [
     {
       "name": "Security & systems",
-      "keywords": ["ProVerif", "Applied pi-calculus", "TEE (SGX, HyperEnclave)", "Occlum", "Kubernetes", "Docker", "Linux", "Alibaba Cloud"]
+      "keywords": [
+        "ProVerif",
+        "Applied pi-calculus",
+        "TEE (SGX, HyperEnclave)",
+        "Occlum",
+        "Kubernetes",
+        "Docker",
+        "Linux",
+        "Alibaba Cloud"
+      ]
     },
     {
       "name": "Knowledge",
-      "keywords": ["Formal verification", "Privacy computing", "Large language models", "Machine learning", "Cryptography"]
+      "keywords": [
+        "Formal verification",
+        "Privacy computing",
+        "Large language models",
+        "Machine learning",
+        "Cryptography"
+      ]
     },
     {
       "name": "Programming",
-      "keywords": ["Python", "C/C++", "Java", "C#", "LaTeX", "HTML"]
+      "keywords": [
+        "Python",
+        "C/C++",
+        "Java",
+        "C#",
+        "LaTeX",
+        "HTML"
+      ]
     },
     {
       "name": "Data & media",
-      "keywords": ["MySQL", "PostgreSQL", "Redis", "Premiere Pro", "After Effects"]
+      "keywords": [
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "Premiere Pro",
+        "After Effects"
+      ]
     }
   ],
   "languages": [
-    { "language": "Chinese", "fluency": "Native" },
-    { "language": "English", "fluency": "Fluent" }
+    {
+      "language": "Chinese",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
   ],
   "activities": [
     "Undergraduate class monitor; the class was named a Beijing Excellent Class Collective.",
     "Outstanding Class Cadre for 3 consecutive years; Outstanding Graduate.",
     "University volunteer; college basketball and badminton teams."
+  ],
+  "certificates": [
+    {
+      "name": "Trusted-Environment-based Cryptographic Computing system (TECC)",
+      "date": "2022-01-01",
+      "issuer": "China Academy of Information and Communications Technology"
+    },
+    {
+      "name": "International Forum for Security Research Certificate",
+      "date": "2021-06-05",
+      "issuer": "Institute of Computing Technology, Chinese Academy of Sciences",
+      "url": "https://www.inforsec.org/wp/"
+    }
   ]
 }

@@ -135,7 +135,9 @@ layout: default
           <ul class="cv-rows two">
             {% for item in group.items -%}
               <li>
-                <span class="period">{{ item.year | default: item.date | slice: 0, 4 }}</span>
+                {%- comment -%} full dates such as 2018-09-01 show the year; ranges such as "2018 – 2020" show as written {%- endcomment -%}
+                {%- if item.year -%}{%- assign when = item.year -%}{%- elsif item.date.size <= 10 -%}{%- assign when = item.date | slice: 0, 4 -%}{%- else -%}{%- assign when = item.date -%}{%- endif %}
+                <span class="period">{{ when }}</span>
                 <span>
                   <span class="title">{{ item.title }}</span>
                   {%- if item.awarder %}<span class="text">{{ item.awarder }}</span>{% endif -%}

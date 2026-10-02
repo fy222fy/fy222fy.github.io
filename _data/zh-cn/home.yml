@@ -37,7 +37,6 @@ research:
       text: 可信执行环境（TEE）、多方安全计算（MPC）与联邦学习，以及它们在大模型托管与推理中的应用。
 
 projects:
-  title: 重点项目
   more: 全部项目
 
 publications:
@@ -59,19 +58,15 @@ timeline:
     - period: 2014 — 2018
       role: 本科 · 信息安全
       org: 北京邮电大学
-      text: 第四届全国密码技术竞赛特等奖。
     - period: 2018 — 2021
       role: 硕士
       org: 北京邮电大学 网络空间安全学院
-      text: 安全协议形式化分析：FIDO UAF 协议的完整验证（NDSS 2021、IEEE TDSC）与开源工具 UAFVerif。
     - period: 2021 — 2024
       role: 网络安全工程师
       org: 蚂蚁集团
-      text: 密态大模型推理与密态知识图谱平台；联邦学习自动攻防框架（在隐语开源）；可信密态计算系统 TECC 的 MPC 算子、TEE 适配与云上部署。
     - period: 2024 — 至今
       role: 博士研究生
       org: 北京邮电大学 网络空间安全学院
-      text: 大模型辅助的形式化分析，以及人工智能群体交互安全。
       current: true
 
 honors:

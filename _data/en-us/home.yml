@@ -43,7 +43,6 @@ research:
         and their use in hosting and running large models.
 
 projects:
-  title: Selected Projects
   more: All projects
 
 publications:
@@ -67,19 +66,15 @@ timeline:
     - period: 2014 – 2018
       role: B.S.
       org: Beijing University of Posts and Telecommunications
-      text: Information Security. Special Prize at the 4th National Cryptography Technology Competition.
     - period: 2018 – 2021
       role: M.S.
       org: School of Cyberspace Security, BUPT
-      text: Formal analysis of security protocols; first-author papers at NDSS 2021 and IEEE TDSC.
     - period: 2021 – 2024
       role: Cybersecurity Engineer
       org: Ant Group
-      text: Confidential LLM computing, TEEs, federated learning and secure multi-party computation.
     - period: 2024 – 2028 (expected)
       role: Ph.D.
       org: School of Cyberspace Security, BUPT
-      text: AI for security, formal analysis, and privacy computing.
       current: true
 
 honors:

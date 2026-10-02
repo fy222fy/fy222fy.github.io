@@ -1,44 +1,8 @@
 # 项目（中文）。英文版在 _data/en-us/projects.yml。
-# 文字来源：首页四个重点项目取自中文手机版设计稿（docs/redesign/boards/New-Mobile.dc.html），
-# 项目页取自 docs/redesign/README.md 第 4.2 节。
-# selected 显示在首页；其余部分组成“项目”页。
+# 文字来源：docs/redesign/README.md 第 4.2 节。
 
 intro: 科研、工业界与开源项目：从认证协议的形式化验证，到大模型的密态计算。
 
-selected:
-  - tag: 自然基金科研项目
-    period: 2018.09 – 2020.03
-    title: FIDO UAF 协议的形式化分析
-    anchor: fido-uaf
-    text: 从 500+ 页标准中提炼安全目标与假设，提出最小化假设分析方法，开发并开源自动化验证工具 UAFVerif。
-    metrics:
-      - 40 万+ 场景验证
-      - 4 类攻击
-      - 1856 款 APP 分析
-  - tag: 蚂蚁集团 · 产品研发
-    period: 2024.02 – 2024.05
-    title: TEE 密态大模型推理
-    anchor: tee-llm
-    text: 基于远程认证设计身份验证与密钥传输流程，借助 Occlum 在 SGX、HyperEnclave 中部署大模型。
-    metrics:
-      - 远程认证
-      - SGX · HyperEnclave
-  - tag: 隐语开源
-    period: 2023.06 – 2024.03
-    title: 联邦学习自动攻防框架
-    anchor: fl-autoattack
-    text: 基于 Ray 实现分布式超参遍历，寻找最佳攻防实践，产出不同模型和场景下的业界基准。
-    metrics:
-      - 1 项专利
-      - B 站直播推广
-  - tag: 蚂蚁集团 · 产品研发
-    period: 2022.01 – 2023.06
-    title: 可信密态计算系统 TECC
-    anchor: tecc
-    text: 实现 ABY3 算子并优化排序等算法，适配异构 TEE 并完成云上部署，撰写白皮书。
-    metrics:
-      - 4 项专利
-      - 软著 + 信通院证书
 
 featured:
   anchor: fido-uaf

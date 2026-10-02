@@ -4,7 +4,6 @@ layout: default
 {%- assign lang = site.active_lang -%}
 {%- assign t = site.data[lang].strings -%}
 {%- assign home = site.data[lang].home -%}
-{%- assign projects = site.data[lang].projects -%}
 {%- assign talks = site.data[lang].talks -%}
 <div class="wrap">
   <section class="hero" aria-labelledby="name">
@@ -69,6 +68,7 @@ layout: default
     <section class="section" aria-labelledby="about">
       <header class="section-head">
         <h2 id="about">{{ home.about.title }}</h2>
+        <a class="more" href="{{ '/projects/' | relative_url }}">{{ home.projects.more }}<span class="arrow" aria-hidden="true">→</span></a>
       </header>
       <div class="about-body">
         {%- for paragraph in paragraphs offset: 2 -%}
@@ -89,28 +89,6 @@ layout: default
           <h3>{{ item.title }}</h3>
           <p>{{ item.text }}</p>
         </div>
-      {%- endfor %}
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="projects">
-    <header class="section-head">
-      <h2 id="projects">{{ home.projects.title }}</h2>
-      <a class="more" href="{{ '/projects/' | relative_url }}">{{ home.projects.more }}<span class="arrow" aria-hidden="true">→</span></a>
-    </header>
-    <div class="cols-2">
-      {% for item in projects.selected -%}
-        <article class="project-brief">
-          <p class="meta-line"><span class="tag">{{ item.tag }}</span><span class="period">{{ item.period }}</span></p>
-          <h3><a href="{{ '/projects/' | relative_url }}#{{ item.anchor }}">{{ item.title }}</a></h3>
-          <p>{{ item.text }}</p>
-          <ul class="metrics">
-            {%- for metric in item.metrics -%}
-              {%- comment -%} numbers such as "400,000+" or "40 万+" are marked in the accent colour {%- endcomment -%}
-              <li>{{ metric | regex_replace: '(?<![A-Za-z0-9])([0-9][0-9,.]*(?: ?万)?\+?)', '<span class="num">\1</span>' }}</li>
-            {%- endfor -%}
-          </ul>
-        </article>
       {%- endfor %}
     </div>
   </section>
@@ -170,7 +148,6 @@ layout: default
           <span class="period">{{ item.period }}</span>
           <h3>{{ item.role }}</h3>
           <p class="org">{{ item.org }}</p>
-          <p class="text">{{ item.text }}</p>
         </li>
       {%- endfor %}
     </ol>

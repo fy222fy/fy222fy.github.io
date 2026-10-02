@@ -1,55 +1,9 @@
 # Projects (English). The Chinese version is _data/zh-cn/projects.yml.
-# `selected` is shown on the home page; the rest make up the Projects page.
 
 intro: >-
   Research, industry and open-source work, from verifying authentication protocols
   to confidential computing for large models.
 
-selected:
-  - tag: Research · NSFC-funded
-    period: 2018.09 – 2020.03
-    title: Formal Analysis of the FIDO UAF Protocol
-    anchor: fido-uaf
-    text: >-
-      A full formal model of FIDO UAF built from 500+ pages of specifications, a minimal-assumption
-      verification method, and the open-source tool UAFVerif. Led to NDSS 2021, IEEE TDSC and a CNNVD vulnerability.
-    metrics:
-      - 400,000+ scenarios verified
-      - 4 attack classes
-      - 1,856 payment apps analyzed
-  - tag: Industry · Ant Group
-    period: 2024.02 – 2024.05
-    title: Confidential LLM Inference in TEEs
-    anchor: tee-llm
-    text: >-
-      Part of the SecretFlow Cloud confidential computing platform for large models: user data stays encrypted
-      end to end and is only decrypted inside a trusted execution environment.
-    metrics:
-      - Remote attestation
-      - SGX · HyperEnclave
-      - Occlum TEE OS
-  - tag: Open source · SecretFlow
-    period: 2023.06 – 2024.03
-    title: Federated Learning AutoAttack
-    anchor: fl-autoattack
-    text: >-
-      An automated attack-and-defense framework for federated learning that searches hyperparameters over
-      existing algorithms to find the best practices, producing benchmarks across models and scenarios.
-    metrics:
-      - Ray distributed tuning
-      - 1 patent
-      - Promoted to 3 universities
-  - tag: Industry · Ant Group
-    period: 2022.01 – 2023.06
-    title: Trusted-Environment-based Cryptographic Computing (TECC)
-    anchor: tecc
-    text: >-
-      Heterogeneous TEEs combined with same-network MPC: more secure than a single TEE and faster than
-      conventional MPC. Selected as one of the Top Ten Hardcore Technologies at the 5th Digital China Summit.
-    metrics:
-      - ABY3 operators
-      - 4 patents
-      - Software copyright · CAICT certificate
 
 featured:
   anchor: fido-uaf
