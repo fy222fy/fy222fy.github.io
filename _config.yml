@@ -5,7 +5,7 @@
 first_name: Haonan
 last_name: Feng
 email: fenghaonan222@gmail.com
-keywords: Haonan Feng, 冯皓楠, AI Security, LLM Security, Formal Verification, Formal Analysis, Privacy Computing, BUPT
+keywords: Haonan Feng, 冯皓楠, AI for Security, AI Security, Formal Analysis, Formal Verification, Privacy Computing, BUPT
 icon: icon.png # browser tab icon, a file in assets/img/
 
 url: https://fy222fy.github.io # the base hostname & protocol for your site
@@ -115,8 +115,6 @@ exclude:
   - package-lock.json
   - purgecss.config.js
   - vendor
-  # The old CV contains a phone number and other details that are not meant to be public.
-  - assets/pdf/
   # photos that are not used on the site
   - assets/img/prof_pic_color.png
   - assets/img/prof_pic_old.jpg

@@ -29,18 +29,18 @@ about:
 research:
   title: Research Interests
   items:
-    - title: LLM Security
+    - title: AI for Security
       text: >-
-        Security of large language models and of multi-agent AI systems,
-        including formal reasoning about how groups of AI agents interact.
-    - title: LLM for Security
-      text: >-
-        Using large language models to assist security analysis,
-        in particular to automate formal modeling and protocol verification.
+        Security of large language models and multi-agent AI systems, and using large language models
+        to assist security analysis, in particular to automate formal modeling and protocol verification.
     - title: Formal Analysis
       text: >-
         Protocol verification with ProVerif and the applied pi-calculus, minimal-assumption analysis,
         and modeling inter-process communication on devices.
+    - title: Privacy Computing
+      text: >-
+        Trusted execution environments (TEE), secure multi-party computation (MPC) and federated learning,
+        and their use in hosting and running large models.
 
 projects:
   title: Selected Projects
@@ -79,7 +79,7 @@ timeline:
     - period: 2024 – 2028 (expected)
       role: Ph.D.
       org: School of Cyberspace Security, BUPT
-      text: LLM security, LLM for security, and formal analysis.
+      text: AI for security, formal analysis, and privacy computing.
       current: true
 
 honors:

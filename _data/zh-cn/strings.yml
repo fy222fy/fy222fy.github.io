@@ -1,6 +1,6 @@
 # 界面文字（中文）。英文版在 _data/en-us/strings.yml。
 
-site_description: 冯皓楠，北京邮电大学网络空间安全学院博士研究生，研究方向为大模型安全、大模型 for 安全与形式化分析。
+site_description: 冯皓楠，北京邮电大学网络空间安全学院博士研究生，研究方向为 AI for Security（AI 安全）、形式化分析与隐私计算。
 
 nav:
   home: 关于

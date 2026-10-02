@@ -9,6 +9,7 @@
   title_lang: zh-CN
   where: Included in International Academic Research Progress in Cybersecurity (网络安全国际学术研究进展), 2022
 - kind: Livestream
+  year: 2022
   title: Federated Learning AutoAttack in SecretFlow
   where: Open-source release livestream on Bilibili
   publications: false

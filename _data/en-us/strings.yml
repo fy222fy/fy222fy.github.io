@@ -1,6 +1,6 @@
 # Interface text (English). The Chinese version is _data/zh-cn/strings.yml.
 
-site_description: Haonan Feng is a Ph.D. student at the School of Cyberspace Security, Beijing University of Posts and Telecommunications, working on LLM security, LLM for security and formal analysis.
+site_description: Haonan Feng is a Ph.D. student at the School of Cyberspace Security, Beijing University of Posts and Telecommunications, working on AI for security, formal analysis and privacy computing.
 
 nav:
   home: About

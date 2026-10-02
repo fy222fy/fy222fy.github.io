@@ -29,12 +29,12 @@ about:
 research:
   title: 研究方向
   items:
-    - title: 大模型安全
-      text: 大模型与多智能体系统的安全，以及对人工智能群体交互的形式化推理。
-    - title: 大模型 for 安全
-      text: 用大模型辅助安全分析，尤其是自动化的形式化建模与协议验证。
+    - title: AI for Security（AI 安全）
+      text: 大模型与多智能体系统的安全，以及用大模型辅助安全分析，尤其是自动化的形式化建模与协议验证。
     - title: 形式化分析
       text: 基于 ProVerif 与应用 π 演算的协议验证、最小化假设分析，以及设备内进程间通信的建模。
+    - title: 隐私计算
+      text: 可信执行环境（TEE）、多方安全计算（MPC）与联邦学习，以及它们在大模型托管与推理中的应用。
 
 projects:
   title: 重点项目
@@ -71,7 +71,7 @@ timeline:
     - period: 2024 – 2028（预计）
       role: 博士
       org: 北京邮电大学网络空间安全学院
-      text: 大模型安全、大模型 for 安全、形式化分析。
+      text: AI for Security（AI 安全）、形式化分析、隐私计算。
       current: true
 
 honors:
