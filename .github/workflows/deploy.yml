@@ -64,6 +64,13 @@ jobs:
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
+      - name: Install ImageMagick 🖼️
+        # 生成照片和博客配图的 webp 版本（jekyll-imagemagick 需要 convert 命令），页面会引用这些文件
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          convert -version | head -1
+          convert -list format | grep -i webp
       - name: Install and Build 🔧
         run: |
           export JEKYLL_ENV=production
