@@ -140,12 +140,9 @@
     toc.querySelectorAll("a[href^='#']").forEach(function (link) {
       links[decodeURIComponent(link.getAttribute("href").slice(1))] = link;
     });
-    var headings = Array.prototype.filter.call(
-      document.querySelectorAll(".prose h1[id], .prose h2[id], .prose h3[id]"),
-      function (heading) {
-        return links[heading.id];
-      }
-    );
+    var headings = Array.prototype.filter.call(document.querySelectorAll(".prose h1[id], .prose h2[id], .prose h3[id]"), function (heading) {
+      return links[heading.id];
+    });
     var active = null;
     var mark = function () {
       var current = headings[0];

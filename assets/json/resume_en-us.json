@@ -194,47 +194,19 @@
   "skills": [
     {
       "name": "Security & systems",
-      "keywords": [
-        "ProVerif",
-        "Applied pi-calculus",
-        "TEE (SGX, HyperEnclave)",
-        "Occlum",
-        "Kubernetes",
-        "Docker",
-        "Linux",
-        "Alibaba Cloud"
-      ]
+      "keywords": ["ProVerif", "Applied pi-calculus", "TEE (SGX, HyperEnclave)", "Occlum", "Kubernetes", "Docker", "Linux", "Alibaba Cloud"]
     },
     {
       "name": "Knowledge",
-      "keywords": [
-        "Formal verification",
-        "Privacy computing",
-        "Large language models",
-        "Machine learning",
-        "Cryptography"
-      ]
+      "keywords": ["Formal verification", "Privacy computing", "Large language models", "Machine learning", "Cryptography"]
     },
     {
       "name": "Programming",
-      "keywords": [
-        "Python",
-        "C/C++",
-        "Java",
-        "C#",
-        "LaTeX",
-        "HTML"
-      ]
+      "keywords": ["Python", "C/C++", "Java", "C#", "LaTeX", "HTML"]
     },
     {
       "name": "Data & media",
-      "keywords": [
-        "MySQL",
-        "PostgreSQL",
-        "Redis",
-        "Premiere Pro",
-        "After Effects"
-      ]
+      "keywords": ["MySQL", "PostgreSQL", "Redis", "Premiere Pro", "After Effects"]
     }
   ],
   "languages": [

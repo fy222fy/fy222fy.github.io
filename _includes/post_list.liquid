@@ -10,7 +10,9 @@
         <li class="post-row">
           <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%m-%d' }}</time>
           <div lang="{{ post.lang | default: 'zh-CN' }}">
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <h3>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
             {% if post.description -%}
               <p class="desc">{{ post.description }}</p>
             {%- endif %}

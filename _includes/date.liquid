@@ -14,10 +14,13 @@
   {%- assign month_index = include.date | date: '%-m' | minus: 1 -%}
   {%- assign month = site.data[site.active_lang].strings.months[month_index] -%}
   {%- if include.format == 'month' -%}
-    {{- month }} {{ include.date | date: '%Y' -}}
+    {{- month }}
+    {{ include.date | date: '%Y' -}}
   {%- elsif include.format == 'day' -%}
-    {{- month }} {{ include.date | date: '%-d' -}}
+    {{- month }}
+    {{ include.date | date: '%-d' -}}
   {%- else -%}
-    {{- month }} {{ include.date | date: '%-d, %Y' -}}
+    {{- month }}
+    {{ include.date | date: '%-d, %Y' -}}
   {%- endif -%}
 {%- endif -%}

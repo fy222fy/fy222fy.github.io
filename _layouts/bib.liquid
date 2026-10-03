@@ -5,7 +5,10 @@
 {%- if page.page_id == 'publications' -%}{%- assign h = 'h4' -%}{%- else -%}{%- assign h = 'h3' -%}{%- endif -%}
 <article class="pub" id="{{ entry.key }}" lang="en">
   <p class="pub__venue">
-    <span class="abbr">{{ entry.abbr }} {{ entry.year }}</span>
+    <span class="abbr">
+      {{- entry.abbr }}
+      {{ entry.year -}}
+    </span>
     {%- if t.types[entry.type] %}
       <span class="kind" lang="{% if site.active_lang == 'zh-cn' %}zh-CN{% else %}en{% endif %}">{{ t.types[entry.type] }}</span>
     {%- endif %}
@@ -17,25 +20,39 @@
   {%- endif %}
   <ul class="pub__links" lang="{% if site.active_lang == 'zh-cn' %}zh-CN{% else %}en{% endif %}">
     {%- if entry.abstract %}
-      <li><button type="button" aria-expanded="false" aria-controls="{{ entry.key }}-abstract" data-toggle>{{ t.abstract }}</button></li>
+      <li>
+        <button type="button" aria-expanded="false" aria-controls="{{ entry.key }}-abstract" data-toggle>{{ t.abstract }}</button>
+      </li>
     {%- endif %}
     {%- if entry.pdf %}
-      <li><a href="{{ entry.pdf }}">{{ t.pdf }}</a></li>
+      <li>
+        <a href="{{ entry.pdf }}">{{ t.pdf }}</a>
+      </li>
     {%- endif %}
     {%- if entry.doi %}
-      <li><a href="https://doi.org/{{ entry.doi }}">{{ t.doi }}</a></li>
+      <li>
+        <a href="https://doi.org/{{ entry.doi }}">{{ t.doi }}</a>
+      </li>
     {%- endif %}
     {%- if entry.html %}
-      <li><a href="{{ entry.html }}">{{ t.html }}</a></li>
+      <li>
+        <a href="{{ entry.html }}">{{ t.html }}</a>
+      </li>
     {%- endif %}
     {%- if entry.video %}
-      <li><a href="{{ entry.video }}">{{ t.video }}</a></li>
+      <li>
+        <a href="{{ entry.video }}">{{ t.video }}</a>
+      </li>
     {%- endif %}
     {%- if entry.code %}
-      <li><a href="{{ entry.code }}">{{ t.code }}</a></li>
+      <li>
+        <a href="{{ entry.code }}">{{ t.code }}</a>
+      </li>
     {%- endif %}
     {%- if page.page_id == 'publications' %}
-      <li><button type="button" aria-expanded="false" aria-controls="{{ entry.key }}-bibtex" data-toggle>{{ t.bibtex }}</button></li>
+      <li>
+        <button type="button" aria-expanded="false" aria-controls="{{ entry.key }}-bibtex" data-toggle>{{ t.bibtex }}</button>
+      </li>
     {%- endif %}
   </ul>
   {% if entry.abstract -%}
@@ -46,7 +63,16 @@
   {% if page.page_id == 'publications' -%}
     <div class="pub__panel" id="{{ entry.key }}-bibtex" hidden>
       <pre><code>{{ entry.bibtex | escape }}</code></pre>
-      <button class="copy" type="button" data-copy data-label="{{ t.copy }}" data-done="{{ t.copied }}" lang="{% if site.active_lang == 'zh-cn' %}zh-CN{% else %}en{% endif %}">{{ t.copy }}</button>
+      <button
+        class="copy"
+        type="button"
+        data-copy
+        data-label="{{ t.copy }}"
+        data-done="{{ t.copied }}"
+        lang="{% if site.active_lang == 'zh-cn' %}zh-CN{% else %}en{% endif %}"
+      >
+        {{ t.copy }}
+      </button>
     </div>
   {%- endif %}
 </article>

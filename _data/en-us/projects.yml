@@ -4,7 +4,6 @@ intro: >-
   Research, industry and open-source work, from verifying authentication protocols
   to confidential computing for large models.
 
-
 featured:
   anchor: fido-uaf
   tag: Research · NSFC-funded

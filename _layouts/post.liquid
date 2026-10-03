@@ -15,7 +15,9 @@ layout: default
     <p class="meta">
       <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{% include date.liquid date=page.date %}</time>
       {% for category in page.categories -%}
-        <a href="{{ category | slugify | prepend: '/blog/category/' | append: '/' | relative_url }}">{{ t.blog.categories[category] | default: category }}</a>
+        <a href="{{ category | slugify | prepend: '/blog/category/' | append: '/' | relative_url }}">
+          {{- t.blog.categories[category] | default: category -}}
+        </a>
       {%- endfor %}
       {% if page.tags.size > 0 -%}
         <span class="tags">

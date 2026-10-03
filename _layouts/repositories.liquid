@@ -16,9 +16,13 @@ layout: default
       {% for item in repos -%}
         {%- assign parts = item.repo | split: '/' -%}
         <article class="repo">
-          <p class="meta-line"><span class="tag">{{ item.role }}</span></p>
+          <p class="meta-line">
+            <span class="tag">{{ item.role }}</span>
+          </p>
           <h2>
-            <a href="https://github.com/{{ item.repo }}"><span class="owner">{{ parts[0] }}/</span>{{ parts[1] }}</a>
+            <a href="https://github.com/{{ item.repo }}"
+              ><span class="owner">{{ parts[0] }}/</span>{{ parts[1] -}}
+            </a>
           </h2>
           <p>{{ item.text }}</p>
         </article>

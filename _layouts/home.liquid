@@ -15,18 +15,34 @@ layout: default
       <p class="hero__role">{{ home.role }} · {{ home.location }}</p>
       {%- comment -%} The self-description is the text of _pages/<lang>/about.md: the first two paragraphs go here, the rest below {%- endcomment -%}
       {%- comment -%} line breaks inside a Chinese paragraph would show up as spaces between characters {%- endcomment -%}
-      {%- if lang == 'zh-cn' -%}{%- assign body = content | replace: '
-', '' -%}{%- else -%}{%- assign body = content -%}{%- endif -%}
+      {%- if lang == 'zh-cn' -%}
+        {%- assign body = content | replace: '
+', '' -%}
+      {%- else -%}
+        {%- assign body = content -%}
+      {%- endif -%}
       {%- assign paragraphs = body | split: '</p>' -%}
       <div class="hero__lead">
-        {%- for paragraph in paragraphs limit: 2 -%}{{ paragraph }}</p>{%- endfor -%}
+        {%- for paragraph in paragraphs limit: 2 -%}
+          {{ paragraph | append: '</p>' }}
+        {%- endfor -%}
       </div>
       <ul class="hero__links">
-        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        <li><a class="ext" href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">{{ t.links.scholar }}</a></li>
-        <li><a class="ext" href="https://orcid.org/{{ site.orcid_id }}">{{ t.links.orcid }}</a></li>
-        <li><a class="ext" href="https://github.com/{{ site.github_username }}">{{ t.links.github }}</a></li>
-        <li><a href="{{ '/cv/' | relative_url }}">{{ t.links.cv }}</a></li>
+        <li>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </li>
+        <li>
+          <a class="ext" href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">{{ t.links.scholar }}</a>
+        </li>
+        <li>
+          <a class="ext" href="https://orcid.org/{{ site.orcid_id }}">{{ t.links.orcid }}</a>
+        </li>
+        <li>
+          <a class="ext" href="https://github.com/{{ site.github_username }}">{{ t.links.github }}</a>
+        </li>
+        <li>
+          <a href="{{ '/cv/' | relative_url }}">{{ t.links.cv }}</a>
+        </li>
       </ul>
     </div>
     <figure class="hero__photo">
@@ -56,7 +72,9 @@ layout: default
         <div>
           <dt class="figure-number">
             {{- fact.figure -}}
-            {%- if fact.unit %}<span class="unit">{{ fact.unit }}</span>{% endif -%}
+            {%- if fact.unit -%}
+              <span class="unit">{{ fact.unit }}</span>
+            {%- endif -%}
           </dt>
           <dd>{{ fact.text }}</dd>
         </div>
@@ -68,12 +86,17 @@ layout: default
     <section class="section" aria-labelledby="about">
       <header class="section-head">
         <h2 id="about">{{ home.about.title }}</h2>
-        <a class="more" href="{{ '/projects/' | relative_url }}">{{ home.projects.more }}<span class="arrow" aria-hidden="true">→</span></a>
+        <a class="more" href="{{ '/projects/' | relative_url }}">
+          {{- home.projects.more -}}
+          <span class="arrow" aria-hidden="true">→</span></a
+        >
       </header>
       <div class="about-body">
         {%- for paragraph in paragraphs offset: 2 -%}
           {%- assign text = paragraph | strip -%}
-          {%- if text != '' -%}{{ text }}</p>{%- endif -%}
+          {%- if text != '' -%}
+            {{ text | append: '</p>' }}
+          {%- endif -%}
         {%- endfor -%}
       </div>
     </section>
@@ -97,7 +120,10 @@ layout: default
     <section aria-labelledby="publications">
       <header class="section-head">
         <h2 id="publications">{{ home.publications.title }}</h2>
-        <a class="more" href="{{ '/publications/' | relative_url }}">{{ home.publications.more }}<span class="arrow" aria-hidden="true">→</span></a>
+        <a class="more" href="{{ '/publications/' | relative_url }}">
+          {{- home.publications.more -}}
+          <span class="arrow" aria-hidden="true">→</span></a
+        >
       </header>
       {%- comment -%} papers in the order listed in _data/<lang>/home.yml (publications.order), not by date {%- endcomment -%}
       <div class="pub-list">
@@ -112,7 +138,10 @@ layout: default
       <section class="section" aria-labelledby="news">
         <header class="section-head">
           <h2 id="news">{{ home.news.title }}</h2>
-          <a class="more" href="{{ '/news/' | relative_url }}">{{ home.news.more }}<span class="arrow" aria-hidden="true">→</span></a>
+          <a class="more" href="{{ '/news/' | relative_url }}">
+            {{- home.news.more -}}
+            <span class="arrow" aria-hidden="true">→</span></a
+          >
         </header>
         <ul class="ruled tight brief">
           {%- assign news = site.news | reverse -%}
@@ -132,8 +161,18 @@ layout: default
         <ul class="ruled tight brief">
           {% for talk in talks -%}
             <li>
-              <span class="kind">{{ talk.kind }}{% if talk.year %} · {{ talk.year }}{% endif %}</span>
-              <span class="title" {% if talk.title_lang %}lang="{{ talk.title_lang }}"{% endif %}>{{ talk.title }}</span>
+              <span class="kind">
+                {{- talk.kind -}}
+                {%- if talk.year %} · {{ talk.year }}{% endif -%}
+              </span>
+              <span
+                class="title"
+                {% if talk.title_lang %}
+                  lang="{{ talk.title_lang }}"
+                {% endif %}
+              >
+                {{- talk.title -}}
+              </span>
               <span class="where">{{ talk.where }}</span>
             </li>
           {%- endfor %}
@@ -145,11 +184,18 @@ layout: default
   <section class="section" aria-labelledby="timeline">
     <header class="section-head">
       <h2 id="timeline">{{ home.timeline.title }}</h2>
-      <a class="more" href="{{ '/cv/' | relative_url }}">{{ home.timeline.more }}<span class="arrow" aria-hidden="true">→</span></a>
+      <a class="more" href="{{ '/cv/' | relative_url }}">
+        {{- home.timeline.more -}}
+        <span class="arrow" aria-hidden="true">→</span></a
+      >
     </header>
     <ol class="timeline">
       {% for item in home.timeline.items -%}
-        <li {% if item.current %}class="is-current"{% endif %}>
+        <li
+          {% if item.current %}
+            class="is-current"
+          {% endif %}
+        >
           <span class="period">{{ item.period }}</span>
           <h3>{{ item.role }}</h3>
           <p class="org">{{ item.org }}</p>

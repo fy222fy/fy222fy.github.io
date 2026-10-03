@@ -15,14 +15,26 @@
     <nav class="site-nav" id="site-nav" aria-label="{{ t.nav.main }}">
       <ul>
         <li>
-          <a href="{{ '/' | relative_url }}" {% if page.permalink == '/' %}aria-current="page"{% endif %}>{{ t.nav.home }}</a>
+          <a
+            href="{{ '/' | relative_url }}"
+            {% if page.permalink == '/' %}
+              aria-current="page"
+            {% endif %}
+          >
+            {{- t.nav.home -}}
+          </a>
         </li>
         {%- assign sorted_pages = site.pages | sort: 'nav_order' -%}
         {%- for p in sorted_pages -%}
           {%- if p.nav and p.autogen == null -%}
             {%- assign section_url = p.permalink | remove: 'index.html' -%}
             <li>
-              <a href="{{ p.permalink | relative_url }}" {% if page.url contains section_url %}aria-current="page"{% endif %}>
+              <a
+                href="{{ p.permalink | relative_url }}"
+                {% if page.url contains section_url %}
+                  aria-current="page"
+                {% endif %}
+              >
                 {{- p.title -}}
               </a>
             </li>
@@ -32,19 +44,53 @@
       <div class="site-nav__tools">
         {%- comment -%} static_href keeps polyglot from rewriting the link to the current language {%- endcomment -%}
         {%- if site.active_lang == site.default_lang -%}
-          <a class="lang-switch" lang="zh-CN" hreflang="zh-CN" aria-label="{{ t.nav.other_language_label }}" {% static_href %}href="{{ site.baseurl }}/zh-cn{{ page.url | remove: 'index.html' }}"{% endstatic_href %}>
+          <a
+            class="lang-switch"
+            lang="zh-CN"
+            hreflang="zh-CN"
+            aria-label="{{ t.nav.other_language_label }}"
+            {% static_href -%}
+            href="{{ site.baseurl }}/zh-cn{{ page.url | remove: 'index.html' }}"
+            {% endstatic_href %}
+          >
             {{- t.nav.other_language -}}
           </a>
         {%- else -%}
-          <a class="lang-switch" lang="en" hreflang="en" aria-label="{{ t.nav.other_language_label }}" {% static_href %}href="{{ site.baseurl }}{{ page.url | remove: 'index.html' }}"{% endstatic_href %}>
+          <a
+            class="lang-switch"
+            lang="en"
+            hreflang="en"
+            aria-label="{{ t.nav.other_language_label }}"
+            {% static_href -%}
+            href="{{ site.baseurl }}{{ page.url | remove: 'index.html' }}"
+            {% endstatic_href %}
+          >
             {{- t.nav.other_language -}}
           </a>
         {%- endif -%}
         <button class="theme-toggle" type="button" aria-label="{{ t.nav.theme }}" title="{{ t.nav.theme }}">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg
+            class="icon-moon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
             <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"></path>
           </svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg
+            class="icon-sun"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
             <circle cx="12" cy="12" r="4"></circle>
             <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5"></path>
           </svg>

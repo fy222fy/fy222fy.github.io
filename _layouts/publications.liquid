@@ -8,9 +8,18 @@ layout: default
     <h1>{{ page.title }}</h1>
     <p class="lead">{{ t.publications.lead }}</p>
     <nav class="page-index" aria-label="{{ page.title }}">
-      <a href="#papers">{{ t.publications.papers }}<span class="count">{% bibliography_count --query @article @inproceedings %}</span></a>
-      <a href="#talks">{{ t.publications.talks }}<span class="count">{{ talks | size }}</span></a>
-      <a href="#ip">{{ t.publications.ip }}<span class="count">{% bibliography_count --query @misc %}</span></a>
+      <a href="#papers">
+        {{- t.publications.papers -}}
+        <span class="count">{% bibliography_count --query @article @inproceedings %}</span></a
+      >
+      <a href="#talks">
+        {{- t.publications.talks -}}
+        <span class="count">{{ talks | size }}</span></a
+      >
+      <a href="#ip">
+        {{- t.publications.ip -}}
+        <span class="count">{% bibliography_count --query @misc %}</span></a
+      >
       <a class="ext" href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">{{ t.links.scholar }}</a>
       <a class="ext" href="https://orcid.org/{{ site.orcid_id }}">{{ t.links.orcid }}</a>
     </nav>
@@ -32,8 +41,16 @@ layout: default
     <div class="cols-2">
       {% for talk in talks -%}
         <article class="talk">
-          <p class="meta-line"><span class="tag">{{ talk.kind }}</span><span>{{ talk.year }}</span></p>
-          <h3 {% if talk.title_lang %}lang="{{ talk.title_lang }}"{% endif %}>{{ talk.title }}</h3>
+          <p class="meta-line">
+            <span class="tag">{{ talk.kind }}</span><span>{{ talk.year }}</span>
+          </p>
+          <h3
+            {% if talk.title_lang %}
+              lang="{{ talk.title_lang }}"
+            {% endif %}
+          >
+            {{ talk.title }}
+          </h3>
           <p class="where">{{ talk.where }}</p>
         </article>
       {%- endfor %}

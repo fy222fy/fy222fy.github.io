@@ -11,11 +11,17 @@ layout: default
     <h1>{{ cv.basics.name }}</h1>
     <p class="lead">{{ cv.basics.label }} · {{ cv.basics.location.address }}</p>
     <ul class="cv-tools">
-      <li><a href="mailto:{{ cv.basics.email }}">{{ cv.basics.email }}</a></li>
+      <li>
+        <a href="mailto:{{ cv.basics.email }}">{{ cv.basics.email }}</a>
+      </li>
       {% for profile in cv.basics.profiles -%}
-        <li><a class="ext" href="{{ profile.url }}">{{ profile.network }}</a></li>
+        <li>
+          <a class="ext" href="{{ profile.url }}">{{ profile.network }}</a>
+        </li>
       {%- endfor %}
-      <li><button type="button" data-print>{{ t.cv.print }}</button></li>
+      <li>
+        <button type="button" data-print>{{ t.cv.print }}</button>
+      </li>
     </ul>
   </header>
 
@@ -28,7 +34,9 @@ layout: default
         <div>
           <dt class="figure-number">
             {{- item.figure -}}
-            {%- if item.unit %}<span class="unit">{{ item.unit }}</span>{% endif -%}
+            {%- if item.unit -%}
+              <span class="unit">{{ item.unit }}</span>
+            {%- endif -%}
           </dt>
           <dd>{{ item.text }}</dd>
         </div>
@@ -48,9 +56,17 @@ layout: default
               {{- item.startDate | date: '%Y' }} – {{ item.endDate | date: '%Y' -}}
               {%- if item.expected %}{{ t.cv.expected }}{% endif -%}
             </p>
-            <h3>{{ item.studyType }}{{ t.cv.degree_in }}{{ item.area }}</h3>
-            <p class="org"><a href="{{ item.url }}">{{ item.institution }}</a></p>
-            {% if item.summary %}<p class="note">{{ item.summary }}</p>{% endif %}
+            <h3>
+              {{ item.studyType -}}
+              {{- t.cv.degree_in -}}
+              {{- item.area }}
+            </h3>
+            <p class="org">
+              <a href="{{ item.url }}">{{ item.institution }}</a>
+            </p>
+            {% if item.summary %}
+              <p class="note">{{ item.summary }}</p>
+            {% endif %}
           </li>
         {%- endfor %}
       </ul>
@@ -65,8 +81,13 @@ layout: default
           <li class="cv-entry">
             <p class="period">{{ item.startDate | date: '%Y.%m' }} – {{ item.endDate | date: '%Y.%m' }}</p>
             <h3>{{ item.position }}</h3>
-            <p class="org"><a href="{{ item.url }}">{{ item.name }}</a>{% if item.description %} · {{ item.description }}{% endif %}</p>
-            {% if item.summary and item.highlights == nil %}<p class="note">{{ item.summary }}</p>{% endif %}
+            <p class="org">
+              <a href="{{ item.url }}">{{ item.name }}</a>
+              {%- if item.description %} · {{ item.description }}{% endif %}
+            </p>
+            {% if item.summary and item.highlights == null %}
+              <p class="note">{{ item.summary }}</p>
+            {% endif %}
             {% if item.highlights -%}
               <ul class="bullets">
                 {% for highlight in item.highlights -%}
@@ -83,7 +104,10 @@ layout: default
   <section class="section" aria-labelledby="projects">
     <header class="section-head">
       <h2 id="projects">{{ t.cv.projects }}</h2>
-      <a class="more" href="{{ '/projects/' | relative_url }}">{{ t.cv.all_projects }}<span class="arrow" aria-hidden="true">→</span></a>
+      <a class="more" href="{{ '/projects/' | relative_url }}">
+        {{- t.cv.all_projects -}}
+        <span class="arrow" aria-hidden="true">→</span></a
+      >
     </header>
     <ul class="cv-rows">
       {% for item in cv.projects -%}
@@ -102,7 +126,10 @@ layout: default
   <section class="section" aria-labelledby="publications">
     <header class="section-head">
       <h2 id="publications">{{ t.cv.publications }}</h2>
-      <a class="more" href="{{ '/publications/' | relative_url }}">{{ t.cv.all_publications }}<span class="arrow" aria-hidden="true">→</span></a>
+      <a class="more" href="{{ '/publications/' | relative_url }}">
+        {{- t.cv.all_publications -}}
+        <span class="arrow" aria-hidden="true">→</span></a
+      >
     </header>
     <div class="cv-refs">
       {% bibliography --query @article @inproceedings --group_by none --template bib_cv %}
@@ -110,11 +137,25 @@ layout: default
         {% for talk in talks -%}
           <li>
             <div class="ref-row">
-              <span class="abbr">{{ talk.kind }} {{ talk.year }}</span>
+              <span class="abbr">
+                {{- talk.kind }}
+                {{ talk.year -}}
+              </span>
               <div class="ref">
                 <span class="me">{{ cv.basics.name }}</span>.
-                <span class="ref-title" {% if talk.title_lang %}lang="{{ talk.title_lang }}"{% endif %}>{{ talk.title }}{{ t.cv.period_mark }}</span>
-                <span class="ref-where">{{ talk.where }}{{ t.cv.period_mark }}</span>
+                <span
+                  class="ref-title"
+                  {% if talk.title_lang %}
+                    lang="{{ talk.title_lang }}"
+                  {% endif %}
+                >
+                  {{- talk.title -}}
+                  {{- t.cv.period_mark -}}
+                </span>
+                <span class="ref-where">
+                  {{- talk.where -}}
+                  {{- t.cv.period_mark -}}
+                </span>
               </div>
             </div>
           </li>
@@ -131,17 +172,29 @@ layout: default
       {%- assign groups = cv.awards | group_by: 'category' -%}
       {% for group in groups -%}
         <div class="cv-group">
-          {% if group.name != '' %}<h3>{{ group.name }}</h3>{% endif %}
+          {% if group.name != '' %}
+            <h3>{{ group.name }}</h3>
+          {% endif %}
           <ul class="cv-rows two">
             {% for item in group.items -%}
               <li>
                 {%- comment -%} full dates such as 2018-09-01 show the year; ranges such as "2018 – 2020" show as written {%- endcomment -%}
-                {%- if item.year -%}{%- assign when = item.year -%}{%- elsif item.date.size <= 10 -%}{%- assign when = item.date | slice: 0, 4 -%}{%- else -%}{%- assign when = item.date -%}{%- endif %}
+                {%- if item.year -%}
+                  {%- assign when = item.year -%}
+                {%- elsif item.date.size <= 10 -%}
+                  {%- assign when = item.date | slice: 0, 4 -%}
+                {%- else -%}
+                  {%- assign when = item.date -%}
+                {%- endif %}
                 <span class="period">{{ when }}</span>
                 <span>
                   <span class="title">{{ item.title }}</span>
-                  {%- if item.awarder %}<span class="text">{{ item.awarder }}</span>{% endif -%}
-                  {%- if item.summary %}<span class="text">{{ item.summary }}</span>{% endif -%}
+                  {%- if item.awarder -%}
+                    <span class="text">{{ item.awarder }}</span>
+                  {%- endif -%}
+                  {%- if item.summary -%}
+                    <span class="text">{{ item.summary }}</span>
+                  {%- endif -%}
                 </span>
               </li>
             {%- endfor %}
@@ -157,7 +210,9 @@ layout: default
                 <span class="period">{{ item.date | slice: 0, 4 }}</span>
                 <span>
                   <span class="title">{{ item.name }}</span>
-                  {%- if item.issuer %}<span class="text">{{ item.issuer }}</span>{% endif -%}
+                  {%- if item.issuer -%}
+                    <span class="text">{{ item.issuer }}</span>
+                  {%- endif -%}
                 </span>
               </li>
             {%- endfor %}
@@ -184,7 +239,12 @@ layout: default
       <dl class="cv-skills">
         {% for skill in cv.skills -%}
           <div>
-            <dt>{{ skill.name }}{% if skill.level %}<span class="level">（{{ skill.level }}）</span>{% endif %}</dt>
+            <dt>
+              {{ skill.name -}}
+              {%- if skill.level -%}
+                <span class="level">（{{ skill.level }}）</span>
+              {%- endif %}
+            </dt>
             <dd>{{ skill.keywords | join: t.cv.list_separator }}</dd>
           </div>
         {%- endfor %}
