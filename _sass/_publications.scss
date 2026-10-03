@@ -304,3 +304,13 @@ ol.bibliography > li {
     }
   }
 }
+
+// Several lists in a row (papers in a chosen order): keep the separators between them
+.pub-list ol.bibliography + ol.bibliography > li:first-child {
+  padding-top: clamp(1rem, 0.85rem + 0.5vw, 1.3rem);
+  border-top: 1px solid var(--rule);
+}
+
+.pub-list ol.bibliography:not(:last-child) > li:last-child {
+  padding-bottom: clamp(1rem, 0.85rem + 0.5vw, 1.3rem);
+}

@@ -30,16 +30,18 @@ research:
   title: 研究方向
   items:
     - title: AI for Security（AI 安全）
-      text: 大模型与多智能体系统的安全，以及用大模型辅助安全分析，尤其是自动化的形式化建模与协议验证。
+      text: 用 AI 辅助网络安全，尤其是形式化分析相关领域，例如用大模型实现形式化建模与协议验证的自动化。
     - title: 形式化分析
-      text: 基于 ProVerif 与应用 π 演算的协议验证、最小化假设分析，以及设备内进程间通信的建模。
+      text: 基于严格的数学方法，验证通信系统的安全性，以及 AI 与智能体之间协作的安全性。
     - title: 隐私计算
-      text: 可信执行环境（TEE）、多方安全计算（MPC）与联邦学习，以及它们在大模型托管与推理中的应用。
+      text: 可信执行环境（TEE）、多方安全计算（MPC）与联邦学习，以及它们在大模型训练与推理中的应用。
 
 projects:
   more: 全部项目
 
 publications:
+  # 首页“代表论文”的顺序（_bibliography/papers.bib 中的条目名）：两篇一作在前
+  order: [feng2021formal, feng2022fido, li20255g, li2020authenticator]
   title: 代表论文
   more: 全部论文
   note: 另有《密码学报》论文 1 篇、发明专利 6 项、CNNVD 收录漏洞 1 个。

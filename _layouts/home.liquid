@@ -99,7 +99,12 @@ layout: default
         <h2 id="publications">{{ home.publications.title }}</h2>
         <a class="more" href="{{ '/publications/' | relative_url }}">{{ home.publications.more }}<span class="arrow" aria-hidden="true">→</span></a>
       </header>
-      {% bibliography --group_by none --query @*[selected=true]* %}
+      {%- comment -%} papers in the order listed in _data/<lang>/home.yml (publications.order), not by date {%- endcomment -%}
+      <div class="pub-list">
+        {% for pub_key in home.publications.order -%}
+          {% bibliography --group_by none --query @*[key={{pub_key}}] %}
+        {%- endfor %}
+      </div>
       <p class="footnote">{{ home.publications.note }}</p>
     </section>
 

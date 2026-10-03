@@ -20,7 +20,6 @@ links:
   cv: 简历
 
 footer:
-  built: 基于 Jekyll 构建 · 托管于 GitHub Pages
   top: 回到顶部
 
 publications:
@@ -53,7 +52,7 @@ publications:
     number: 编号
 
 projects:
-  lead_label: 2016 – 2024 年的主要工作
+  lead_label: 2016 年至今的主要工作
   outcomes: 成果
 
 cv:

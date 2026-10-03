@@ -130,7 +130,7 @@ ant:
 
 earlier:
   title: Competitions, Coursework & Side Projects
-  meta: 2016 – 2024
+  meta: 2016 – present
   items:
     - anchor: windows-login
       tag: Competition
@@ -168,7 +168,7 @@ earlier:
         - A face-recognition library management site with Flask and MySQL.
     - anchor: quant
       tag: Side project
-      period: 2023 – 2024
+      period: 2024 – present
       title: AI Quantitative Investment Framework
       work:
         - A quantitative investment framework that supports multiple kinds of financial products.

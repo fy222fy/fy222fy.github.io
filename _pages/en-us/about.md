@@ -28,7 +28,7 @@ on confidential computing for large models, federated learning, secure multi-par
 
 Confidential computing for large models: in 2024, Ant Group launched the SecretFlow Cloud confidential computing platform for large models,
 which combines software and hardware trusted privacy-computing technologies to keep data encrypted while models are hosted and run.
-I worked on confidential LLM inference in TEEs, built a confidential knowledge-graph platform,
+I worked on confidential LLM inference in TEEs,
 and proposed a federated-learning scheme for privacy-preserving joint fine-tuning and inference across institutions.
 
 Federated learning: I built an automated attack-and-defense framework for federated learning and open-sourced it in SecretFlow.
@@ -36,9 +36,9 @@ Given a set of attack and defense algorithms, the framework automatically search
 It also implements mainstream machine-learning models and state-of-the-art attack and defense algorithms,
 producing benchmarks across models and attack-defense scenarios.
 
-MPC and TEE: in 2022, Ant Group released the Trusted-Environment-based Cryptographic Computing system (TECC),
-which was selected as one of the “Top Ten Hardcore Technologies” at the 5th Digital China Summit.
+MPC and TEE: I was a core developer of the Trusted-Environment-based Cryptographic Computing system (TECC)
+and did nearly half of its work, from algorithms and engineering to production deployment and operations,
+including obtaining its software copyright and its evaluation certificate from the China Academy of Information and Communications Technology (CAICT).
 By combining multiple heterogeneous TEEs with MPC running within the same network,
 TECC is more secure than a single TEE and faster than conventional MPC.
-I worked on MPC operators, product development, adaptation to SGX and HyperEnclave, and cloud deployment,
-and obtained one software copyright and an evaluation certificate from the China Academy of Information and Communications Technology (CAICT).
+Ant Group released it in 2022, and it was selected as one of the “Top Ten Hardcore Technologies” at the 5th Digital China Summit.

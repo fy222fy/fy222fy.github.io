@@ -31,21 +31,23 @@ research:
   items:
     - title: AI for Security
       text: >-
-        Security of large language models and multi-agent AI systems, and using large language models
-        to assist security analysis, in particular to automate formal modeling and protocol verification.
+        Using AI to assist cybersecurity, especially formal analysis, for example using large language models
+        to automate formal modeling and protocol verification.
     - title: Formal Analysis
       text: >-
-        Protocol verification with ProVerif and the applied pi-calculus, minimal-assumption analysis,
-        and modeling inter-process communication on devices.
+        Using rigorous mathematical methods to verify the security of communication systems
+        and of collaboration among AI agents.
     - title: Privacy Computing
       text: >-
         Trusted execution environments (TEE), secure multi-party computation (MPC) and federated learning,
-        and their use in hosting and running large models.
+        and their use in training and inference of large models.
 
 projects:
   more: All projects
 
 publications:
+  # 首页“代表论文”的顺序（_bibliography/papers.bib 中的条目名）：两篇一作在前
+  order: [feng2021formal, feng2022fido, li20255g, li2020authenticator]
   title: Selected Publications
   more: All publications
   note: >-

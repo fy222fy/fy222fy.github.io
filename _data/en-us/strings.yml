@@ -20,7 +20,6 @@ links:
   cv: CV
 
 footer:
-  built: Built with Jekyll · Hosted on GitHub Pages
   top: Back to top
 
 publications:
@@ -53,7 +52,7 @@ publications:
     number: Number
 
 projects:
-  lead_label: Selected work, 2016 – 2024
+  lead_label: Selected work, 2016 – present
   outcomes: Outcomes
 
 cv:

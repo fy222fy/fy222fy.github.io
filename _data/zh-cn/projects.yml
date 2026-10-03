@@ -82,7 +82,7 @@ ant:
 
 earlier:
   title: 竞赛、课程与业余项目
-  meta: 2016 – 2024
+  meta: 2016 – 至今
   items:
   - anchor: windows-login
     tag: "第四届全国密码技术竞赛"
@@ -113,7 +113,7 @@ earlier:
       - "Flask + MySQL 人脸识别图书管理网站"
   - anchor: quant
     tag: "业余项目"
-    period: "2023 – 2024"
+    period: 2024 – 至今
     title: "AI 量化投资框架"
     work:
       - "支持多类金融产品，用 AI / 大模型做选股与资产配置，对接实盘交易"
