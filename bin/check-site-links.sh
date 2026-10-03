@@ -12,6 +12,8 @@
 #   bin/check-site-links.sh            # 默认检查 _site
 #   bin/check-site-links.sh path/to/site
 #
+# 目录形式的链接（如 /publications/#某篇论文）按 GitHub Pages 的方式解析到目录下的 index.html。
+#
 # 依赖 lychee >= 0.18（需要 --root-dir 参数）：
 #   macOS: brew install lychee
 #   其他:  https://github.com/lycheeverse/lychee/releases
@@ -39,5 +41,6 @@ ROOT="$(cd "$SITE_DIR" && pwd)"
   --include-fragments \
   --no-progress \
   --root-dir "$ROOT" \
+  --index-files index.html \
   --remap "^${SITE_URL//./\\.}/(.*)\$ file://$ROOT/\$1" \
   "$ROOT/**/*.html"
