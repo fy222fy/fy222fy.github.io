@@ -17,6 +17,9 @@
           <a href="https://github.com/{{ site.github_username }}">{{ t.links.github }}</a>
         </li>
       </ul>
+      {%- if site.baidu_analytics_id != blank %}
+        <p class="site-footer__note">{{ t.footer.analytics }}</p>
+      {%- endif %}
     </div>
   </div>
 </footer>
