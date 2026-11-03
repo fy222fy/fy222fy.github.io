@@ -21,6 +21,7 @@ links:
 
 footer:
   top: 回到顶部
+  analytics: 本站使用百度统计收集访问数据，包括 IP 地址、大致地区和浏览的页面。
 
 publications:
   lead: 论文、学术报告、发明专利与漏洞，按时间倒序排列。

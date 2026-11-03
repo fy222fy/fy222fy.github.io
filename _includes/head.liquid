@@ -24,3 +24,16 @@
   <link rel="icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache }}">
 {%- endif %}
 <link rel="alternate" type="application/atom+xml" title="{{ site.first_name }} {{ site.last_name }}" href="{{ '/feed.xml' | relative_url }}">
+
+{% comment %} Visitor statistics (Baidu Tongji), turned on by `baidu_analytics_id` in _config.yml. {% endcomment %}
+{% if site.baidu_analytics_id != blank and jekyll.environment == 'production' -%}
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement('script');
+      hm.src = 'https://hm.baidu.com/hm.js?{{ site.baidu_analytics_id }}';
+      hm.async = true;
+      document.head.appendChild(hm);
+    })();
+  </script>
+{%- endif %}

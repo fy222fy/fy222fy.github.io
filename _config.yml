@@ -58,6 +58,11 @@ jekyll-archives:
 # Categories listed at the top of the blog page, in this order
 display_categories: ["learn", "c++", "ai", "security"]
 
+# Visitor statistics (https://tongji.baidu.com). Paste the 32-character site ID from
+# the tracking code it gives you (the part after `hm.js?`). Leave it empty to turn
+# statistics off. Only production builds load it, so local previews are not counted.
+baidu_analytics_id: 68d4710b1b04d4a5117437a7c1a72180
+
 # Comments under posts (https://giscus.app). Leave `repo` empty to turn comments off.
 giscus:
   repo: # <github-user>/<repo>

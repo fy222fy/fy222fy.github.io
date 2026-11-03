@@ -297,4 +297,10 @@ html:lang(zh-CN) .wordmark {
   a {
     text-decoration-color: transparent;
   }
+
+  .site-footer__note {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 0.9em;
+  }
 }
