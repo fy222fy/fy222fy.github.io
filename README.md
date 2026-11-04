@@ -24,7 +24,7 @@
 
 ## 本地预览
 
-需要 Ruby 3.3 和 Bundler，以及 ImageMagick（`convert` 命令，用于生成照片的 webp 版本）。
+需要 Ruby 3.3 和 Bundler。
 
 ```bash
 bundle install

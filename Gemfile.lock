@@ -111,8 +111,6 @@ GEM
     jekyll-get-json (1.0.0)
       deep_merge (~> 1.2)
       jekyll (>= 3.0)
-    jekyll-imagemagick (1.4.0)
-      jekyll (>= 3.4)
     jekyll-link-attributes (2.0.1)
     jekyll-minifier (0.2.2)
       cssminify2 (~> 2.1.0)
@@ -244,7 +242,6 @@ DEPENDENCIES
   jekyll-archives
   jekyll-feed
   jekyll-get-json
-  jekyll-imagemagick
   jekyll-link-attributes
   jekyll-minifier
   jekyll-polyglot

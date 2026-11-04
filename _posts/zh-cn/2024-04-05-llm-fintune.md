@@ -77,8 +77,6 @@ GPT3在[《Language Models are Few-Shot Learners》](https://arxiv.org/abs/2005.
 
 以NLI（预测两句话之间的关系）为例：
 
-[//]: # "![image.png](https://i-blog.csdnimg.cn/blog_migrate/4d2a59becf8b513bdd678b3dd77a322a.png)"
-
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/posts/2024-04-05-llm-fintune-img/2.png" class="img-fluid rounded z-depth-1" %}
@@ -93,8 +91,6 @@ Prompt-Tuning的主要组件称为Pattern-Verbalizer-Pair。
 - PLM：预训练的模型。
 - Verbalizer：标签词映射，对于具体分类任务，选择指定的标签词。
 
-[//]: # "![image.png](https://i-blog.csdnimg.cn/blog_migrate/59c0006aa0a58cda2620565e9759badd.png)"
-
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/posts/2024-04-05-llm-fintune-img/3.png" class="img-fluid rounded z-depth-1" %}
@@ -106,8 +102,6 @@ Prompt-Tuning的主要组件称为Pattern-Verbalizer-Pair。
 - Patterns Ensembling：为一个句子设计不同的Pattern；
 - Verbalizers Ensembling：标签词可以有多个，例如great、nice都可以是积极的；
 - PVPs Ensembling：多个PVP组件，采用加权、投票等形式获得结果。
-
-[//]: # "![image.png](https://i-blog.csdnimg.cn/blog_migrate/5bbcd8d261a5d89cd39800152d2b0b03.png)"
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -131,8 +125,6 @@ Prompt-Tuning的主要组件称为Pattern-Verbalizer-Pair。
 - 词向量微调（Word Embedding） ：显式地定义离散字符的模板，但在训练时这些模板字符的词向量参与梯度下降，初始定义的离散字符用于作为向量的初始化；
 - 伪标记（Pseudo Token） ：不显式地定义离散的模板，而是将模板作为可训练的参数；
 
-[//]: # "- ![image.png](https://i-blog.csdnimg.cn/blog_migrate/29e3dab4d67b5baa6c4ca021aa7b91ec.png)"
-
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/posts/2024-04-05-llm-fintune-img/5.png" class="img-fluid rounded z-depth-1" %}
@@ -146,8 +138,6 @@ Prompt-Tuning的主要组件称为Pattern-Verbalizer-Pair。
 例如，[AutoPrompt](https://arxiv.org/pdf/2010.15980.pdf)给定原始的输入，额外定义若干离散的字符作为trigger，
 并组成Template，喂入MLM中预测对应label word的概率。而这些trigger最终通过梯度搜索的方法进行挑选。
 
-[//]: # "![image.png](https://i-blog.csdnimg.cn/blog_migrate/7b8c61a9af964ca255b6edf3d01349d1.png)"
-
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/posts/2024-04-05-llm-fintune-img/6.png" class="img-fluid rounded z-depth-1" %}
@@ -159,8 +149,6 @@ Prompt-Tuning的主要组件称为Pattern-Verbalizer-Pair。
 直接让模型来生成合适的模板。
 首先定义一个Template的母版，将这些母版与原始文本拼接后喂入T5模型（T5模型属于自回归式的生成模型）后在<X>和<Y>占位符部分生成相应的字符，
 最终形成对应的Template。然后再基于生成的Template和label word进行训练。
-
-![image.png](https://i-blog.csdnimg.cn/blog_migrate/de969f0730c54b7e302caf54078b035d.png)
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -198,8 +186,6 @@ Verbalizer也会影响预测的结果，和模板类似，Verbalizer也分为离
 里的Prompt Tuning。其实是Prefix Tuning的一个简化版本。
 基本概念：给每个任务定义prompt tokens，只在输入层加入这些tokens（训练的就是这些tokens）。
 
-[//]: # "![image.png](https://i-blog.csdnimg.cn/blog_migrate/58202278e30880bdfff28b2d6298719a.png)"
-
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/posts/2024-04-05-llm-fintune-img/8.png" class="img-fluid rounded z-depth-1" %}
@@ -212,8 +198,6 @@ Prompts提出了Prompt Ensembling，在一个批次里面可以同时训练一�
 
 [《GPT Understands, Too》](https://arxiv.org/abs/2103.10385)
 P-Tuning用MLP + LSTM（长短期记忆网络）的方式对Prompt Embedding进行一层处理，其虚拟token可以插入到除了前缀的任意位置。
-
-[//]: # "![image.png](https://i-blog.csdnimg.cn/blog_migrate/f8028ab8ecc68dfed8a47939f55b4f86.png)"
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -229,8 +213,6 @@ P-Tuning用MLP + LSTM（长短期记忆网络）的方式对Prompt Embedding进�
 [《Prefix-Tuning: Optimizing Continuous Prompts for Generation》](https://arxiv.org/pdf/2101.00190)
 基本概念：固定训练的LM，添加任务特定的，可训练的前缀（训练的是这个embedding的前缀）。
 
-[//]: # "![image.png](https://i-blog.csdnimg.cn/blog_migrate/71cbf8e0601d31d068838190a1de03bd.png)"
-
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/posts/2024-04-05-llm-fintune-img/10.png" class="img-fluid rounded z-depth-1" %}
@@ -245,8 +227,6 @@ P-Tuning用MLP + LSTM（长短期记忆网络）的方式对Prompt Embedding进�
 - 针对编码器-解码器架构模型：Encoder和Decoder都增加了前缀，得到 z = [PREFIX; x; PREFIX0; y]。
 - Encoder端增加前缀是为了引导输入部分的编码，Decoder 端增加前缀是为了引导后续token的生成。
 
-[//]: # "![image.png](https://i-blog.csdnimg.cn/blog_migrate/8bb99ac2718d47f23e27db13612ec879.png)"
-
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/posts/2024-04-05-llm-fintune-img/11.png" class="img-fluid rounded z-depth-1" %}
@@ -257,8 +237,6 @@ P-Tuning用MLP + LSTM（长短期记忆网络）的方式对Prompt Embedding进�
 
 1. Deep Continuous Prompt：一般做法是在embedding层加入可训练的virtual token，但实际上可以在每一层都加入可训练的prefix。
 2. 套MLP：因为直接优化可能导致不稳定和性能下降，所以在训练的过程中增加MLP映射矩阵。
-
-[//]: # "![image.png](https://i-blog.csdnimg.cn/blog_migrate/1b3706c093af69739f8f6edc6ff099b5.png)12"
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -273,8 +251,6 @@ P-Tuning用MLP + LSTM（长短期记忆网络）的方式对Prompt Embedding进�
 
 从原理上，P-Tuning V2和Prefix Tuning是一样的，只不过Prefix Tuning针对NLG（自然语言生成）任务，
 而P-Tuning v2进行了改进，可以用于NLU（自然语言理解）任务，如语义识别，情感分析等。
-
-[//]: # "![image.png](https://i-blog.csdnimg.cn/blog_migrate/f16a0e24c5b3b1197a5dc70ae8c1621b.png)"
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">

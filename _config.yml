@@ -116,7 +116,6 @@ plugins:
   - jekyll-archives
   - jekyll-feed
   - jekyll-get-json
-  - jekyll-imagemagick
   - jekyll-link-attributes
   - jekyll-minifier
   - jekyll-polyglot
@@ -212,26 +211,8 @@ external_links:
   exclude:
 
 # -----------------------------------------------------------------------------
-# Responsive images (jekyll-imagemagick). Needs ImageMagick: `convert -version`.
+# Images in blog posts load lazily (only when scrolled into view)
 # -----------------------------------------------------------------------------
-
-imagemagick:
-  enabled: true
-  widths:
-    - 480
-    - 800
-    - 1400
-  input_directories:
-    - assets/img/
-    - assets/posts/
-  input_formats:
-    - ".jpg"
-    - ".jpeg"
-    - ".png"
-    - ".tiff"
-    - ".gif"
-  output_formats:
-    webp: "-quality 85"
 
 lazy_loading_images: true
 
