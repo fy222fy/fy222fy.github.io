@@ -14,7 +14,7 @@ facts:
     text: First-author papers at NDSS and IEEE TDSC
   - figure: "5"
     unit: yrs
-    text: Of formal-analysis research, from undergraduate to Ph.D.
+    text: Formal-analysis research, from B.S. to Ph.D.
   - figure: "3"
     unit: yrs
     text: Security engineering at Ant Group
@@ -27,10 +27,10 @@ about:
 research:
   title: Research Interests
   items:
-    - title: AI for Security
+    - title: AI for Security & AI Security
       text: >-
-        Using AI to assist cybersecurity, especially formal analysis, for example using large language models
-        to automate formal modeling and protocol verification.
+        Using AI to strengthen security, for example using large language models to automate formal modeling
+        and protocol verification; and studying the security of AI systems themselves, such as interactions among AI agents.
     - title: Formal Analysis
       text: >-
         Using rigorous mathematical methods to verify the security of communication systems
@@ -64,7 +64,7 @@ timeline:
   more: Full CV
   items:
     - period: 2014 – 2018
-      role: B.S.
+      role: B.S., Information Security
       org: Beijing University of Posts and Telecommunications
     - period: 2018 – 2021
       role: M.S.

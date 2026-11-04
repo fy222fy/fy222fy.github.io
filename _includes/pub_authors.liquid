@@ -1,11 +1,21 @@
 {%- comment -%}
   Author list of a bibliography entry. The site owner is emphasized; markers such as * and † become superscripts.
+  Markers are given in the entry's `author_marks` field by author position, e.g. author_marks={1:*†; 2:*},
+  so that the author field (and the BibTeX shown to visitors) stays clean.
   Names written as a single word (Chinese names) are separated with a Chinese comma.
 {%- endcomment -%}
 {%- assign entry = include.entry -%}
+{%- assign mark_list = entry.author_marks | default: '' | split: ';' -%}
 {%- for author in entry.author_array -%}
+  {%- assign position = forloop.index | append: '' -%}
   {%- assign last = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
   {%- assign marks = author.last | regex_replace: '[^*∗†‡§¶‖&^]', '' -%}
+  {%- for item in mark_list -%}
+    {%- assign pair = item | strip | split: ':' -%}
+    {%- if pair[0] == position -%}
+      {%- assign marks = marks | append: pair[1] -%}
+    {%- endif -%}
+  {%- endfor -%}
   {%- assign is_self = false -%}
   {%- if site.scholar.last_name contains last -%}
     {%- if author.first == blank or site.scholar.first_name contains author.first -%}

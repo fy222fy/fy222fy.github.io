@@ -179,26 +179,7 @@ scholar:
   group_order: descending
   bibliography_group_tag: h3
   # fields used by this site only, left out of the BibTeX shown to visitors
-  bibtex_skip_fields:
-    [
-      abbr,
-      abstract,
-      additional_info,
-      assession_number,
-      code,
-      day,
-      dimensions,
-      google_scholar_id,
-      html,
-      if,
-      kind,
-      nationality,
-      pdf,
-      sci_index_date,
-      selected,
-      video,
-      where,
-    ]
+  bibtex_skip_fields: [abbr, abstract, author_marks, code, day, google_scholar_id, html, kind, month_numeric, pdf, selected, title_en, video, where]
 
 # -----------------------------------------------------------------------------
 # Links to other websites open in a new tab (jekyll-link-attributes)

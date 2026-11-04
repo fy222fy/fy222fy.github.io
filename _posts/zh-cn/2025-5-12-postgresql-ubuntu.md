@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ubuntu系统安装postgresql数据库
+title: Ubuntu 系统安装 PostgreSQL 数据库
 date: 2025-05-12
-description: ubuntu安装postgresql并启动远程访问
+description: 在 Ubuntu 上安装 PostgreSQL 并开启远程访问
 tags: linux
 categories: learn
 ---

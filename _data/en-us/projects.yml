@@ -100,6 +100,7 @@ ant:
         - Proved the privacy of the semi-honest ABY3 protocol under a malicious model, after comparing MPC algorithms.
         - Implemented ABY3 operators and optimized vector XOR, matrix dot product and sorting (4 patents).
         - Adapted operators to SGX and HyperEnclave, deployed to the cloud and onboarded 1 business application.
+        - Selected as one of the “Top Ten Hardcore Technologies” at the 5th Digital China Summit.
     - anchor: oceanbase-lob
       tag: Product
       period: 2021.06 – 2021.09
@@ -123,7 +124,7 @@ ant:
       - figure: "1"
         text: CAICT MPC security evaluation certificate for TECC (IY2022102700)
       - figure: "1"
-        text: Trusted Encrypted Computing white paper, co-written
+        text: TECC white paper, co-written
       - figure: "1"
         text: Open-source framework in SecretFlow
 

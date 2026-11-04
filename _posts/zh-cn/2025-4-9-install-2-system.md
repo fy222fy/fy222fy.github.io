@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 服务器安装linux和ubuntu双系统
+title: 服务器安装 Ubuntu 和 Windows 双系统
 date: 2025-04-09 23:17:00
 description: 在不同磁盘上安装 Ubuntu 与 Windows 后配置 GRUB 双系统引导
 tags: linux
@@ -9,7 +9,7 @@ categories: learn
 
 ## 背景
 
-在一台服务器上，有可能需要同时安装linux和windows双系统，
+在一台服务器上，有可能需要同时安装 Linux 和 Windows 双系统，
 这时存在如何设置grub启动双系统的问题。
 
 在我个人的情况中，是首先在磁盘A安装了ubuntu系统，随后在磁盘B安装Windows系统，但发现最后只能登入ubuntu系统，无法登入Windows。

@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 使用ffmpeg将声音从不同设备转移
+title: 使用 FFmpeg 在不同设备之间传输声音
 date: 2025-04-18 00:00:00
-description: 使用 ffmpeg 通过网络将一台设备的音频传输到另一台设备播放
+description: 使用 FFmpeg 通过网络将一台设备的音频传输到另一台设备播放
 tags: linux
 categories: learn
 ---

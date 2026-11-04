@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Haonan Feng",
-    "label": "Ph.D. Student, School of Cyberspace Security, Beijing University of Posts and Telecommunications",
+    "label": "Ph.D. student, School of Cyberspace Security, Beijing University of Posts and Telecommunications",
     "image": "prof_pic.jpg",
     "email": "fenghaonan222@gmail.com",
     "url": "https://fy222fy.github.io",
@@ -36,12 +36,16 @@
       {
         "figure": "5",
         "unit": "yrs",
-        "text": "of formal-analysis research, cyberspace security from B.S. to Ph.D."
+        "text": "of formal-analysis research in cyberspace security, from B.S. to Ph.D."
       },
       {
         "figure": "3",
         "unit": "yrs",
         "text": "of security engineering, product development and open source at Ant Group"
+      },
+      {
+        "figure": "6",
+        "text": "Chinese invention patents, plus 1 software copyright and 1 CAICT certificate"
       }
     ]
   },
@@ -54,7 +58,7 @@
       "startDate": "2024-09-01",
       "endDate": "2028-06-01",
       "expected": true,
-      "summary": "AI for security, formal analysis, privacy computing"
+      "summary": "AI for security, AI security, formal analysis, privacy computing"
     },
     {
       "institution": "School of Cyberspace Security, Beijing University of Posts and Telecommunications",
@@ -78,7 +82,6 @@
   "work": [
     {
       "name": "Ant Group",
-      "description": "confidential computing",
       "position": "Cybersecurity Engineer",
       "url": "https://www.antgroup.com/",
       "startDate": "2021-07-06",
@@ -102,7 +105,7 @@
     {
       "name": "Federated fine-tuning of LLMs",
       "period": "2024.02 – 2024.05",
-      "description": "Federated-learning architecture for cross-institution LLM training, validated with DeepSpeed and PyTorch.",
+      "description": "Federated-learning architecture for cross-institution LLM training, validated with Accelerate, DeepSpeed and PyTorch.",
       "entity": "Ant Group"
     },
     {
@@ -235,6 +238,20 @@
       "date": "2021-06-05",
       "issuer": "Institute of Computing Technology, Chinese Academy of Sciences",
       "url": "https://www.inforsec.org/wp/"
+    }
+  ],
+  "interests": [
+    {
+      "name": "AI for Security"
+    },
+    {
+      "name": "AI Security"
+    },
+    {
+      "name": "Formal Analysis"
+    },
+    {
+      "name": "Privacy Computing"
     }
   ]
 }

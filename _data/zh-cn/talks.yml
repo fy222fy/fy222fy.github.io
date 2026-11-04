@@ -1,4 +1,4 @@
-# 学术报告、书章与其它（中文）。publications: false 表示不在“论文”页显示。
+# 学术报告、书章与其他（中文）。publications: false 表示不在“论文”页显示。
 - kind: 学术报告
   year: 2022
   title: FIDO UAF 协议的形式化分析

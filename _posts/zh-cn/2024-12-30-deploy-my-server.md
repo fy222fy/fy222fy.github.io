@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 配置新的linux服务器并安装iterm2
+title: 新 Linux 服务器初始化配置（含 iTerm2 自动登录）
 date: 2024-12-30 16:40:16
 description: 新 Linux 服务器初始化配置，以及使用 iTerm2 自动登录
 tags: linux

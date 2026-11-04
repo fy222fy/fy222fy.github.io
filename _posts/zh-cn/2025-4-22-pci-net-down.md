@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 插入新pci设备后ubuntu网络不可用
+title: 插入新 PCIe 设备后 Ubuntu 网络不可用
 date: 2025-04-22 00:00:00
 description: 插入新 PCIe 设备后网卡名称改变导致 Ubuntu 断网的排查与修复
 tags: linux

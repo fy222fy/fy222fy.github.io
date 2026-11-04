@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Windows系统如何安装ProVerif Editor
+title: Windows 系统如何安装 ProVerif Editor
 date: 2019-09-23 00:00:00
 permalink: /blog/2024/ProVerif-editor/ # keep the original URL
 description: 在 Windows 上安装与配置 ProVerif 及 ProVerif Editor

@@ -9,7 +9,7 @@ photo: prof_pic.jpg # file in assets/img/
 ---
 
 I am a Ph.D. student in the School of Cyberspace Security at Beijing University of Posts and Telecommunications.
-My main research interests include **AI for security**, **formal analysis** and **privacy computing**.
+My main research interests are **AI for security**, **AI security**, **formal analysis** and **privacy computing**.
 
 Currently, I am researching how large models can be applied to formal analysis,
 and how formal analysis can be used to study the security of interactions among groups of AI agents.
